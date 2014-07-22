@@ -21,7 +21,7 @@
   border-width: 1px;
   border-style: solid;
   // border-color: $neon-pink;
-  @include tran(border, $neon-pink, 0.35, lighten);
+  // @include tran(border, $neon-pink, 0.35, lighten);
   border-radius: 50%;
   content: '';
   opacity: 0;
@@ -50,4 +50,43 @@
   -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
   -moz-transform: translateX(-50%) translateY(-50%) scale(1);
   transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+// Ring Colors
+.cl-effect-12 .icon {
+  &--phone {
+    &::before,
+    &::after {
+      border-color: $neon-1;
+    }
+  }
+
+
+  &--twitter {
+    &::before,
+    &::after {
+      border-color: $neon-2;
+    }
+  }
+
+  &--instagram {
+    &::before,
+    &::after {
+      border-color: $neon-3;
+    }
+  }
+
+  &--tumblr {
+    &::before,
+    &::after {
+      border-color: $neon-4;
+    }
+  }
+
+  &--email {
+    &::before,
+    &::after {
+      border-color: $neon-5;
+    }
+  }
 }
