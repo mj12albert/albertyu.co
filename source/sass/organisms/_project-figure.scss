@@ -1,0 +1,58 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE: <figure> chunks within block--project                        /
+//                                                                             /
+//=============================================================================/
+
+// <figure>
+.project__figure {
+  @extend .cf;
+  position: relative;
+  width: 100%;
+  clear: both;
+  margin: 2.618rem 0;
+
+  @include breakpoint($tablet) {
+    margin: 4.236rem 0;
+  }
+}
+
+  .project__figure figcaption {
+    position: relative;
+    clear: both;
+    padding: 0.938rem 0 1.618rem;
+
+    // Whitney
+    /* @extend %whitneySSmBook;
+    font-size: 0.7741254643rem;
+    line-height: 1.618; */
+
+    // Calluna
+    @extend %callunaItalic;
+    font-size: 0.938rem;
+    line-height: 1.517;
+
+    @include font-smoothing(off);
+
+    @include breakpoint($tablet) {
+      // padding: 1rem 0 2.618rem;
+      padding: 1.125rem 0 2.618rem;
+      // font-size: 0.879844rem;
+      // font-size: 0.695rem;
+      // line-height: 1.618;
+
+      &.left {
+        padding-right: 25%;
+      }
+
+      &.right {
+        padding-left: 25%;
+      }
+    }
+  }

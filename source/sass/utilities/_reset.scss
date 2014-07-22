@@ -1,0 +1,79 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Utility                                                      /
+//         TITLE: CSS Reset                                                    /
+//                                                                             /
+//=============================================================================/
+
+html {
+	// font-size: 100%;
+}
+
+div,
+header,
+main,
+section,
+article,
+aside,
+figure,
+figcaption,
+form,
+footer {
+  @include box-sizing(border-box);
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  // position: relative;
+   margin: 0;
+   padding: 0;
+}
+
+p {
+  // position: relative;
+  // margin: 0;
+  // padding: 0;
+}
+
+p:empty {
+  display: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+  list-style: none;
+}
+
+blockquote {
+  // position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  // display: block;
+  position: relative;
+  outline: 0;
+  height: auto;
+}
+
+input,
+button,
+textarea {
+  padding: 0;
+  border: none;
+}
+
+address {
+  font-style: normal;
+}

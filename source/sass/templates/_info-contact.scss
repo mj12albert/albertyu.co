@@ -1,0 +1,31 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Template                                                     /
+//         TITLE: Contact Block                                                /
+//                                                                             /
+//=============================================================================/
+
+.block.contact {
+  background-color: #2e2e2e;
+}
+
+/* .block.contact .column {
+  padding: 6rem 0;
+} */
+
+.block.contact p {
+  font-size: 1.618rem;
+  line-height: 1.2;
+  color: #c4c4c4;
+  margin-bottom: 2.618rem;
+}
+
+.contact-button-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}

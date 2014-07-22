@@ -1,0 +1,25 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE: <article> for project writeup/description                    /
+//                                                                             /
+//=============================================================================/
+
+// <article>
+.project__description {
+  @extend .cf;
+  position: relative;
+  width: 90%;
+  margin-bottom: 1.618rem;
+
+  @include breakpoint($tablet) {
+    float: left;
+    width: 60%;
+    margin-bottom: 5.711rem;
+  }
+}

@@ -1,0 +1,27 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Template                                                     /
+//         TITLE: Info Blocks (Profile & Contact)                              /
+//                                                                             /
+//=============================================================================/
+
+.block--info {
+  padding: 6.425rem 0;
+}
+
+// <h1>
+.block--info__title {
+  font-size: 1.618rem;
+}
+
+.block--info .column {
+  @include breakpoint($tablet) {
+    width: 48%;
+    max-width: 29.0909090909rem;
+  }
+}

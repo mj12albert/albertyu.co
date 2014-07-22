@@ -1,0 +1,42 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Molecule                                                     /
+//         TITLE:                                                              /
+//                                                                             /
+//=============================================================================/
+
+// <a>
+.mark {
+  // @extend .cf;
+  // clear: both;
+  float: left;
+  width: 20%;
+  // margin-left: -0.358rem;
+}
+
+// <svg>
+#site-logo {
+  position: relative;
+  display: block;
+}
+
+  // <g> tag for the mark/polygon
+  #mark {
+    fill: #eaeaea;
+  }
+
+  // <g> tag for the slash
+  #slash line {
+    stroke-width: 1.5;
+  }
+
+#mark-slash {
+  position: absolute;
+  top: 0;
+  left: -0.382rem;
+}

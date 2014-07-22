@@ -1,0 +1,69 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Scaffolding                                                  /
+//         TITLE:                                                              /
+//                                                                             /
+//=============================================================================/
+
+html {
+  font: normal 112.5%/1.65 serif;
+
+  @include font-smoothing(on);
+
+  @include breakpoint($desktop) {
+    font: normal 137.5%/1.6 serif;
+  }
+}
+
+body {
+  @extend %callunaLight;
+  text-rendering: optimizeLegibility;
+
+  color: #212121;
+  background-color: lighten($white, 1);
+}
+
+// <div>
+.block {
+  width: 100%;
+  position: relative;
+}
+
+.column,
+%column {
+  @extend .cf;
+
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+
+  @include breakpoint($tablet) {
+    width: 80%;
+    max-width: 66.6666666667rem; // 1200px/18
+  }
+
+  @include breakpoint($desktop) {
+    max-width: 48.4848484848rem;
+  }
+}
+
+// horizontal ul/nav abstraction from csswizardry
+%horizontal-list {
+  list-style:none;
+  margin-left:0;
+  @extend .cf;
+
+  > li {
+    &,
+    > a {
+      display:inline-block;
+     *display:inline;
+      zoom:1;
+    }
+  }
+}

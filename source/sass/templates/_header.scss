@@ -1,0 +1,25 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE: Site Header                                                  /
+//                                                                             /
+//=============================================================================/
+
+// <section>
+.hero {
+  height: 90vh;
+}
+
+  // <header>
+  .header {
+    @extend %column;
+
+    padding-top: 1rem;
+
+    border-bottom: 1px solid #eee;
+  }

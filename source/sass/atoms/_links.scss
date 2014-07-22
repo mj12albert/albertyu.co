@@ -1,0 +1,43 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Atom                                                         /
+//         TITLE: Links                                                        /
+//                                                                             /
+//=============================================================================/
+
+// Prettier link colors
+a {
+  text-decoration: none;
+  @include transition(color 200ms ease-in-out, background-color 220ms ease-in-out);
+}
+
+a:link    {
+  color: $blue;
+  @include transition(color 200ms ease-in-out, background-color 220ms ease-in-out);
+}
+
+a:visited {
+  // color: $purple;
+  @include transition(color 200ms ease-in-out, background-color 220ms ease-in-out);
+}
+
+a:hover   {
+  color: $aqua;
+  @include transition(color 200ms ease-in-out, background-color 220ms ease-in-out);
+}
+
+a:active  {
+  color: $orange;
+  @include transition(color 200ms ease-in-out, background-color 220ms ease-in-out);
+}
+
+// No tap highlight
+%noTap {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}

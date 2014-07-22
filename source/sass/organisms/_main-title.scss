@@ -1,0 +1,32 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE: Site Title                                                   /
+//                                                                             /
+//=============================================================================/
+
+// <h1>
+
+.main-title {
+  @extend %column;
+}
+
+.main-title p {
+  @extend %callunaLight;
+  // @extend .gamma;
+  // font-size: 2.5rem;
+  font-size: 2.0581061761rem;
+  line-height: 1.2;
+  color: #3e3e3e;
+
+  clear: both;
+  max-width: 28rem;
+  margin: 1.618rem 0 0;
+
+  // @include font-smoothing(on);
+}

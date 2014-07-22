@@ -1,0 +1,79 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Molecule                                                     /
+//         TITLE: Ghost button links                                           /
+//                                                                             /
+//=============================================================================/
+
+.button {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.938rem 2.618rem;
+
+  @extend %verlagBold;
+  text-transform: uppercase;
+  font-size: 0.833rem;
+  line-height: 1;
+
+  // border: 1px solid #b4b4b4;
+  border-width: 1px;
+  border-style: solid;
+}
+
+  .button__arrow {
+    opacity: 0;
+    margin-left: -2rem;
+    @include transition(margin 200ms, opacity 180ms);
+  }
+
+  .button__arrow:before {
+    content:'→';
+    margin-right: 1rem;
+  }
+
+// Colors
+.button {
+  &:link,
+  &:visited {
+    color: darken(#c4c4c4, 15);
+    border-color: darken(#a2a2a2, 15);
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: #f2f2f2;
+    background-color: #f2f2f2;
+    color: #2e2e2e;
+  }
+
+  &:active {
+    border-color: darken(#f2f2f2, 30);
+    background-color: darken(#f2f2f2, 30);
+    color: #2e2e2e;
+  }
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    @extend %noTap;
+  }
+}
+
+// States
+.button:hover,
+.button:focus,
+.button:active {
+  .button__arrow {
+    opacity: 1;
+    margin-left: 0;
+    @include transition(margin 200ms, opacity 120ms);
+  }
+}

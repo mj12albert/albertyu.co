@@ -1,0 +1,73 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE:                                                              /
+//                                                                             /
+//=============================================================================/
+
+// Base color scheme
+.ekpac {
+  background-color: darken(#093054, 5);
+  // color: darken(#8dd7c3, 57);
+  @include tran(color, #fafafa, 0.99, lighten);
+}
+
+.ekpac .project__header {
+  height: 25rem;
+
+  background-image:url('../assets/ekpac-header.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:after {
+    height: 100%;
+
+    @include background-image(linear-gradient(top,
+      rgba(7, 35, 61, 0.1),
+      rgba(7, 35, 61, 0.5) 32%,
+      rgba(7, 35, 61, 0.88) 62%,
+      darken(#093054, 5)
+    ));
+  }
+
+  @include breakpoint($tablet) {
+    height: 35rem;
+  }
+}
+
+.ekpac.ekpac .column {
+  margin-top: -20rem;
+}
+
+  // Project Title
+  .ekpac .project__title {
+    // @include tran(color, lighten(#1a4b3e, 0), 0.85, lighten);
+    // @include tran(border, lighten(#1a4b3e, 12), 0.5, lighten);
+  }
+
+  // Services text/list
+  .ekpac .project__detail {
+    // @include tran(color, darken(#1a4b3e, 2), 0.95, lighten);
+  }
+
+    // Slash delimiting services
+    .ekpac .project__services li:after {
+      color: #fecb00;
+      font-weight: 400;
+    }
+
+  // Description
+  .ekpac .project__description {
+    font-weight: 400;
+  }
+
+  // Caption text
+  .ekpac figcaption {
+    // color: desaturate(lighten(#1a4b3e, 45), 30%);
+  }

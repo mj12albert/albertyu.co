@@ -1,0 +1,81 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Template                                                     /
+//         TITLE: Site Footer                                                  /
+//                                                                             /
+//=============================================================================/
+
+// <footer>
+.block--footer {
+  // padding: 1rem 0;
+
+  line-height: 1;
+
+  background-color: #262626;
+  color: #808080;
+
+  @include font-feature-settings(lnum);
+}
+
+.block--footer .column {
+  padding: 1rem 0;
+}
+
+  // <ul>
+  .social {
+    @extend %horizontal-list;
+
+    // float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+  }
+
+    .social li:not(:last-of-type) {
+      margin-right: 0.2222222222rem;
+    }
+
+    // <a>
+    .icon {
+      position: relative;
+      display: inline-block;
+      // padding: 0 0.16rem;
+    }
+
+    .icon svg {
+      // width: 3rem;
+      height: 3rem;
+    }
+
+    .icon path {
+      fill: #555555;
+    }
+
+    .icon {
+      &:hover,
+      &:focus {
+        outline: none;
+
+        path {
+          fill: #c4c4c4;
+        }
+      }
+
+      &:active {
+
+      }
+    }
+
+  // <small>
+  .legal {
+    // padding: 1rem 0;
+  }

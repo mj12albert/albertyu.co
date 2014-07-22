@@ -1,0 +1,67 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Molecule                                                     /
+//         TITLE: Site Navigation                                              /
+//                                                                             /
+//=============================================================================/
+
+nav {
+  float: left;
+  // padding: 1rem 0;
+
+  @include breakpoint($tablet) {
+    width: 80%;
+    padding: 0.579rem 0 0.382rem;
+    text-align: right;
+  }
+}
+
+// <ul>
+.navigation {
+  @extend %horizontal-list;
+
+  // Type
+  @extend %verlagBook;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+  .navigation li:not(:last-of-type) {
+    &:after {
+      content: " /";
+      font-size: 150%;
+      font-weight: 300;
+      margin: 0 0.1666666667rem;
+      color: $neon-pink;
+    }
+  }
+
+  .navigation a {
+    &:link,
+    &:visited {
+      color: #a4a4a4;
+    }
+
+    &:hover,
+    &:focus {
+      color: #6b6b6b;
+    }
+
+    &:active {
+      color: #6b6b6b;
+    }
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+      @extend %noTap;
+    }
+  }

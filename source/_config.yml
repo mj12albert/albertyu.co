@@ -1,0 +1,7 @@
+source: /Users/mj12albert/Servers/albertyu.co/source
+destination: /Users/mj12albert/Servers/albertyu.co/build
+timezone: Asia/Hong_Kong
+encoding: utf-8
+# host: albertyu.co.dev
+# port: 4000
+exclude: ['sass']
