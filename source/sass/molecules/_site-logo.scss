@@ -11,32 +11,56 @@
 //=============================================================================/
 
 // <a>
-.mark {
-  // @extend .cf;
-  // clear: both;
-  float: left;
-  width: 20%;
-  // margin-left: -0.358rem;
+#mark {
+  display: block;
+  padding: 0.618rem;
+  margin-left: -1.125rem;
+
+  @include breakpoint($tablet) {
+    display: none;
+  }
 }
 
 // <svg>
 #site-logo {
-  position: relative;
-  display: block;
+/*   @include breakpoint(600px) {
+    width: 200%;
+    height: 200%;
+  } */
+
+  /* @include breakpoint($tablet) {
+    width: 20.8475px;
+    height: 47.2715px;
+  } */
 }
 
-  // <g> tag for the mark/polygon
-  #mark {
-    fill: #eaeaea;
-  }
+#monogram {
+  // display: none;
+  fill: #f0f0f0;
 
-  // <g> tag for the slash
-  #slash line {
-    stroke-width: 1.5;
+  @include breakpoint($tablet) {
+    // display: block;
   }
+}
+
+#slash {
+
+}
+
+// <svg>
+/* #mark-monogram {
+  // display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.833rem 0.833rem 0.833rem 0;
+
+  fill: #fafafa;
+}
 
 #mark-slash {
   position: absolute;
   top: 0;
-  left: -0.382rem;
-}
+  left: 0.382rem;
+  padding: 0.618rem;
+} */

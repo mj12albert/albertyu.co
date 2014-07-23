@@ -28,6 +28,31 @@ body {
   background-color: lighten($white, 1);
 }
 
+// Variant of %column below
+%hero-column {
+  position: relative;
+  width: 90%;
+  max-width: 20.185rem;
+
+  margin: 0;
+
+  @include breakpoint($tablet) {
+
+    width: 80%;
+    max-width: 29.03rem;
+
+    // margin: 0 auto;
+  }
+
+  @include breakpoint($laptop) {
+    max-width: 34.8306782768rem;
+  }
+
+  @include breakpoint($desktop) {
+    // margin-left: 0;
+  }
+}
+
 // <div>
 .block {
   width: 100%;

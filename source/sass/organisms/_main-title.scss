@@ -11,22 +11,23 @@
 //=============================================================================/
 
 // <h1>
-
 .main-title {
-  @extend %column;
-}
+  // @extend %hero-column;
 
-.main-title p {
   @extend %callunaLight;
-  // @extend .gamma;
-  // font-size: 2.5rem;
-  font-size: 2.0581061761rem;
+  font-size: 1.82rem;
   line-height: 1.2;
   color: #3e3e3e;
 
-  clear: both;
-  max-width: 28rem;
-  margin: 1.618rem 0 0;
+  // padding-top: 5%;
 
-  // @include font-smoothing(on);
+  @include breakpoint($tablet) {
+    font-size: 2.182rem;
+  }
+
+  @include breakpoint($laptop) {
+    font-size: 2.618rem;
+    // max-width: 34.8306782768rem;
+  }
+
 }

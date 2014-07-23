@@ -12,14 +12,34 @@
 
 // <section>
 .hero {
-  height: 90vh;
+  // height: 90vh;
+  width: 95%;
+  margin-left: 5%;
+  // padding-top: 5%;
+
+  @include breakpoint($tablet) {
+    width: 80%;
+    max-width: 66.6666666667rem; // 1200px/18
+    height: 90vh;
+    // height: 50vh;
+    margin: 0 auto;
+    // padding-top: 10%;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: 48.4848484848rem;
+  }
 }
 
   // <header>
   .header {
-    @extend %column;
+    @extend %hero-column;
+    padding-top: 5%;
+    padding-bottom: 4.765rem;
+    // padding-top: 1.618rem;
+    // margin-top: -7px;
 
-    padding-top: 1rem;
-
-    border-bottom: 1px solid #eee;
+    @include breakpoint($tablet) {
+      padding-top: 10%;
+    }
   }
