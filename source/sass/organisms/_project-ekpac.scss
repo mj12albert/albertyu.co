@@ -64,7 +64,7 @@
 
   // <img> inside <figure>
   .ekpac .bordered {
-    @include box-shadow(0 0 0 1px lighten(#093054, 6));
+    @include box-shadow(0 0 0 1px lighten(#093054, 8));
   }
 
   // Description
