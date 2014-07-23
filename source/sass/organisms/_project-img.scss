@@ -6,12 +6,15 @@
 //        CLIENT: Albert Yu                                                    /
 //   DELIVERABLE: Website Prototype                                            /
 //         CLASS: Organism                                                     /
-//         TITLE: <img> within .project__figure                                /
+//         TITLE: <img> or <video> within .project__figure                     /
 //                                                                             /
 //=============================================================================/
 
-.project__figure img {
-  max-width: 100%;
+.project__figure {
+  img,
+  video {
+    max-width: 100%;
+  }
 }
 
 /**
