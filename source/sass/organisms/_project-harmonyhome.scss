@@ -46,6 +46,11 @@
       @include tran(color, lighten(#1a4b3e, 2), 0.7, lighten);
     }
 
+  // <img> inside <figure>
+  .harmonyhome .bordered {
+    @include box-shadow(0 0 0 1px #f2f2f2);
+  }
+
   // Caption text
   .harmonyhome figcaption {
     color: desaturate(lighten(#1a4b3e, 45), 30%);
