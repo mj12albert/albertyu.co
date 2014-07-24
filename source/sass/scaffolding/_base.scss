@@ -38,7 +38,7 @@ body {
 
   @include breakpoint($tablet) {
 
-    width: 80%;
+    width: 85%;
     max-width: 29.03rem;
 
     // margin: 0 auto;
@@ -68,7 +68,7 @@ body {
   margin: 0 auto;
 
   @include breakpoint($tablet) {
-    width: 80%;
+    width: 85%;
     max-width: 66.6666666667rem; // 1200px/18
   }
 

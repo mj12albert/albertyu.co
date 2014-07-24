@@ -15,23 +15,63 @@
     <p class="project__description">Home is a partnership between Eliza and Winnie, clinical psychologists specializing in child development and family services, with a strong emphasis on practising positive psychology. Their new website was designed around a serene, uplifting graphical identity that reflects the personality and values of the practice. The old content-management system was also stripped out and replaced with leaner, more specialized components to simplify creating structured content like articles and workshops, and to significantly reduce maintenance overhead. The responsive site was templated and built with <a href="http://jekyllrb.com/">Jekyll</a>, hosted on <a href="https://pages.github.com/">Github Pages</a>, and integrated with <a href="http://developmentseed.org/blog/2012/june/25/prose-a-content-editor-for-github/">Prose.io</a> for writing and publishing.</p>
 
     <figure class="project__figure">
-      <img src="assets/hh-responsive-lossy.png" alt="">
+      <picture>
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="assets/hh-responsive-lg.png, assets/hh-responsive-lg@2x.png 2x" media="(min-width: 48.0625em)" >
+        <source srcset="assets/hh-responsive-md.png, assets/hh-responsive-md@2x.png 2x" media="(min-width: 30em)" >
+        <!--[if IE 9]></video><![endif]-->
+        <img srcset="assets/hh-responsive-sm.png, assets/hh-responsive-sm@2x.png 2x" >
+      </picture>
     </figure>
 
     <figure class="project__figure">
-      <img src="assets/hh-style-tile-a.jpg" alt="" class="bordered half fixed">
-      <img src="assets/hh-style-tile-b.jpg" alt="" class="bordered half fixed last">
+      <picture class="bordered half">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="assets/hh-style-tile-a-lg.jpg, assets/hh-style-tile-a-lg@2x.jpg 2x" media="(min-width: 48.0625em)" >
+        <source srcset="assets/hh-style-tile-a-md.jpg, assets/hh-style-tile-a-md@2x.jpg 2x" media="(min-width: 30em)" >
+        <!--[if IE 9]></video><![endif]-->
+        <img srcset="assets/hh-style-tile-a-sm.jpg, assets/hh-style-tile-a-sm@2x.jpg 2x" >
+      </picture>
+
+      <picture class="bordered half last">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="assets/hh-style-tile-b-lg.jpg, assets/hh-style-tile-b-lg@2x.jpg 2x" media="(min-width: 48.0625em)" >
+        <source srcset="assets/hh-style-tile-b-md.jpg, assets/hh-style-tile-b-md@2x.jpg 2x" media="(min-width: 30em)" >
+        <!--[if IE 9]></video><![endif]-->
+        <img srcset="assets/hh-style-tile-b-sm.jpg, assets/hh-style-tile-b-sm@2x.jpg 2x" >
+      </picture>
+
       <figcaption class="right">Style tiles and element collages were used to quickly explore visual styles and elements. The final design is characterized by a soft color palette derived from the existing logo and subtle photography treatments.</figcaption>
     </figure>
 
     <figure class="project__figure">
-      <img src="assets/hh-prose-interface.jpg" alt="" class="bordered">
+      <picture class="bordered">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="assets/hh-prose-interface-lg.jpg, assets/hh-prose-interface-lg@2x.jpg 2x" media="(min-width: 48.0625em)" >
+        <source srcset="assets/hh-prose-interface-md.jpg, assets/hh-prose-interface-md@2x.jpg 2x" media="(min-width: 30em)" >
+        <!--[if IE 9]></video><![endif]-->
+        <img srcset="assets/hh-prose-interface-sm.jpg, assets/hh-prose-interface-sm@2x.jpg 2x" >
+      </picture>
+
       <figcaption class="left">On the backend, Prose was chosen for its simple and intuitive interface that only exposes writing and editing capabilities. Combining that with Github Pages allowed effortless publishing and backups. A lot of technical debt created by the previous, conventional CMS was eliminated.</figcaption>
     </figure>
 
     <figure class="project__figure">
-      <img src="assets/hh-profile-lossy.jpg" alt="" class="bordered half">
-      <img src="assets/hh-services-lossy.jpg" alt="" class="bordered half last">
+      <picture class="bordered half">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="assets/hh-profile-lg.jpg, assets/hh-profile-lg@2x.jpg 2x" media="(min-width: 48.0625em)" >
+        <source srcset="assets/hh-profile-md.jpg, assets/hh-profile-md@2x.jpg 2x" media="(min-width: 30em)" >
+        <!--[if IE 9]></video><![endif]-->
+        <img srcset="assets/hh-profile-sm.jpg, assets/hh-profile-sm@2x.jpg 2x" >
+      </picture>
+
+      <picture class="bordered half last">
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="assets/hh-services-lg.jpg, assets/hh-services-lg@2x.jpg 2x" media="(min-width: 48.0625em)" >
+        <source srcset="assets/hh-services-md.jpg, assets/hh-services-md@2x.jpg 2x" media="(min-width: 30em)" >
+        <!--[if IE 9]></video><![endif]-->
+        <img srcset="assets/hh-services-sm.jpg, assets/hh-services-sm@2x.jpg 2x" >
+      </picture>
     </figure>
 
   </article>
