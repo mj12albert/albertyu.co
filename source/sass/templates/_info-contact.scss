@@ -12,6 +12,10 @@
 
 .block--contact {
   background-color: #2e2e2e;
+
+  @include breakpoint($tablet) {
+    padding-top: 9.241rem;
+  }
 }
 
   // <h2>

@@ -10,9 +10,22 @@
 //                                                                             /
 //=============================================================================/
 
-.block--contact {
-  background-color: #2e2e2e;
+// <div>
+.block--information {
+  padding-top: 4.765rem;
+
+  @include breakpoint($tablet) {
+    // padding-top: 9.241rem;
+  }
 }
+
+  // <svg>
+  .block--information .mark {
+    position: relative;
+    display: block;
+    margin: 0 auto 1.618rem;
+    padding-right: 0.833rem;
+  }
 
   // <h2>
   .block__title--information {
