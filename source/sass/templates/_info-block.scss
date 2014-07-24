@@ -12,6 +12,10 @@
 
 .block--info {
   padding: 6.425rem 0;
+
+  @include breakpoint($tablet) {
+    padding-top: 9.241rem;
+  }
 }
 
 // <h1>

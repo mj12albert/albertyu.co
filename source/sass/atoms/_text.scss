@@ -10,7 +10,21 @@
 //                                                                             /
 //=============================================================================/
 
+// Default text style
+%text {
+  @extend %callunaLight;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  color: #212121;
+
+  margin: auto auto 1rem;
+
+  @include breakpoint($desktop) {
+    line-height: 1.6;
+  }
+}
+
 p {
-  // margin-bottom: 1rem;
   margin: auto auto 1rem;
 }

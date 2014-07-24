@@ -5,25 +5,16 @@
 //       PROJECT: albertyu.co                                                  /
 //        CLIENT: Albert Yu                                                    /
 //   DELIVERABLE: Website Prototype                                            /
-//         CLASS: Utility                                                      /
-//         TITLE: Breakpoints                                                  /
+//         CLASS: Template                                                     /
+//         TITLE: Information/Profile Block                                    /
 //                                                                             /
 //=============================================================================/
 
-$breakpoint-to-ems: true;
+.block--contact {
+  background-color: #2e2e2e;
+}
 
-$phone: 321px;
-
-$phoneL: 481px;
-
-$phablet: 533px;
-
-$tablet: 768px;
-
-$laptop: 981px;
-
-$desktop: 1200px;
-
-// $large: 1360px;
-
-// $larger: 1600px;
+  // <h2>
+  .block__title--information {
+    @extend %text;
+  }
