@@ -1,5 +1,8 @@
 domready(function () {
   console.log("dom is loaded!");
+
+  window.viewportUnitsBuggyfill.init();
+
   smoothScroll.init({
     speed: 500, // Integer. How fast to complete the scroll in milliseconds
     easing: 'easeInOutCubic', // Easing pattern to use
