@@ -26,19 +26,24 @@
   .project__figure figcaption {
     position: relative;
     clear: both;
+    margin-left: 1.215rem;
     padding: 0.938rem 0 1.618rem;
 
-    // Whitney
-    /* @extend %whitneySSmBook;
-    font-size: 0.7741254643rem;
-    line-height: 1.618; */
-
     // Calluna
-    @extend %callunaItalic;
+    /* @extend %callunaItalic;
     font-size: 0.938rem;
-    line-height: 1.517;
+    line-height: 1.517; */
 
-    @include font-smoothing(off);
+    @extend %callunaSansLight;
+    font-size: 0.9rem;
+    line-height: 1.348;
+    // text-indent: -0.833rem;
+    text-indent: -1.215rem;
+
+    &:before {
+      content: '\2191';
+      margin-right: 0.382rem;
+    }
 
     @include breakpoint($tablet) {
       // padding: 1rem 0 2.618rem;
@@ -48,11 +53,11 @@
       // line-height: 1.618;
 
       &.left {
-        padding-right: 25%;
+        padding-right: 40%;
       }
 
       &.right {
-        padding-left: 25%;
+        padding-left: 40%;
       }
     }
   }

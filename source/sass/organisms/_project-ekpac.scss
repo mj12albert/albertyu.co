@@ -76,6 +76,12 @@
   }
 
   // Caption text
-  .ekpac figcaption {
-    // color: desaturate(lighten(#1a4b3e, 45), 30%);
+  .project__caption--ekpac {
+    @include font-smoothing(off);
+    @include tran(color, #e0e0e0, 0.99, lighten);
+
+    &:before {
+      color: #fecb00;
+      // font-weight: 400;
+    }
   }

@@ -10,7 +10,7 @@
 //                                                                             /
 //=============================================================================/
 
-// Base color scheme
+// Base color scheme & styles
 .harmonyhome {
   background-color: lighten(#8dd7c3, 27);
   color: darken(#8dd7c3, 57);
@@ -52,6 +52,11 @@
   }
 
   // Caption text
-  .harmonyhome figcaption {
-    color: desaturate(lighten(#1a4b3e, 45), 30%);
+  .project__caption--harmonyhome {
+    color: desaturate(lighten(#1a4b3e, 20), 20%);
+
+    &:before {
+      color: #0375B3;
+      font-weight: 600;
+    }
   }
