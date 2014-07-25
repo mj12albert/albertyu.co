@@ -13,11 +13,11 @@
 .button {
   display: block;
   overflow: hidden;
-  padding: 0.938rem 2.618rem;
+  padding: 1.348rem 2.618rem;
 
   @extend %verlagBold;
   text-transform: uppercase;
-  font-size: 0.833rem;
+  font-size: 0.938rem;
   line-height: 1;
   text-align: center;
 
@@ -27,6 +27,8 @@
 
   @include breakpoint(30em) {
     display: inline-block;
+    padding: 0.938rem 2.618rem;
+    font-size: 0.833rem;
   }
 }
 
