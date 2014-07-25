@@ -11,7 +11,11 @@
 //=============================================================================/
 
 .block--info {
-  padding: 6.425rem 0;
+  padding: 2.945rem 0;
+
+  @include breakpoint($tablet) {
+    padding: 6.425rem 0;
+  }
 }
 
 // <h1>

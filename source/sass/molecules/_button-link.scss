@@ -11,7 +11,7 @@
 //=============================================================================/
 
 .button {
-  display: inline-block;
+  display: block;
   overflow: hidden;
   padding: 0.938rem 2.618rem;
 
@@ -19,10 +19,15 @@
   text-transform: uppercase;
   font-size: 0.833rem;
   line-height: 1;
+  text-align: center;
 
   // border: 1px solid #b4b4b4;
   border-width: 1px;
   border-style: solid;
+
+  @include breakpoint(30em) {
+    display: inline-block;
+  }
 }
 
   .button__arrow {

@@ -16,8 +16,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   border-width: 1px;
   border-style: solid;
   // border-color: $neon-pink;
@@ -31,6 +31,11 @@
   -webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
   -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
   transform: translateX(-50%) translateY(-50%) scale(0.2);
+
+  @include breakpoint(25em) {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* .cl-effect-12 a::after {

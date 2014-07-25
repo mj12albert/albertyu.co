@@ -23,7 +23,9 @@
 }
 
 .block--footer .column {
-  padding: 1rem 0;
+  @include breakpoint(25em) {
+    padding: 1rem 0;
+  }
 }
 
   // <ul>
@@ -31,17 +33,25 @@
     @extend %horizontal-list;
 
     // float: right;
-    position: absolute;
-    top: 0;
-    right: 0;
 
     font-size: 0;
     line-height: 0;
     text-align: center;
+
+    @include breakpoint(25em) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
     .social li:not(:last-of-type) {
-      margin-right: 0.2222222222rem;
+      margin-right: 1.125rem;
+
+      @include breakpoint(25em) {
+        margin-right: 0.2222222222rem;
+      }
+
     }
 
     // <a>
@@ -52,8 +62,11 @@
     }
 
     .icon svg {
-      // width: 3rem;
-      height: 3rem;
+      height: 4.236rem;
+
+      @include breakpoint(25em) {
+        height: 3rem;
+      }
     }
 
     .icon path {
@@ -78,4 +91,9 @@
   // <small>
   .legal {
     // padding: 1rem 0;
+    display: none;
+
+    @include breakpoint(25em) {
+      display: inline;
+    }
   }

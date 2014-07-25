@@ -12,7 +12,8 @@
 
 // <aside>
 .project__detail {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto 1.618rem;
 
   @extend %verlagBold;
   text-transform: uppercase;
@@ -20,17 +21,16 @@
   line-height: 1;
 
   @include breakpoint($tablet) {
+    width: 100%;
     float: left;
     width: 40%;
-    margin-top: 0.221rem;
+    margin: 0.221rem auto 0;
   }
 }
 
   // <ul>
   .project__services {
     @extend %horizontal-list;
-
-    margin-bottom: 0.625rem;
   }
 
   .project__services li {

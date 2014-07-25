@@ -49,6 +49,9 @@
   .ekpac .project__title {
     // @include tran(color, lighten(#1a4b3e, 0), 0.85, lighten);
     // @include tran(border, lighten(#1a4b3e, 12), 0.5, lighten);
+    .kern {
+      margin-left: -0.1111111111rem;
+    }
   }
 
   // Services text/list

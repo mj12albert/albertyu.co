@@ -60,6 +60,11 @@ blockquote {
   padding: 0;
 }
 
+picture {
+  display: block;
+  line-height: 0;
+}
+
 img {
   // display: block;
   position: relative;

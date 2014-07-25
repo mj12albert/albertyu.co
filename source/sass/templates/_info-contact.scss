@@ -21,10 +21,14 @@
   // <h2>
   .block__title--contact {
     @extend %callunaLight;
-    font-size: 1.618rem;
+    font-size: 1.348rem;
     line-height: 1.2;
     color: #c4c4c4;
     margin-bottom: 2.618rem;
+
+    @include breakpoint($phoneL) {
+      font-size: 1.618rem;
+    }
 
     @include breakpoint($tablet) {
       font-size: 1.348rem;
