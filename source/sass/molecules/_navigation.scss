@@ -97,3 +97,15 @@ nav {
       display: inline;
     }
   }
+
+// DISABLED LINK
+#disabled {
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: #ebebeb;
+    text-decoration: line-through;
+  }
+}
