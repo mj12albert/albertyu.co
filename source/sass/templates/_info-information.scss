@@ -12,7 +12,7 @@
 
 // <div>
 .block--information {
-  padding-top: 4.765rem;
+  padding-top: 2.945rem;
 
   @include breakpoint($tablet) {
     // padding-top: 9.241rem;
@@ -23,7 +23,7 @@
   .block--information .mark {
     position: relative;
     display: block;
-    margin: 0 auto 1.618rem;
+    margin: 0 auto 2.618rem;
     padding-right: 0.833rem;
   }
 

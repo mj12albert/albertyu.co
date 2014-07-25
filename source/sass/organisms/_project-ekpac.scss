@@ -70,6 +70,14 @@
     @include box-shadow(0 0 0 1px lighten(#093054, 8));
   }
 
+  // <hr>
+  .ekpac .hr {
+    background-color: lighten(#093054, 15);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    @include tran(border, #fecb00, 0.75, lighten);
+  }
+
   // Description
   .ekpac .project__description {
     font-weight: 400;
