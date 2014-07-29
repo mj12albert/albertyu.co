@@ -2,8 +2,9 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var rimraf = require('gulp-rimraf');
 var concat = require('gulp-concat');
-var minify = require('gulp-minify-css');
+var minifycss = require('gulp-minify-css');
 var processhtml = require('gulp-processhtml');
+var minifyhtml = require('gulp-minify-html');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 // gulp-strip-debug throws an error if input has nothing to strip
@@ -15,12 +16,15 @@ gulp.task('clean', function() {
     .pipe(rimraf());
 });
 
-// Process HTML
+// Process & Minify HTML
 gulp.task('html', function() {
   gulp.src(['build/index.html'])
     .pipe(processhtml('index.html'))
     .pipe(replace('dtg6nmd', 'mmu7zkr'))
     .pipe(replace('761324', '682504'))
+    /*.pipe(minifyhtml({
+      conditionals: true
+    }))*/
     .pipe(gulp.dest('deploy'));
 })
 
@@ -28,7 +32,7 @@ gulp.task('html', function() {
 gulp.task('css', function() {
   return gulp.src(['build/css/*'])
     .pipe(rename("albertyu.css"))
-    .pipe(minify({ keepSpecialComments: 0 }))
+    .pipe(minifycss({ keepSpecialComments: 0 }))
     .pipe(gulp.dest('deploy/css'));
 })
 
