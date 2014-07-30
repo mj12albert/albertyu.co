@@ -83,6 +83,11 @@
     font-weight: 400;
   }
 
+  .ekpac .credits {
+    font-weight: 600;
+    @include tran(color, #cfcfcf, 0.99, lighten);
+  }
+
   // Caption text
   .project__caption--ekpac.project__caption--ekpac {
     // @include font-smoothing(off);
