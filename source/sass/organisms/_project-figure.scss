@@ -23,22 +23,28 @@
   }
 }
 
-  .project__figure figcaption {
+// <figcaption>
+.project__figure figcaption {
+  @extend %callunaSansLight;
+  font-size: 0.9rem;
+  line-height: 1.348;
+  // text-indent: -1.215rem;
+}
+
+.project__caption {
+
+  // <figcaptions>s that go BELOW images
+  &--below {
     position: relative;
     clear: both;
     margin-left: 1.215rem;
     padding: 0.938rem 0 1.618rem;
+    text-indent: -1.215rem;
 
-    // Calluna
-    /* @extend %callunaItalic;
-    font-size: 0.938rem;
-    line-height: 1.517; */
-
-    @extend %callunaSansLight;
+    /* @extend %callunaSansLight;
     font-size: 0.9rem;
     line-height: 1.348;
-    // text-indent: -0.833rem;
-    text-indent: -1.215rem;
+    text-indent: -1.215rem; */
 
     &:before {
       content: '\2191';
@@ -46,11 +52,7 @@
     }
 
     @include breakpoint($tablet) {
-      // padding: 1rem 0 2.618rem;
       padding: 1.125rem 0 2.618rem;
-      // font-size: 0.879844rem;
-      // font-size: 0.695rem;
-      // line-height: 1.618;
 
       &.left {
         padding-right: 40%;
@@ -61,3 +63,41 @@
       }
     }
   }
+
+  // <figcaption>s that go LEFT OR RIGHT of images
+  &--left,
+  &--right {
+    float: left;
+    @include calc(width, "50% - 1.5rem");
+  }
+
+  &--left {
+    &:after {
+      // Arrow points RIGHT
+      content: '\2192';
+      float: right;
+      padding-top: 1rem;
+    }
+
+    + .half.fixed,
+    + img,
+    + picture {
+      margin-left: 1.5rem;
+      margin-right: 0;
+    }
+  }
+
+  &--right {
+    float: left;
+    margin-left: 0.75rem;
+    text-indent: -1.215rem;
+
+    &:before {
+      // Arrow points LEFT
+      content: '\2190';
+      margin-right: 0.382rem;
+    }
+  }
+}
+
+
