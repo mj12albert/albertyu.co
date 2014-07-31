@@ -60,12 +60,38 @@
       font-weight: 600;
     }
 
+  // <img> inside <figure>
+  .juniorchefacademy .bordered {
+    // @include box-shadow(0 0 0 1px lighten(saturate(rgba(129,0,14,1.000), 15), 20));
+    @include box-shadow(0 0 0 1px saturate(#f3efe0, 15));
+  }
+
+  // <hr>
+  .juniorchefacademy .hr {
+    background-color: lighten(#093054, 15);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    @include tran(border, #fecb00, 0.75, lighten);
+  }
+
   // Description
   .juniorchefacademy .project__description {
     font-weight: 400;
   }
 
+  .juniorchefacademy .credits {
+    font-weight: 600;
+    color: #dfdfdf;
+  }
+
   // Caption text
-  .juniorchefacademy figcaption {
-    color: desaturate(lighten(#1a4b3e, 45), 30%);
+  .project__caption--jca.project__caption--jca {
+    // color: desaturate(lighten(#1a4b3e, 45), 30%);
+    font-weight: 400;
+
+    &:before,
+    &:after {
+      color: #ffffff;
+      font-weight: 400;
+    }
   }
