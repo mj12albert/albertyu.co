@@ -4,7 +4,9 @@ timezone: Asia/Hong_Kong
 encoding: utf-8
 # host: albertyu.co.dev
 # port: 4000
+include: [
+  '*.scss'
+]
 exclude: [
-  'sass',
   'Gemfile*'
 ]
