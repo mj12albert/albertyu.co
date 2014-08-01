@@ -1,0 +1,119 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE:                                                              /
+//                                                                             /
+//=============================================================================/
+
+// Base color scheme
+.juniorchefacademy {
+  background-color: #fafafa;
+  background-color: rgba(129, 0, 14, 0.1);
+  background-color: desaturate(rgba(247, 246, 242, 1), 17);
+  color: rgba(129, 0, 14, 1.000);
+  color: lighten(#4e0008, 3);
+}
+
+.juniorchefacademy .project__header {
+  // height: 25rem;
+
+  background-image:url('../assets/jca/jca-header-pattern.jpg');
+  background-position: center -3rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:after {
+    height: 100%;
+
+    @include background-image(linear-gradient(top,
+      rgba(245, 245, 244, 0.07),
+      rgba(245, 245, 244, 0.85) 55%,
+      rgba(245, 245, 244, 1)
+    ));
+  }
+
+  @include breakpoint($tablet) {
+    // height: 35rem;
+  }
+}
+
+.juniorchefacademy.juniorchefacademy .column {
+  // margin-top: -20rem;
+}
+
+  // Project Title
+  .juniorchefacademy .project__title {
+    // @include tran(color, lighten(#1a4b3e, 0), 0.85, lighten);
+    color: #920010;
+    @include tran(border, #920010, 0.45, lighten);
+  }
+
+  // Services text/list
+  .juniorchefacademy .project__info {
+    color: lighten(#4e0008, 3);
+  }
+
+    // Slash delimiting services
+    .juniorchefacademy .project__services li:after {
+      @include tran(color, #b40014, 0.8, lighten);
+      font-weight: 600;
+    }
+
+  // <img> inside <figure>
+  .juniorchefacademy .bordered {
+    @include box-shadow(0 0 0 1px desaturate(lighten(rgba(146, 0, 16, 0.15), 40), 16));
+  }
+
+  .juniorchefacademy .bordered--red {
+    @include box-shadow(0 0 0 1px rgba(146, 0, 16, 0.4));
+  }
+
+  .juniorchefacademy .bordered--gray {
+    @include box-shadow(0 0 0 1px darken(desaturate(rgba(247, 246, 242, 1), 8), 15));
+  }
+
+  .juniorchefacademy .bordered--white {
+    @include box-shadow(0 0 0 1px #efeeee);
+  }
+
+  // <hr>
+  .juniorchefacademy .hr {
+    background-color: lighten(#093054, 15);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    @include tran(border, #fecb00, 0.75, lighten);
+  }
+
+  // Description
+  .juniorchefacademy .project__description {
+    font-weight: 400;
+  }
+
+  .juniorchefacademy .credits {
+    font-weight: 600;
+    color: desaturate(lighten(#4e0008, 40), 75);
+    color: lighten(desaturate(lighten(#4e0008, 40), 75), 20);
+
+    & > .slash {
+      color: lighten(desaturate(lighten(#4e0008, 40), 25), 15);
+    }
+  }
+
+  // Caption text
+  .project__caption--jca.project__caption--jca {
+    color: darken(rgba(247, 246, 242, 1), 15);
+    color: darken(#D96E68, 4);
+    color: darken(#BA5059, 4);
+    color: darken(#A85D63, 2);
+
+    &:before,
+    &:after {
+      @include tran(color, #b40014, 1, lighten);
+      font-weight: 400;
+    }
+  }
