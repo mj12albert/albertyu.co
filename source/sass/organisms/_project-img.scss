@@ -35,9 +35,11 @@
   margin-bottom: 1.618rem;
 
   &.fixed {
-    margin-right: 1.5rem;
-    float: left;
-    @include calc(width, "50% - 0.75rem");
+    @include breakpoint($phoneL) {
+      margin-right: 1.5rem;
+      float: left;
+      @include calc(width, "50% - 0.75rem");
+    }
   }
 
   @include breakpoint($tablet) {

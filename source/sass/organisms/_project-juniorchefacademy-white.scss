@@ -22,13 +22,17 @@
 .juniorchefacademy .project__header {
   // height: 25rem;
 
-  background-image:url('../assets/jca/jca-header-pattern.jpg');
-  background-position: center -3rem;
+  background-image:url('../assets/juniorchefacademy/jca-header-pattern.jpg');
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 
   &:after {
     height: 100%;
+    // top: 0;
+    // bottom: 0;
+    // height: 0;
+    // padding-bottom: 55.66666667%;
 
     @include background-image(linear-gradient(top,
       rgba(245, 245, 244, 0.07),
@@ -83,10 +87,10 @@
 
   // <hr>
   .juniorchefacademy .hr {
-    background-color: lighten(#093054, 15);
+    background-color: lighten(#4e0008, 6);
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    @include tran(border, #fecb00, 0.75, lighten);
+    @include tran(border, #920010, 0.6, lighten);
   }
 
   // Description
@@ -115,5 +119,52 @@
     &:after {
       @include tran(color, #b40014, 1, lighten);
       font-weight: 400;
+    }
+  }
+
+//
+#jca-bear-doodle-highlight {
+  clear: both;
+  // margin-left: 0;
+  // margin-bottom: 0;
+  // margin-top: 1.618rem;
+  margin: 1.618rem 0 0;
+
+  @include breakpoint($phoneL) {
+    clear: none;
+    width: calc(33.333333% - 0.75rem);
+    margin-left: 1.5rem;
+  }
+
+  @include breakpoint($laptop) {
+    width: calc(25% - 0.75rem);
+  }
+}
+
+#jca-bear-doodle-highlight-caption {
+  margin-bottom: 1.618rem;
+  margin: 0 1.215rem 1.618rem 0;
+
+  // @include breakpoint(0 480px) {
+    text-indent: 0;
+  // }
+}
+
+  #jca-bear-doodle-highlight-caption:before {
+    position: absolute;
+
+    @include breakpoint(0 480px) {
+      // Arrow points DOWN for < 480
+      content: '\2193';
+      bottom: -1.348rem;
+      right: -1.25rem;
+      // right: 0;
+    }
+
+    @include breakpoint($phoneL) {
+      // top: 0;
+      // right: -0.75rem;
+      // padding: 0;
+      display: none;
     }
   }

@@ -29,6 +29,7 @@
   font-size: 0.9rem;
   line-height: 1.348;
   // text-indent: -1.215rem;
+  position: relative;
 }
 
 .project__caption {
@@ -62,23 +63,41 @@
         padding-left: 40%;
       }
     }
+
+    @include breakpoint($desktop) {
+      padding-top: 1.348rem;
+    }
   }
 
   // <figcaption>s that go LEFT OR RIGHT of images
   &--left,
   &--right {
-    float: left;
-    @include calc(width, "50% - 1.5rem");
+    margin-left: 1.215rem;
+    text-indent: -1.215rem;
+
+    &:before {
+      // Arrow points UP on smallest screens
+      content: '\2191';
+      margin-right: 0.382rem;
+    }
+
+    @include breakpoint($phoneL) {
+      float: left;
+      @include calc(width, "50% - 1.5rem");
+    }
   }
 
   &--left {
     &:after {
-      // Arrow points RIGHT
-      content: '\2192';
       float: right;
       padding-top: 1rem;
+      @include breakpoint($phoneL) {
+        // Arrow points RIGHT for 480+
+        content: '\2192';
+      }
     }
 
+    // THIS IS UGLY, FIX IT LATER
     + .half.fixed,
     + img,
     + picture {
@@ -89,13 +108,16 @@
 
   &--right {
     float: left;
-    margin-left: 0.75rem;
-    text-indent: -1.215rem;
 
-    &:before {
-      // Arrow points LEFT
-      content: '\2190';
-      margin-right: 0.382rem;
+    @include breakpoint($phoneL) {
+      margin-left: 0.75rem;
+      text-indent: -1.215rem;
+
+      &:before {
+        // Arrow points LEFT for 480+
+        content: '\2190';
+        margin-right: 0.382rem;
+      }
     }
   }
 }
