@@ -94,9 +94,9 @@
   }
 
   // Description
-  .juniorchefacademy .project__description {
+  /* .juniorchefacademy .project__description {
     font-weight: 400;
-  }
+  } */
 
   .juniorchefacademy .credits {
     font-weight: 600;
@@ -142,12 +142,15 @@
 }
 
 #jca-bear-doodle-highlight-caption {
-  margin-bottom: 1.618rem;
+  text-indent: 0;
+  // margin-bottom: 1.618rem;
   margin: 0 1.215rem 1.618rem 0;
 
-  // @include breakpoint(0 480px) {
-    text-indent: 0;
-  // }
+  @include breakpoint($phoneL) {
+    // margin: 0 1.215rem 1.618rem 0;
+    margin-left: 1.215rem;
+    // margin-right: 2.43rem;
+  }
 }
 
   #jca-bear-doodle-highlight-caption:before {
