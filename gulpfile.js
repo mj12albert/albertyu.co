@@ -3,6 +3,7 @@ var gutil = require('gulp-util');
 var rimraf = require('gulp-rimraf');
 var concat = require('gulp-concat');
 var minifycss = require('gulp-minify-css');
+var cleanhtml = require('gulp-cleanhtml');
 var processhtml = require('gulp-processhtml');
 var minifyhtml = require('gulp-minify-html');
 var rename = require('gulp-rename');
@@ -25,12 +26,13 @@ gulp.task('html', function() {
     /*.pipe(minifyhtml({
       conditionals: true
     }))*/
+    .pipe(cleanhtml())
     .pipe(gulp.dest('deploy'));
 })
 
 // Minify CSS
 gulp.task('css', function() {
-  return gulp.src(['build/css/*'])
+  return gulp.src(['build/css/*.css'])
     .pipe(rename("albertyu.css"))
     .pipe(minifycss({ keepSpecialComments: 0 }))
     .pipe(gulp.dest('deploy/css'));
