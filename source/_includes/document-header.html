@@ -15,8 +15,10 @@
     loadCSS("css/manifest.css");
     function loadJS(a){"use strict";var b=window.document.getElementsByTagName("script")[0],c=window.document.createElement("script");return c.src=a,b.parentNode.insertBefore(c,b),c}
     <!--build:remove -->
+    loadJS("js/picturefill.js");
     loadJS("js/vendor/domReady.js");
     loadJS("js/vendor/vhBuggyfill.js");
+    loadJS("js/vendor/fastclick.js");
     loadJS("js/vendor/smoothScroll.js");
     <!--/build -->
     loadJS("js/main.js");</script>
@@ -24,7 +26,7 @@
 <!-- PICTUREFILL -->
   <script>document.createElement("picture");</script>
   <!--build:js js/picturefill.min.js -->
-  <script src="js/picturefill.js" async></script>
+  <!-- <script src="js/picturefill.js" async></script> -->
   <!--/build-->
 
 <!-- TYPEKIT -->

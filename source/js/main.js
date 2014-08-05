@@ -1,3 +1,7 @@
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+
 domready(function () {
   console.log("dom is loaded!");
 

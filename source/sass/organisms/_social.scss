@@ -25,19 +25,38 @@
 // <a> wraps <svg>
 .social > li > a {
   @extend %noTap;
+  outline: none;
 
   // States
   &:hover,
   &:focus {
-    outline: none;
+    // outline: none;
 
     .icon {
       fill: #c4c4c4;
     }
   }
 
-  &:active {
+  &:active.icon {
+    &--phone .icon {
+      fill: $neon-1;
+    }
 
+    &--twitter .icon {
+      fill: $neon-2;
+    }
+
+    &--instagram .icon {
+      fill: $neon-3;
+    }
+
+    &--tumblr .icon {
+      fill: $neon-4;
+    }
+
+    &--email .icon {
+      fill: $neon-5;
+    }
   }
 
   // Interaction effect base styles
