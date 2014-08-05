@@ -45,7 +45,7 @@
     }
   }
 
-    .social li:not(:last-of-type) {
+    .social > li:not(:last-of-type) {
       margin-right: 1.125rem;
 
       @include breakpoint(25em) {
@@ -55,37 +55,9 @@
     }
 
     // <a>
-    .icon {
+    .social > li > a {
       position: relative;
       display: inline-block;
-      // padding: 0 0.16rem;
-    }
-
-    .icon svg {
-      height: 4.236rem;
-
-      @include breakpoint(25em) {
-        height: 3rem;
-      }
-    }
-
-    .icon path {
-      fill: #555555;
-    }
-
-    .icon {
-      &:hover,
-      &:focus {
-        outline: none;
-
-        path {
-          fill: #c4c4c4;
-        }
-      }
-
-      &:active {
-
-      }
     }
 
   // <small>

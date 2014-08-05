@@ -24,11 +24,6 @@
   @import "utilities/fonts-verlag";
   @import "utilities/fonts-calluna";
   @import "utilities/fonts-callunaSans";
-  // @import "utilities/fonts-ptSans";
-  // @import "utilities/fonts-ptSansCaption";
-  // @import "utilities/fonts-kepler";
-  // @import "utilities/fonts-whitney";
-  // @import "utilities/font-awesome";
 
 // ATOMS
   @import "atoms/text";
@@ -52,9 +47,10 @@
   @import "organisms/project-harmonyhome";
   @import "organisms/project-ekpac";
   @import "organisms/project-juniorchefacademy-white";
+  @import "organisms/social";
 
 // QUARKS
-  @import "quarks/cl-effect";
+  // @import "quarks/cl-effect";
 
 // SCAFFOLDING
   @import "scaffolding/base";
