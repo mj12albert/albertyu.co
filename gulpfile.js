@@ -21,6 +21,8 @@ gulp.task('clean', function() {
 gulp.task('html', function() {
   gulp.src(['build/index.html'])
     .pipe(processhtml('index.html'))
+    .pipe(replace('manifest.css', 'albertyu.css'))
+    .pipe(replace('main.js', 'albertyu.js'))
     .pipe(replace('dtg6nmd', 'mmu7zkr'))
     .pipe(replace('761324', '682504'))
     /*.pipe(minifyhtml({
@@ -42,7 +44,6 @@ gulp.task('css', function() {
 gulp.task('js', function() {
   return gulp.src([
     'build/js/vendor/*.js',
-    '!build/js/vendor/picturefill.js',
     'build/js/main.js'
   ])
     .pipe(stripDebug())
