@@ -4,6 +4,9 @@
     ? document.querySelectorAll('trigger-overlay')
     : document.getElementsByClassName('trigger-overlay');
 	var overlay = document.querySelector('div.overlay');
+	var contactLinks = (!document.getElementsByClassName)
+    ? document.querySelectorAll('contact-link')
+    : document.getElementsByClassName('contact-link');
 	var	closeBttn = overlay.querySelector('button.overlay-close');
 	var	transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
@@ -14,6 +17,9 @@
 		};
 	var	transEndEventName = transEndEventNames[Modernizr.prefixed('transition')];
 	var	support = {transitions: Modernizr.csstransitions};
+
+	// console.log(triggerBttns);
+	// console.log(contactLinks);
 
 	function toggleOverlay(e) {
 		e.preventDefault();
@@ -60,4 +66,14 @@
 	}
 
 	closeBttn.addEventListener('click', toggleOverlay);
+
+	// Close the overlay by clicking anywhere on it
+	overlay.addEventListener('click', toggleOverlay);
+
+	// Stop clicks on contact links from bubbling up to the overlay
+	for (var i = 0, len = contactLinks.length; i < len; i++) {
+		contactLinks[i].addEventListener('click', function(e) {
+			e.stopPropagation();
+		})
+	}
 })();

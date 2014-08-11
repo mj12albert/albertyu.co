@@ -52,7 +52,8 @@
     }
   }
 
-  .contact > ul > li > a {
+  // <a>
+  .contact-link {
     display: inline-block;
     margin-bottom: 1.618rem;
   }
@@ -90,7 +91,7 @@
 } */
 
 .container {
-  // background: #fff;
+  background: #fdfdfd;
   -webkit-transition: -webkit-transform 350ms;
   transition: transform 350ms;
 }
