@@ -251,7 +251,7 @@
 	 * @public
 	 * @param {Object} options User settings
 	 */
-	exports.init = function ( options ) {
+	var init = function ( options ) {
 
 		// feature test
 		if ( !supports ) return;
@@ -272,6 +272,13 @@
 	// Public APIs
 	//
 
-	return exports;
+	// return exports;
+
+	// Initialize self
+	init({
+		speed: 500,
+		easing: 'easeInOutCubic',
+		updateURL: false
+	})
 
 });
