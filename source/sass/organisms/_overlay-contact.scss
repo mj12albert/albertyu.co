@@ -96,11 +96,18 @@
 }
 
 .container.overlay-open {
-  -webkit-transform: translateY(-7%) scale(0.85);
-  transform: translateY(-7%) scale(0.85);
+  &.top {
+    -webkit-transform: translateY(-7%) scale(0.85);
+    transform: translateY(-7%) scale(0.85);
+  }
+
+  &.bottom {
+    -webkit-transform: translateY(7%) scale(0.85);
+    transform: translateY(7%) scale(0.85);
+  }
 }
 
-.overlay-contentscale {
+.zoom {
   visibility: hidden;
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
@@ -108,7 +115,7 @@
   transition: transform 350ms, visibility 0s 350ms;
 }
 
-.overlay-contentscale.open {
+.zoom.open {
   visibility: visible;
   -webkit-transform: translateY(0%);
   transform: translateY(0%);

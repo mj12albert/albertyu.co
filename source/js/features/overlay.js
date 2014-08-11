@@ -20,7 +20,11 @@
 
 		if(classie.has(overlay, 'open')) {
 			classie.remove(overlay, 'open');
+			classie.remove(overlay, 'dark');
+			classie.remove(overlay, 'light');
 			classie.remove(container, 'overlay-open');
+			classie.remove(container, 'top');
+			classie.remove(container, 'bottom');
 			classie.add(overlay, 'close');
 			var onEndTransitionFn = function(e) {
 				if(support.transitions) {
@@ -39,12 +43,20 @@
 		else if( !classie.has(overlay, 'close')) {
 			classie.add(overlay, 'open');
 			classie.add(container, 'overlay-open');
+
+			if (classie.has(e.srcElement, 'top')) {
+				classie.add(container, 'top');
+				classie.add(overlay, 'dark');
+			} else {
+				classie.add(container, 'bottom');
+				classie.add(overlay, 'light');
+			}
 		}
 	}
 
 	// Loop through all triggers in the DOM and bind a click listener
 	for (var i = 0, len = triggerBttns.length; i < len; i++) {
-		triggerBttns[i].addEventListener('click', toggleOverlay);
+		triggerBttns[i].addEventListener('click', toggleOverlay)
 	}
 
 	closeBttn.addEventListener('click', toggleOverlay);
