@@ -26,6 +26,7 @@ body {
 
   color: #212121;
   background-color: lighten($white, 1);
+  background-color: #545454;
 }
 
 // Variant of %column below
@@ -34,22 +35,13 @@ body {
   width: 90%;
   max-width: 20.185rem;
 
-  margin: 0;
-
   @include breakpoint($tablet) {
-
     width: 85%;
     max-width: 29.03rem;
-
-    // margin: 0 auto;
   }
 
   @include breakpoint($laptop) {
     max-width: 34.8306782768rem;
-  }
-
-  @include breakpoint($desktop) {
-    // margin-left: 0;
   }
 }
 

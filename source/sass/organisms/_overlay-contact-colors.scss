@@ -1,0 +1,146 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE: Dark/Light color schemes for overlay                         /
+//                                                                             /
+//=============================================================================/
+
+.dark {
+  background: rgba(18, 18, 18, 0.96);
+
+  .contact-link {
+    &:link .contact-link,
+    &:visited .contact-link {
+      &__title {
+        color: rgba(255, 255, 255, 0.22);
+      }
+
+      &__subtitle {
+        color: rgba(255, 255, 255, 0.225);
+        @include transition(color 200ms ease-in-out);
+      }
+    }
+
+    &:hover .contact-link,
+    &:focus .contact-link,
+    &:active .contact-link {
+      /* &__title {
+        color: rgba(255, 255, 255, 0.225);
+      } */
+
+      &__subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        @include transition(color 200ms ease-in-out);
+      }
+    }
+  }
+
+  // <svg> close
+  .overlay-close {
+    & {
+      .icon--close {
+        fill: rgba(255, 255, 255, 0.5);
+        @include transition(fill 220ms ease-in-out);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .icon--close {
+        fill: rgba(255, 255, 255, 0.9);
+        @include transition(fill 220ms ease-in-out);
+      }
+    }
+  }
+}
+
+.touch .dark .contact-link {
+  &:link,
+  &:visited,
+  &:active {
+    .contact-link__title,
+    .contact-link__subtitle {
+      color: rgba(255, 255, 255, 0.55);
+    }
+  }
+}
+
+.light {
+  background: rgba(255, 255, 255, 0.87);
+
+  .contact-link__subtitle {
+    font-weight: 400;
+  }
+
+  .contact-link__subtitle:after {
+    height: 2px;
+  }
+
+  .contact-link {
+    &:link .contact-link,
+    &:visited .contact-link {
+      &__title {
+        color: lighten(#181818, 28);
+      }
+
+      &__subtitle {
+        color: lighten(#181818, 60);
+        @include transition(color 200ms ease-in-out);
+      }
+    }
+
+    &:hover .contact-link,
+    &:focus .contact-link,
+    &:active .contact-link {
+      /* &__title {
+        color: rgba(255, 255, 255, 0.225);
+      } */
+
+      &__subtitle {
+        color: lighten(#181818, 1);
+        @include transition(color 200ms ease-in-out);
+      }
+    }
+  }
+
+  // <svg> close
+  .overlay-close {
+    & {
+      .icon--close {
+        fill: lighten(#181818, 50);
+        @include transition(fill 220ms ease-in-out);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .icon--close {
+        fill: darken(#181818, 5);
+        @include transition(fill 220ms ease-in-out);
+      }
+    }
+  }
+}
+
+.touch .light .contact-link {
+  &:link,
+  &:visited,
+  &:active {
+    .contact-link__title,
+    .contact-link__subtitle {
+      color: lighten(#181818, 18);
+    }
+  }
+}
+
+.touch .contact-link__subtitle:after {
+  opacity: 1;
+  max-width: 100%;
+}

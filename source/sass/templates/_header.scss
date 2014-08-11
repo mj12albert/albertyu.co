@@ -13,7 +13,6 @@
 // <section>
 .hero {
   position: relative;
-  // height: 90vh;
   width: 95%;
   margin-left: 5%;
   background: #fdfdfd;
@@ -22,9 +21,7 @@
     width: 80%;
     max-width: 66.6666666667rem; // 1200px/18
     height: 90vh;
-    // height: 50vh;
     margin: 0 auto;
-    // padding-top: 10%;
   }
 
   @include breakpoint(48.0625em) {
@@ -39,10 +36,9 @@
   // <header>
   .header {
     @extend %hero-column;
+    margin: 0 auto 0 0;
     padding-top: 5%;
     padding-bottom: 4.765rem;
-    // padding-top: 1.618rem;
-    // margin-top: -7px;
 
     @include breakpoint($tablet) {
       padding-top: 10%;
