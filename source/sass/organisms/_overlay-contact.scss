@@ -1,0 +1,117 @@
+//=============================================================================/
+//                          THE STUDIO OF ALBERT YU                            /
+//=============================================================================/
+//                                                                             /
+//       PROJECT: albertyu.co                                                  /
+//        CLIENT: Albert Yu                                                    /
+//   DELIVERABLE: Website Prototype                                            /
+//         CLASS: Organism                                                     /
+//         TITLE: Overlay for contact information                              /
+//                                                                             /
+//=============================================================================/
+
+.container {
+  box-shadow: 0 0 1px 0 $neon-1;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+// Close button
+.overlay .overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  z-index: 100;
+}
+
+  // <div>
+  .contact {
+    position: relative;
+    margin-left: 5%;
+    padding-top: 5%;
+
+    @include breakpoint($tablet) {
+      width: 80%;
+      max-width: 66.6666666667rem; // 1200px/18
+      margin: 0 auto;
+      padding-top: 10%;
+    }
+
+    @include breakpoint($desktop) {
+      max-width: 48.4848484848rem;
+    }
+  }
+
+  .contact > ul > li > a {
+    display: inline-block;
+    margin-bottom: 1.618rem;
+  }
+
+    // <span>
+    .contact-link__title,
+    .contact-link__subtitle {
+      display: block;
+    }
+
+    .contact-link__title {
+      @extend %callunaLight;
+      font-size: 2.618rem;
+      line-height: 1.2;
+      color: #3e3e3e;
+
+      @include breakpoint($tablet) {
+        font-size: 3.53rem;
+      }
+
+      @include breakpoint($laptop) {
+        font-size: 4.236rem;
+      }
+    }
+
+    .contact-link__subtitle {
+      @extend %verlagLight;
+      text-indent: 0.236rem;
+      letter-spacing: 1px;
+    }
+
+/* Effects */
+/* body {
+  background: #ddd;
+} */
+
+.container {
+  // background: #fff;
+  -webkit-transition: -webkit-transform 350ms;
+  transition: transform 350ms;
+}
+
+.container.overlay-open {
+  -webkit-transform: translateY(-7%) scale(0.85);
+  transform: translateY(-7%) scale(0.85);
+}
+
+.overlay-contentscale {
+  visibility: hidden;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: -webkit-transform 350ms, visibility 0s 350ms;
+  transition: transform 350ms, visibility 0s 350ms;
+}
+
+.overlay-contentscale.open {
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: -webkit-transform 350ms;
+  transition: transform 350ms;
+}

@@ -12,10 +12,11 @@
 
 // <section>
 .hero {
+  position: relative;
   // height: 90vh;
   width: 95%;
   margin-left: 5%;
-  // padding-top: 5%;
+  background: #fdfdfd;
 
   @include breakpoint($tablet) {
     width: 80%;

@@ -7,20 +7,25 @@ title: Albert Yu | Design + Code
   <!-- SVG SPRITE SHEET -->
   {% include icons.svg %}
 
-  <!-- HEADER -->
-  {% include page-header.html %}
+  <div id="main" class="container">
+    <!-- HEADER -->
+    {% include page-header.html %}
 
-  <!-- PROJECTS -->
-  <a id="projects"></a>
-  {% include projects/harmonyhome.html %}
-  {% include projects/ekpac.html %}
-  {% include projects/juniorchefacademy.html %}
+    <!-- PROJECTS -->
+    <a id="projects"></a>
+    {% include projects/harmonyhome.html %}
+    {% include projects/ekpac.html %}
+    {% include projects/juniorchefacademy.html %}
 
-  <!-- INFORMATION -->
-  {% include section-information.html %}
-  {% include section-contact.html %}
+    <!-- INFORMATION -->
+    {% include section-information.html %}
+    {% include section-contact.html %}
 
-  <!-- FOOTER -->
-  {% include page-footer.html %}
+    <!-- FOOTER -->
+    {% include page-footer.html %}
+  </div>
+
+  <!-- OVERLAY -->
+  {% include overlay-contact.html %}
 
 {% include document-footer.html %}

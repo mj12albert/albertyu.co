@@ -15,4 +15,4 @@ domready(function () {
     // callbackBefore: function ( toggle, anchor ) {}, // Function to run before scrolling
     // callbackAfter: function ( toggle, anchor ) {} // Function to run after scrolling);
   });
-})
+});
