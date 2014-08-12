@@ -43,8 +43,15 @@ gulp.task('css', function() {
 // Concat & Minify JS
 gulp.task('js', function() {
   return gulp.src([
-    'build/js/vendor/*.js',
+    // 'build/js/vendor/modernizr.custom.60996.js',
+    'build/js/vendor/vhBuggyfill.js',
+    'build/js/vendor/classie.js',
+    // 'build/js/vendor/domReady.js',
+    'build/js/vendor/fastclick.js',
+    'build/js/helpers.js',
+    'build/js/features/*.js',
     'build/js/main.js'
+    // 'build/js/overlay.js'
   ])
     .pipe(stripDebug())
     .pipe(concat('albertyu.js'))
@@ -52,9 +59,24 @@ gulp.task('js', function() {
     .pipe(gulp.dest('deploy/js'));
 })
 
+// Overlay
+gulp.task('overlayjs', function() {
+  return gulp.src(['build/js/overlay.js'])
+    .pipe(uglify())
+    .pipe(gulp.dest('deploy/js'));
+})
+
+// Modernizr
+gulp.task('modernizr', function() {
+  return gulp.src(['build/js/vendor/modernizr.custom.60996.js'])
+    .pipe(rename("modernizr.js" ))
+    .pipe(uglify())
+    .pipe(gulp.dest('deploy/js'));
+})
+
 // Picturefill
 gulp.task('picturefill', function() {
-  return gulp.src(['build/js/vendor/picturefill.js'])
+  return gulp.src(['build/js/picturefill.js'])
     .pipe(rename({ suffix: ".min" }))
     .pipe(uglify({ mangle: true }))
     .pipe(gulp.dest('deploy/js'));
@@ -74,7 +96,9 @@ gulp.task('default', ['clean'], function() {
     'html',
     'css',
     'js',
+    'modernizr',
     'picturefill',
+    'overlayjs',
     'assets'
   );
 });

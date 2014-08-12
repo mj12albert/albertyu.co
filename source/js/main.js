@@ -4,6 +4,6 @@ window.addEventListener('load', function() {
   window.viewportUnitsBuggyfill.init();
 }, false);
 
-domready(function () {
-  // console.log("dom is loaded!");
-}) // Close domready()
+/*domready(function () {
+  console.log("dom is loaded!");
+})*/ // Close domready()
