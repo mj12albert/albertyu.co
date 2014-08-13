@@ -5,8 +5,13 @@ encoding: utf-8
 # host: albertyu.co.dev
 # port: 4000
 include: [
-  '*.scss'
+  '*.scss',
+  '*.css.map'
 ]
 exclude: [
-  'Gemfile*'
+  'Gemfile*',
+  # 'css/',
+  # 'sass/',
+  'js/',
+  'assets/'
 ]
