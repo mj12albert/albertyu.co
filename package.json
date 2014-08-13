@@ -2,6 +2,7 @@
   "author": "Albert Yu <albert@albertyu.co>",
   "private": true,
   "devDependencies": {
+    "browsernizr": "^1.0.2",
     "gulp": "^3.8.6",
     "gulp-cleanhtml": "0.0.2",
     "gulp-concat": "^2.3.4",
@@ -14,6 +15,11 @@
     "gulp-uglify": "^0.3.1",
     "gulp-uncss": "^0.4.5",
     "gulp-util": "^3.0.0",
-    "merge-stream": "^0.1.5"
+    "merge-stream": "^0.1.5",
+    "viewport-units-buggyfill": "^0.3.1",
+    "vinyl-source-stream": "^0.1.1"
+  },
+  "dependencies": {
+    "browserify": "^5.9.3"
   }
 }

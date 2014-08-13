@@ -1,9 +1,8 @@
-  /*!
+/*! 
  * viewport-units-buggyfill v0.3.1
  * @web: https://github.com/rodneyrehm/viewport-units-buggyfill/
  * @author: Rodney Rehm - http://rodneyrehm.de/en/
  */
-
 (function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
@@ -41,13 +40,13 @@
     styleNode = document.createElement('style');
     styleNode.id = 'patched-viewport';
     document.head.appendChild(styleNode);
-
+    
     // Issue #6: Cross Origin Stylesheets are not accessible through CSSOM,
     // therefore download and inject them as <style> to circumvent SOP.
     importCrossOriginLinks(function() {
       //window.addEventListener('orientationchange', updateStyles, true);
       // doing a full refresh rather than updateStyles because an orientationchange
-      // could activate different stylesheets
+      // could activate different stylesheets 
       window.addEventListener('orientationchange', refresh, true);
       refresh();
     });
@@ -204,7 +203,7 @@
         next();
       }
     };
-
+    
     forEach.call(document.styleSheets, function(sheet) {
       if (!sheet.href || origin(sheet.href) === origin(location.href) ) {
         // skip <style> and <link> from same origin
@@ -213,7 +212,7 @@
       _waiting++;
       convertLinkToStyle(sheet.ownerNode, decrease);
     });
-
+    
     if (!_waiting) {
       next();
     }
@@ -233,7 +232,7 @@
       next();
     }, next);
   }
-
+  
   function getCors(url, success, error) {
     var xhr = new XMLHttpRequest();
     if ('withCredentials' in xhr) {
@@ -246,7 +245,7 @@
     } else {
       throw new Error('cross-domain XHR not supported');
     }
-
+    
     xhr.onload = success;
     xhr.onerror = error;
     xhr.send();

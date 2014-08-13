@@ -60,7 +60,7 @@
   }
 }
 
-.touch .dark .contact-link {
+.touchevents .dark .contact-link {
   &:link,
   &:visited,
   &:active {
@@ -129,7 +129,7 @@
   }
 }
 
-.touch .light .contact-link {
+.touchevents .light .contact-link {
   &:link,
   &:visited,
   &:active {
@@ -140,7 +140,7 @@
   }
 }
 
-.touch .contact-link__subtitle:after {
+.touchevents .contact-link__subtitle:after {
   opacity: 1;
   max-width: 100%;
 }

@@ -12,6 +12,7 @@
 
 <!-- SYNCHRONOUS MODERNIZR -->
   <!--build:js js/modernizr.js -->
+  <!-- <script type="text/javascript" src="js/modernizr.custom.js"></script> -->
   <!--/build-->
 
 <!-- ASYNCHRONOUSLY LOAD CSS+JS -->
@@ -19,18 +20,18 @@
     loadCSS("css/manifest.css");
     function loadJS(a){"use strict";var b=window.document.getElementsByTagName("script")[0],c=window.document.createElement("script");return c.src=a,b.parentNode.insertBefore(c,b),c}
     <!--build:remove -->
-    loadJS("js/picturefill.js");
-    loadJS("js/vendor/modernizr.custom.60996.js");
-    loadJS("js/vendor/domReady.js");
-    loadJS("js/vendor/vhBuggyfill.js");
-    loadJS("js/vendor/fastclick.js");
-    loadJS("js/vendor/classie.js");
-    loadJS("js/helpers.js");
-    loadJS("js/smoothScroll.js");
+    // loadJS("js/picturefill.js");
+    // loadJS("js/build-main/domReady.js");
+    // loadJS("js/build-main/vhBuggyfill.js");
+    // loadJS("js/build-main/fastclick.js");
+    // loadJS("js/build-main/classie.js");
+    // loadJS("js/build-main/smoothScroll.js");
+    // loadJS("js/build-main/helpers.js");
     // loadJS("js/features/overlay.js");
     <!--/build -->
-    loadJS("js/main.js");
-    loadJS("js/overlay.js");</script>
+    // loadJS("js/main.js");
+    // loadJS("js/overlay.js");
+    loadJS("js/browserified.min.js");</script>
 
 <!-- PICTUREFILL -->
   <script>document.createElement("picture");</script>
