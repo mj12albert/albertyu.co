@@ -1,5 +1,5 @@
 /**
- * smooth-scroll v5.0.0
+ * smooth-scroll v5.0.1
  * Animate scrolling to anchor links, by Chris Ferdinandi.
  * http://github.com/cferdinandi/smooth-scroll
  *
@@ -9,13 +9,16 @@
 
 (function (root, factory) {
 	if ( typeof define === 'function' && define.amd ) {
+		// AMD
 		define('smoothScroll', factory(root));
 	} else if ( typeof exports === 'object' ) {
-		module.smoothScroll = factory(root);
+		// CommonJS
+		module.exports = factory(root);
 	} else {
 		root.smoothScroll = factory(root);
 	}
 })(this, function (root) {
+// (function(window) {
 
 	'use strict';
 
@@ -24,7 +27,7 @@
 	//
 
 	var exports = {}; // Object for public APIs
-	var supports = !!document.querySelector && !!root.addEventListener; // Feature test
+	var supports = !!document.querySelector && !!window.addEventListener; // Feature test
 	var settings;
 
 	// Default settings
@@ -32,7 +35,7 @@
 		speed: 500,
 		easing: 'easeInOutCubic',
 		offset: 0,
-		updateURL: true,
+		updateURL: false,
 		callbackBefore: function () {},
 		callbackAfter: function () {}
 	};
@@ -170,7 +173,8 @@
 	 * @param {Object} settings
 	 * @param {Event} event
 	 */
-	exports.animateScroll = function ( toggle, anchor, options, event ) {
+	// exports.animateScroll = function ( toggle, anchor, options, event ) {
+	var animateScroll = function ( toggle, anchor, options, event ) {
 
 		// Options and overrides
 		var settings = extend( settings || defaults, options || {} );  // Merge user options with defaults
@@ -180,7 +184,7 @@
 		// Selectors and variables
 		var fixedHeader = document.querySelector('[data-scroll-header]'); // Get the fixed header
 		var headerHeight = fixedHeader === null ? 0 : (fixedHeader.offsetHeight + fixedHeader.offsetTop); // Get the height of a fixed header if one exists
-		var startLocation = root.pageYOffset; // Current location on the page
+		var startLocation = window.pageYOffset; // Current location on the page
 		var endLocation = getEndLocation( document.querySelector(anchor), headerHeight, parseInt(settings.offset, 10) ); // Scroll to location
 		var animationInterval; // interval timer
 		var distance = endLocation - startLocation; // distance to travel
@@ -204,8 +208,8 @@
 		 * @param {Number} animationInterval How much to scroll on this loop
 		 */
 		var stopAnimateScroll = function (position, endLocation, animationInterval) {
-			var currentLocation = root.pageYOffset;
-			if ( position == endLocation || currentLocation == endLocation || ( (root.innerHeight + currentLocation) >= documentHeight ) ) {
+			var currentLocation = window.pageYOffset;
+			if ( position == endLocation || currentLocation == endLocation || ( (window.innerHeight + currentLocation) >= documentHeight ) ) {
 				clearInterval(animationInterval);
 				settings.callbackAfter( toggle, anchor ); // Run callbacks after animation complete
 			}
@@ -220,7 +224,7 @@
 			percentage = ( timeLapsed / parseInt(settings.speed, 10) );
 			percentage = ( percentage > 1 ) ? 1 : percentage;
 			position = startLocation + ( distance * easingPattern(settings.easing, percentage) );
-			root.scrollTo( 0, Math.floor(position) );
+			window.scrollTo( 0, Math.floor(position) );
 			stopAnimateScroll(position, endLocation, animationInterval);
 		};
 
@@ -237,8 +241,8 @@
 		 * Reset position to fix weird iOS bug
 		 * @link https://github.com/cferdinandi/smooth-scroll/issues/45
 		 */
-		if ( root.pageYOffset === 0 ) {
-			root.scrollTo( 0, 0 );
+		if ( window.pageYOffset === 0 ) {
+			window.scrollTo( 0, 0 );
 		}
 
 		// Start scrolling animation
@@ -251,7 +255,9 @@
 	 * @public
 	 * @param {Object} options User settings
 	 */
-	var init = function ( options ) {
+
+	// exports.init = function ( options ) {
+	var init = function(options) {
 
 		// feature test
 		if ( !supports ) return;
@@ -262,9 +268,14 @@
 
 		// When a toggle is clicked, run the click handler
 		forEach(toggles, function (toggle) {
-			toggle.addEventListener('click', exports.animateScroll.bind( null, toggle, toggle.hash, settings ), false);
+			toggle.addEventListener('click', animateScroll.bind( null, toggle, toggle.hash, settings ), false);
 		});
 
+	};
+
+	var smoothScroll = {
+		init: init,
+		animateScroll: animateScroll
 	};
 
 
@@ -274,11 +285,6 @@
 
 	// return exports;
 
-	// Initialize self
-	init({
-		speed: 500,
-		easing: 'easeInOutCubic',
-		updateURL: false
-	})
+	return smoothScroll;
 
 });

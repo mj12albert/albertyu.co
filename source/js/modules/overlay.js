@@ -9,7 +9,7 @@ require('browsernizr/lib/prefixed');
 require('browsernizr/lib/setClasses');
 
 var Modernizr = require('browsernizr');
-var classie = require('./modules/classie.js');
+var classie = require('./classie.js');
 
 module.exports = (function() {
 	var container = document.querySelector('div.container');
@@ -36,6 +36,8 @@ module.exports = (function() {
 
 	function toggleOverlay(e) {
 		e.preventDefault();
+		var button = e.target;
+		// console.log(button);
 
 		if(classie.has(overlay, 'open')) {
 			classie.remove(overlay, 'open');
@@ -63,7 +65,10 @@ module.exports = (function() {
 			classie.add(overlay, 'open');
 			classie.add(container, 'overlay-open');
 
-			if (classie.has(e.srcElement, 'top')) {
+			// console.log(e.srcElement);
+
+
+			if (classie.has(button, 'top')) {
 				classie.add(container, 'top');
 				classie.add(overlay, 'dark');
 			} else {

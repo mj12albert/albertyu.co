@@ -10,33 +10,12 @@
   <meta name="description" content="Albert Yu is a freelance designer and developer in Hong Kong.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- SYNCHRONOUS MODERNIZR -->
-  <!--build:js js/modernizr.js -->
-  <!-- <script type="text/javascript" src="js/modernizr.custom.js"></script> -->
-  <!--/build-->
-
 <!-- ASYNCHRONOUSLY LOAD CSS+JS -->
-  <script>function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
-    loadCSS("css/manifest.css");
-    function loadJS(a){"use strict";var b=window.document.getElementsByTagName("script")[0],c=window.document.createElement("script");return c.src=a,b.parentNode.insertBefore(c,b),c}
-    <!--build:remove -->
-    // loadJS("js/picturefill.js");
-    // loadJS("js/build-main/domReady.js");
-    // loadJS("js/build-main/vhBuggyfill.js");
-    // loadJS("js/build-main/fastclick.js");
-    // loadJS("js/build-main/classie.js");
-    // loadJS("js/build-main/smoothScroll.js");
-    // loadJS("js/build-main/helpers.js");
-    // loadJS("js/features/overlay.js");
-    <!--/build -->
-    // loadJS("js/main.js");
-    // loadJS("js/overlay.js");
-    loadJS("js/browserified.min.js");</script>
+  <script>function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}loadCSS("css/manifest.css");
+    function loadJS(a){"use strict";var b=window.document.getElementsByTagName("script")[0],c=window.document.createElement("script");return c.src=a,b.parentNode.insertBefore(c,b),c}loadJS("js/browserified.js");</script>
 
 <!-- PICTUREFILL -->
   <script>document.createElement("picture");</script>
-  <!--build:js js/picturefill.min.js -->
-  <!--/build-->
 
 <!-- TYPEKIT -->
   <script type="text/javascript">(function(d){var config={kitId:'dtg6nmd',scriptTimeout:3000},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive"},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);</script>
@@ -44,7 +23,6 @@
 <!-- CLOUD.TYPOGRAPHY 1.1.0 -->
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6808232/761324/css/fonts.css" />
 
-  <link rel="stylesheet" href="css/manifest.css">
 </head>
 
 <body>

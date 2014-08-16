@@ -1,20 +1,10 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-/**
- * Plugins/Modules
- */
-
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"./source/js/app.js":[function(require,module,exports){
 var fastclick = require('./modules/fastclick.js');
 var viewports = require('./modules/viewport-units-buggyfill.js');
 var domready = require('./modules/ready.js');
-// var classie = require('./modules/classie.js');
-var smoothScroll = require('./modules/smooth-scroll.commonJS.js');
-
-/**
- * Helper functions
- */
-
-// require('./functions/getElementsByClass.js');
-// require('./functions/insertAfter.js');
+var picturefill = require('./modules/picturefill.js');
+var smoothScroll = require('./modules/smooth-scroll.js');
+require('./modules/overlay.js');
 
 domready(function() {
   console.log("ready!!!");
@@ -25,9 +15,10 @@ domready(function() {
 
   smoothScroll.init();
 
-  require('./overlay.commonJS.js');
+  // ...
+
 })
-},{"./modules/fastclick.js":35,"./modules/ready.js":36,"./modules/smooth-scroll.commonJS.js":37,"./modules/viewport-units-buggyfill.js":38,"./overlay.commonJS.js":39}],2:[function(require,module,exports){
+},{"./modules/fastclick.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/fastclick.js","./modules/overlay.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/overlay.js","./modules/picturefill.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/picturefill.js","./modules/ready.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/ready.js","./modules/smooth-scroll.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/smooth-scroll.js","./modules/viewport-units-buggyfill.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/viewport-units-buggyfill.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/index.js":[function(require,module,exports){
 var Modernizr = require('./lib/Modernizr'),
     ModernizrProto = require('./lib/ModernizrProto'),
     classes = require('./lib/classes'),
@@ -50,7 +41,7 @@ for (var i = 0; i < Modernizr._q.length; i++) {
 
 module.exports = Modernizr;
 
-},{"./lib/Modernizr":3,"./lib/ModernizrProto":4,"./lib/classes":5,"./lib/setClasses":23,"./lib/testRunner":29}],3:[function(require,module,exports){
+},{"./lib/Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./lib/ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./lib/classes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/classes.js","./lib/setClasses":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/setClasses.js","./lib/testRunner":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testRunner.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 
 
@@ -68,7 +59,7 @@ var ModernizrProto = require('./ModernizrProto');
   
 
 module.exports = Modernizr;
-},{"./ModernizrProto":4}],4:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js":[function(require,module,exports){
 var tests = require('./tests');
 
 
@@ -112,12 +103,12 @@ var tests = require('./tests');
   
 
 module.exports = ModernizrProto;
-},{"./tests":31}],5:[function(require,module,exports){
+},{"./tests":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/tests.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/classes.js":[function(require,module,exports){
 
   var classes = [];
   
 module.exports = classes;
-},{}],6:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/contains.js":[function(require,module,exports){
 
   /**
    * contains returns a boolean for if substr is found within str.
@@ -128,14 +119,14 @@ module.exports = classes;
 
   
 module.exports = contains;
-},{}],7:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/createElement.js":[function(require,module,exports){
 
   var createElement = function() {
     return document.createElement.apply(document, arguments);
   };
   
 module.exports = createElement;
-},{}],8:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/cssomPrefixes.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 var omPrefixes = require('./omPrefixes');
 
@@ -145,12 +136,12 @@ var omPrefixes = require('./omPrefixes');
   
 
 module.exports = cssomPrefixes;
-},{"./ModernizrProto":4,"./omPrefixes":20}],9:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./omPrefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/omPrefixes.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/docElement.js":[function(require,module,exports){
 
   var docElement = document.documentElement;
   
 module.exports = docElement;
-},{}],10:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/domPrefixes.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 var omPrefixes = require('./omPrefixes');
 
@@ -160,7 +151,7 @@ var omPrefixes = require('./omPrefixes');
   
 
 module.exports = domPrefixes;
-},{"./ModernizrProto":4,"./omPrefixes":20}],11:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./omPrefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/omPrefixes.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/domToHyphenated.js":[function(require,module,exports){
 
     // Helper function for e.g. boxSizing -> box-sizing
     function domToHyphenated( name ) {
@@ -170,7 +161,7 @@ module.exports = domPrefixes;
     }
     
 module.exports = domToHyphenated;
-},{}],12:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/fnBind.js":[function(require,module,exports){
 var slice = require('./slice');
 
 
@@ -222,7 +213,7 @@ var slice = require('./slice');
   
 
 module.exports = Function.prototype.bind;
-},{"./slice":24}],13:[function(require,module,exports){
+},{"./slice":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/slice.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/getBody.js":[function(require,module,exports){
 var createElement = require('./createElement');
 
 
@@ -242,7 +233,7 @@ var createElement = require('./createElement');
   
 
 module.exports = getBody;
-},{"./createElement":7}],14:[function(require,module,exports){
+},{"./createElement":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/createElement.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/injectElementWithStyles.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 var docElement = require('./docElement');
 var createElement = require('./createElement');
@@ -308,7 +299,7 @@ var getBody = require('./getBody');
   
 
 module.exports = injectElementWithStyles;
-},{"./ModernizrProto":4,"./createElement":7,"./docElement":9,"./getBody":13}],15:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./createElement":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/createElement.js","./docElement":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/docElement.js","./getBody":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/getBody.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/is.js":[function(require,module,exports){
 
   /**
    * is returns a boolean for if typeof obj is exactly type.
@@ -318,7 +309,7 @@ module.exports = injectElementWithStyles;
   }
   
 module.exports = is;
-},{}],16:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/load.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 
 
@@ -915,7 +906,7 @@ ModernizrProto['load'] = function() {
 
 
 
-},{"./ModernizrProto":4}],17:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/mStyle.js":[function(require,module,exports){
 var Modernizr = require('./Modernizr');
 var modElem = require('./modElem');
 
@@ -934,7 +925,7 @@ var modElem = require('./modElem');
   
 
 module.exports = mStyle;
-},{"./Modernizr":3,"./modElem":18}],18:[function(require,module,exports){
+},{"./Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./modElem":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/modElem.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/modElem.js":[function(require,module,exports){
 var Modernizr = require('./Modernizr');
 var createElement = require('./createElement');
 
@@ -954,7 +945,7 @@ var createElement = require('./createElement');
   
 
 module.exports = modElem;
-},{"./Modernizr":3,"./createElement":7}],19:[function(require,module,exports){
+},{"./Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./createElement":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/createElement.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/nativeTestProps.js":[function(require,module,exports){
 var injectElementWithStyles = require('./injectElementWithStyles');
 var domToHyphenated = require('./domToHyphenated');
 
@@ -993,7 +984,7 @@ var domToHyphenated = require('./domToHyphenated');
     
 
 module.exports = nativeTestProps;
-},{"./domToHyphenated":11,"./injectElementWithStyles":14}],20:[function(require,module,exports){
+},{"./domToHyphenated":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/domToHyphenated.js","./injectElementWithStyles":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/injectElementWithStyles.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/omPrefixes.js":[function(require,module,exports){
 
   // Following spec is to expose vendor-specific style properties as:
   //   elem.style.WebkitBorderRadius
@@ -1008,7 +999,7 @@ module.exports = nativeTestProps;
   var omPrefixes = 'Webkit Moz O ms';
   
 module.exports = omPrefixes;
-},{}],21:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixed.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 var testPropsAll = require('./testPropsAll');
 
@@ -1042,7 +1033,7 @@ var testPropsAll = require('./testPropsAll');
   
 
 module.exports = prefixed;
-},{"./ModernizrProto":4,"./testPropsAll":28}],22:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./testPropsAll":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testPropsAll.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixes.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 
 
@@ -1055,7 +1046,7 @@ var ModernizrProto = require('./ModernizrProto');
   
 
 module.exports = prefixes;
-},{"./ModernizrProto":4}],23:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/setClasses.js":[function(require,module,exports){
 var Modernizr = require('./Modernizr');
 var docElement = require('./docElement');
 
@@ -1084,7 +1075,7 @@ var docElement = require('./docElement');
   
 
 module.exports = setClasses;
-},{"./Modernizr":3,"./docElement":9}],24:[function(require,module,exports){
+},{"./Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./docElement":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/docElement.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/slice.js":[function(require,module,exports){
 var classes = require('./classes');
 
 
@@ -1092,7 +1083,7 @@ var classes = require('./classes');
   
 
 module.exports = slice;
-},{"./classes":5}],25:[function(require,module,exports){
+},{"./classes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/classes.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testAllProps.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 var testPropsAll = require('./testPropsAll');
 
@@ -1119,7 +1110,7 @@ var testPropsAll = require('./testPropsAll');
     
 
 module.exports = testAllProps;
-},{"./ModernizrProto":4,"./testPropsAll":28}],26:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./testPropsAll":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testPropsAll.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testDOMProps.js":[function(require,module,exports){
 var is = require('./is');
 require('./fnBind');
 
@@ -1156,7 +1147,7 @@ require('./fnBind');
   
 
 module.exports = testDOMProps;
-},{"./fnBind":12,"./is":15}],27:[function(require,module,exports){
+},{"./fnBind":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/fnBind.js","./is":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/is.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testProps.js":[function(require,module,exports){
 var contains = require('./contains');
 var mStyle = require('./mStyle');
 var createElement = require('./createElement');
@@ -1255,7 +1246,7 @@ var is = require('./is');
   
 
 module.exports = testProps;
-},{"./contains":6,"./createElement":7,"./is":15,"./mStyle":17,"./nativeTestProps":19}],28:[function(require,module,exports){
+},{"./contains":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/contains.js","./createElement":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/createElement.js","./is":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/is.js","./mStyle":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/mStyle.js","./nativeTestProps":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/nativeTestProps.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testPropsAll.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 var cssomPrefixes = require('./cssomPrefixes');
 var is = require('./is');
@@ -1296,7 +1287,7 @@ var prefixes = require('./prefixes');
     
 
 module.exports = testPropsAll;
-},{"./ModernizrProto":4,"./cssomPrefixes":8,"./domPrefixes":10,"./is":15,"./prefixes":22,"./testDOMProps":26,"./testProps":27}],29:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./cssomPrefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/cssomPrefixes.js","./domPrefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/domPrefixes.js","./is":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/is.js","./prefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixes.js","./testDOMProps":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testDOMProps.js","./testProps":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testProps.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testRunner.js":[function(require,module,exports){
 var tests = require('./tests');
 var Modernizr = require('./Modernizr');
 var classes = require('./classes');
@@ -1366,7 +1357,7 @@ var is = require('./is');
   
 
 module.exports = testRunner;
-},{"./Modernizr":3,"./classes":5,"./is":15,"./tests":31}],30:[function(require,module,exports){
+},{"./Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./classes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/classes.js","./is":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/is.js","./tests":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/tests.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testStyles.js":[function(require,module,exports){
 var ModernizrProto = require('./ModernizrProto');
 var injectElementWithStyles = require('./injectElementWithStyles');
 
@@ -1375,12 +1366,12 @@ var injectElementWithStyles = require('./injectElementWithStyles');
   
 
 module.exports = testStyles;
-},{"./ModernizrProto":4,"./injectElementWithStyles":14}],31:[function(require,module,exports){
+},{"./ModernizrProto":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/ModernizrProto.js","./injectElementWithStyles":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/injectElementWithStyles.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/tests.js":[function(require,module,exports){
 
   var tests = [];
   
 module.exports = tests;
-},{}],32:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/css/transitions.js":[function(require,module,exports){
 var Modernizr = require('./../../lib/Modernizr');
 var testAllProps = require('./../../lib/testAllProps');
 
@@ -1396,7 +1387,7 @@ var testAllProps = require('./../../lib/testAllProps');
   Modernizr.addTest('csstransitions', testAllProps('transition', 'all', true));
 
 
-},{"./../../lib/Modernizr":3,"./../../lib/testAllProps":25}],33:[function(require,module,exports){
+},{"./../../lib/Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./../../lib/testAllProps":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testAllProps.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/touchevents.js":[function(require,module,exports){
 var Modernizr = require('./../lib/Modernizr');
 var prefixes = require('./../lib/prefixes');
 var testStyles = require('./../lib/testStyles');
@@ -1454,7 +1445,7 @@ This test will also return `true` for Firefox 4 Multitouch support.
   });
 
 
-},{"./../lib/Modernizr":3,"./../lib/prefixes":22,"./../lib/testStyles":30}],34:[function(require,module,exports){
+},{"./../lib/Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./../lib/prefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixes.js","./../lib/testStyles":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testStyles.js"}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/classie.js":[function(require,module,exports){
 /*!
  * classie v1.0.1
  * class helper functions
@@ -1541,7 +1532,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{}],35:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/fastclick.js":[function(require,module,exports){
 /**
  * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
  *
@@ -2364,7 +2355,730 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
 	window.FastClick = FastClick;
 }
 
-},{}],36:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/overlay.js":[function(require,module,exports){
+/**
+ * Plugins
+ */
+
+require('browsernizr/test/css/transitions');
+require('browsernizr/test/touchevents');
+require('browsernizr/lib/load');
+require('browsernizr/lib/prefixed');
+require('browsernizr/lib/setClasses');
+
+var Modernizr = require('browsernizr');
+var classie = require('./classie.js');
+
+module.exports = (function() {
+	var container = document.querySelector('div.container');
+	var	triggerBttns = (!document.getElementsByClassName)
+    ? document.querySelectorAll('trigger-overlay')
+    : document.getElementsByClassName('trigger-overlay');
+	var overlay = document.querySelector('div.overlay');
+	var contactLinks = (!document.getElementsByClassName)
+    ? document.querySelectorAll('contact-link')
+    : document.getElementsByClassName('contact-link');
+	var	closeBttn = overlay.querySelector('button.overlay-close');
+	var	transEndEventNames = {
+			'WebkitTransition': 'webkitTransitionEnd',
+			'MozTransition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'msTransition': 'MSTransitionEnd',
+			'transition': 'transitionend'
+		};
+	var	transEndEventName = transEndEventNames[Modernizr.prefixed('transition')];
+	var	support = {transitions: Modernizr.csstransitions};
+
+	// console.log(triggerBttns);
+	// console.log(contactLinks);
+
+	function toggleOverlay(e) {
+		e.preventDefault();
+		var button = e.target;
+		// console.log(button);
+
+		if(classie.has(overlay, 'open')) {
+			classie.remove(overlay, 'open');
+			classie.remove(overlay, 'dark');
+			classie.remove(overlay, 'light');
+			classie.remove(container, 'overlay-open');
+			classie.remove(container, 'top');
+			classie.remove(container, 'bottom');
+			classie.add(overlay, 'close');
+			var onEndTransitionFn = function(e) {
+				if(support.transitions) {
+					if(e.propertyName !== 'visibility') return;
+					this.removeEventListener(transEndEventName, onEndTransitionFn);
+				}
+				classie.remove( overlay, 'close' );
+			};
+			if(support.transitions) {
+				overlay.addEventListener(transEndEventName, onEndTransitionFn);
+			}
+			else {
+				onEndTransitionFn();
+			}
+		}
+		else if( !classie.has(overlay, 'close')) {
+			classie.add(overlay, 'open');
+			classie.add(container, 'overlay-open');
+
+			// console.log(e.srcElement);
+
+
+			if (classie.has(button, 'top')) {
+				classie.add(container, 'top');
+				classie.add(overlay, 'dark');
+			} else {
+				classie.add(container, 'bottom');
+				classie.add(overlay, 'light');
+			}
+		}
+	}
+
+	// Loop through all triggers in the DOM and bind a click listener
+	for (var i = 0, len = triggerBttns.length; i < len; i++) {
+		triggerBttns[i].addEventListener('click', toggleOverlay)
+	}
+
+	closeBttn.addEventListener('click', toggleOverlay);
+
+	// Close the overlay by clicking anywhere on it
+	overlay.addEventListener('click', toggleOverlay);
+
+	// Stop clicks on contact links from bubbling up to the overlay
+	for (var i = 0, len = contactLinks.length; i < len; i++) {
+		contactLinks[i].addEventListener('click', function(e) {
+			e.stopPropagation();
+		})
+	}
+})();
+},{"./classie.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/classie.js","browsernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/index.js","browsernizr/lib/load":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/load.js","browsernizr/lib/prefixed":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixed.js","browsernizr/lib/setClasses":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/setClasses.js","browsernizr/test/css/transitions":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/css/transitions.js","browsernizr/test/touchevents":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/touchevents.js"}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/picturefill.js":[function(require,module,exports){
+/*! Picturefill - v2.1.0 - 2014-07-25
+* http://scottjehl.github.io/picturefill
+* Copyright (c) 2014 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
+/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas, David Knight. Dual MIT/BSD license */
+
+window.matchMedia || (window.matchMedia = function() {
+	"use strict";
+
+	// For browsers that support matchMedium api such as IE 9 and webkit
+	var styleMedia = (window.styleMedia || window.media);
+
+	// For those that don't support matchMedium
+	if (!styleMedia) {
+		var style       = document.createElement('style'),
+			script      = document.getElementsByTagName('script')[0],
+			info        = null;
+
+		style.type  = 'text/css';
+		style.id    = 'matchmediajs-test';
+
+		script.parentNode.insertBefore(style, script);
+
+		// 'style.currentStyle' is used by IE <= 8 and 'window.getComputedStyle' for all other browsers
+		info = ('getComputedStyle' in window) && window.getComputedStyle(style, null) || style.currentStyle;
+
+		styleMedia = {
+			matchMedium: function(media) {
+				var text = '@media ' + media + '{ #matchmediajs-test { width: 1px; } }';
+
+				// 'style.styleSheet' is used by IE <= 8 and 'style.textContent' for all other browsers
+				if (style.styleSheet) {
+					style.styleSheet.cssText = text;
+				} else {
+					style.textContent = text;
+				}
+
+				// Test if media query is true or false
+				return info.width === '1px';
+			}
+		};
+	}
+
+	return function(media) {
+		return {
+			matches: styleMedia.matchMedium(media || 'all'),
+			media: media || 'all'
+		};
+	};
+}());
+/*! Picturefill - Responsive Images that work today.
+*  Author: Scott Jehl, Filament Group, 2012 ( new proposal implemented by Shawn Jansepar )
+*  License: MIT/GPLv2
+*  Spec: http://picture.responsiveimages.org/
+*/
+(function( w, doc ) {
+	// Enable strict mode
+	"use strict";
+
+	// If picture is supported, well, that's awesome. Let's get outta here...
+	if ( w.HTMLPictureElement ) {
+		w.picturefill = function() { };
+		return;
+	}
+
+	// HTML shim|v it for old IE (IE9 will still need the HTML video tag workaround)
+	doc.createElement( "picture" );
+
+	// local object for method references and testing exposure
+	var pf = {};
+
+	// namespace
+	pf.ns = "picturefill";
+
+	// srcset support test
+	pf.srcsetSupported = "srcset" in doc.createElement( "img" );
+	pf.sizesSupported = w.HTMLImageElement.sizes;
+
+	// just a string trim workaround
+	pf.trim = function( str ) {
+		return str.trim ? str.trim() : str.replace( /^\s+|\s+$/g, "" );
+	};
+
+	// just a string endsWith workaround
+	pf.endsWith = function( str, suffix ) {
+		return str.endsWith ? str.endsWith( suffix ) : str.indexOf( suffix, str.length - suffix.length ) !== -1;
+	};
+
+	/**
+	 * Shortcut method for matchMedia ( for easy overriding in tests )
+	 */
+	pf.matchesMedia = function( media ) {
+		return w.matchMedia && w.matchMedia( media ).matches;
+	};
+
+	/**
+	 * Shortcut method for `devicePixelRatio` ( for easy overriding in tests )
+	 */
+	pf.getDpr = function() {
+		return ( w.devicePixelRatio || 1 );
+	};
+
+	/**
+	 * Get width in css pixel value from a "length" value
+	 * http://dev.w3.org/csswg/css-values-3/#length-value
+	 */
+	pf.getWidthFromLength = function( length ) {
+		// If no length was specified, or it is 0 or negative, default to `100vw` (per the spec).
+		length = length && ( parseFloat( length ) > 0 || length.indexOf( "calc(" ) > -1 ) ? length : "100vw";
+
+		/**
+		* If length is specified in  `vw` units, use `%` instead since the div we’re measuring
+		* is injected at the top of the document.
+		*
+		* TODO: maybe we should put this behind a feature test for `vw`?
+		*/
+		length = length.replace( "vw", "%" );
+
+		// Create a cached element for getting length value widths
+		if ( !pf.lengthEl ) {
+			pf.lengthEl = doc.createElement( "div" );
+			doc.documentElement.insertBefore( pf.lengthEl, doc.documentElement.firstChild );
+		}
+
+		// Positioning styles help prevent padding/margin/width on `html` from throwing calculations off.
+		pf.lengthEl.style.cssText = "position: absolute; left: 0; width: " + length + ";";
+
+		if ( pf.lengthEl.offsetWidth <= 0 ) {
+			// Something has gone wrong. `calc()` is in use and unsupported, most likely. Default to `100vw` (`100%`, for broader support.):
+			pf.lengthEl.style.cssText = "width: 100%;";
+		}
+
+		return pf.lengthEl.offsetWidth;
+	};
+
+	// container of supported mime types that one might need to qualify before using
+	pf.types =  {};
+
+	// Add support for standard mime types.
+	pf.types["image/jpeg"] = true;
+	pf.types["image/gif"] = true;
+	pf.types["image/png"] = true;
+
+	// test svg support
+	pf.types[ "image/svg+xml" ] = doc.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
+
+	// test webp support, only when the markup calls for it
+	pf.types[ "image/webp" ] = function() {
+		// based on Modernizr's lossless img-webp test
+		// note: asynchronous
+		var img = new w.Image(),
+			type = "image/webp";
+
+		img.onerror = function() {
+			pf.types[ type ] = false;
+			picturefill();
+		};
+		img.onload = function() {
+			pf.types[ type ] = img.width === 1;
+			picturefill();
+		};
+		img.src = "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
+	};
+
+	/**
+	 * Takes a source element and checks if its type attribute is present and if so, supported
+	 * Note: for type tests that require a async logic,
+	 * you can define them as a function that'll run only if that type needs to be tested. Just make the test function call picturefill again when it is complete.
+	 * see the async webp test above for example
+	 */
+	pf.verifyTypeSupport = function( source ) {
+		var type = source.getAttribute( "type" );
+		// if type attribute exists, return test result, otherwise return true
+		if ( type === null || type === "" ) {
+			return true;
+		} else {
+			// if the type test is a function, run it and return "pending" status. The function will rerun picturefill on pending elements once finished.
+			if ( typeof( pf.types[ type ] ) === "function" ) {
+				pf.types[ type ]();
+				return "pending";
+			} else {
+				return pf.types[ type ];
+			}
+		}
+	};
+
+	/**
+	* Parses an individual `size` and returns the length, and optional media query
+	*/
+	pf.parseSize = function( sourceSizeStr ) {
+		var match = /(\([^)]+\))?\s*(.+)/g.exec( sourceSizeStr );
+		return {
+			media: match && match[1],
+			length: match && match[2]
+		};
+	};
+
+	/**
+	 * Takes a string of sizes and returns the width in pixels as a number
+	 */
+	pf.findWidthFromSourceSize = function( sourceSizeListStr ) {
+		// Split up source size list, ie ( max-width: 30em ) 100%, ( max-width: 50em ) 50%, 33%
+		//                            or (min-width:30em) calc(30% - 15px)
+		var sourceSizeList = pf.trim( sourceSizeListStr ).split( /\s*,\s*/ ),
+			winningLength;
+
+		for ( var i = 0, len = sourceSizeList.length; i < len; i++ ) {
+			// Match <media-condition>? length, ie ( min-width: 50em ) 100%
+			var sourceSize = sourceSizeList[ i ],
+				// Split "( min-width: 50em ) 100%" into separate strings
+				parsedSize = pf.parseSize( sourceSize ),
+				length = parsedSize.length,
+				media = parsedSize.media;
+
+			if ( !length ) {
+				continue;
+			}
+			if ( !media || pf.matchesMedia( media ) ) {
+				// if there is no media query or it matches, choose this as our winning length
+				// and end algorithm
+				winningLength = length;
+				break;
+			}
+		}
+
+		// pass the length to a method that can properly determine length
+		// in pixels based on these formats: http://dev.w3.org/csswg/css-values-3/#length-value
+		return pf.getWidthFromLength( winningLength );
+	};
+
+	pf.parseSrcset = function( srcset ) {
+		/**
+		* A lot of this was pulled from Boris Smus’ parser for the now-defunct WHATWG `srcset`
+		* https://github.com/borismus/srcset-polyfill/blob/master/js/srcset-info.js
+		*
+		* 1. Let input (`srcset`) be the value passed to this algorithm.
+		* 2. Let position be a pointer into input, initially pointing at the start of the string.
+		* 3. Let raw candidates be an initially empty ordered list of URLs with associated
+		*    unparsed descriptors. The order of entries in the list is the order in which entries
+		*    are added to the list.
+		*/
+		var candidates = [];
+
+		while ( srcset !== "" ) {
+			srcset = srcset.replace(/^\s+/g,"");
+
+			// 5. Collect a sequence of characters that are not space characters, and let that be url.
+			var pos = srcset.search(/\s/g),
+				url, descriptor = null;
+
+			if ( pos !== -1 ) {
+				url = srcset.slice( 0, pos );
+
+				var last = url[ url.length - 1 ];
+
+				// 6. If url ends with a U+002C COMMA character (,), remove that character from url
+				// and let descriptors be the empty string. Otherwise, follow these substeps
+				// 6.1. If url is empty, then jump to the step labeled descriptor parser.
+
+				if ( last === "," || url === "" ) {
+					url = url.replace(/,+$/, "");
+					descriptor = "";
+				}
+				srcset = srcset.slice( pos + 1 );
+
+				// 6.2. Collect a sequence of characters that are not U+002C COMMA characters (,), and
+				// let that be descriptors.
+				if ( descriptor === null ) {
+					var descpos = srcset.indexOf(",");
+					if ( descpos !== -1 ) {
+						descriptor = srcset.slice( 0, descpos );
+						srcset = srcset.slice( descpos + 1 );
+					} else {
+						descriptor = srcset;
+						srcset = "";
+					}
+				}
+			} else {
+				url = srcset;
+				srcset = "";
+			}
+
+			// 7. Add url to raw candidates, associated with descriptors.
+			if ( url || descriptor ) {
+				candidates.push({
+					url: url,
+					descriptor: descriptor
+				});
+			}
+		}
+		return candidates;
+	};
+
+	pf.parseDescriptor = function( descriptor, sizesattr ) {
+		// 11. Descriptor parser: Let candidates be an initially empty source set. The order of entries in the list
+		// is the order in which entries are added to the list.
+		var sizes = sizesattr || "100vw",
+			sizeDescriptor = descriptor && descriptor.replace(/(^\s+|\s+$)/g, ""),
+			widthInCssPixels = pf.findWidthFromSourceSize( sizes ),
+			resCandidate;
+
+			if ( sizeDescriptor ) {
+				var splitDescriptor = sizeDescriptor.split(" ");
+
+				for (var i = splitDescriptor.length + 1; i >= 0; i--) {
+					if ( splitDescriptor[ i ] !== undefined ) {
+						var curr = splitDescriptor[ i ],
+							lastchar = curr && curr.slice( curr.length - 1 );
+
+						if ( ( lastchar === "h" || lastchar === "w" ) && !pf.sizesSupported ) {
+							resCandidate = parseFloat( ( parseInt( curr, 10 ) / widthInCssPixels ) );
+						} else if ( lastchar === "x" ) {
+							var res = curr && parseFloat( curr, 10 );
+							resCandidate = res && !isNaN( res ) ? res : 1;
+						}
+					}
+				}
+			}
+		return resCandidate || 1;
+	};
+
+	/**
+	 * Takes a srcset in the form of url/
+	 * ex. "images/pic-medium.png 1x, images/pic-medium-2x.png 2x" or
+	 *     "images/pic-medium.png 400w, images/pic-medium-2x.png 800w" or
+	 *     "images/pic-small.png"
+	 * Get an array of image candidates in the form of
+	 *      {url: "/foo/bar.png", resolution: 1}
+	 * where resolution is http://dev.w3.org/csswg/css-values-3/#resolution-value
+	 * If sizes is specified, resolution is calculated
+	 */
+	pf.getCandidatesFromSourceSet = function( srcset, sizes ) {
+		var candidates = pf.parseSrcset( srcset ),
+			formattedCandidates = [];
+
+		for ( var i = 0, len = candidates.length; i < len; i++ ) {
+			var candidate = candidates[ i ];
+
+			formattedCandidates.push({
+				url: candidate.url,
+				resolution: pf.parseDescriptor( candidate.descriptor, sizes )
+			});
+		}
+		return formattedCandidates;
+	};
+
+	/*
+	 * if it's an img element and it has a srcset property,
+	 * we need to remove the attribute so we can manipulate src
+	 * (the property's existence infers native srcset support, and a srcset-supporting browser will prioritize srcset's value over our winning picture candidate)
+	 * this moves srcset's value to memory for later use and removes the attr
+	 */
+	pf.dodgeSrcset = function( img ) {
+		if ( img.srcset ) {
+			img[ pf.ns ].srcset = img.srcset;
+			img.removeAttribute( "srcset" );
+		}
+	};
+
+	/*
+	 * Accept a source or img element and process its srcset and sizes attrs
+	 */
+	pf.processSourceSet = function( el ) {
+		var srcset = el.getAttribute( "srcset" ),
+			sizes = el.getAttribute( "sizes" ),
+			candidates = [];
+
+		// if it's an img element, use the cached srcset property (defined or not)
+		if ( el.nodeName.toUpperCase() === "IMG" && el[ pf.ns ] && el[ pf.ns ].srcset ) {
+			srcset = el[ pf.ns ].srcset;
+		}
+
+		if ( srcset ) {
+			candidates = pf.getCandidatesFromSourceSet( srcset, sizes );
+		}
+		return candidates;
+	};
+
+	pf.applyBestCandidate = function( candidates, picImg ) {
+		var candidate,
+			length,
+			bestCandidate;
+
+		candidates.sort( pf.ascendingSort );
+
+		length = candidates.length;
+		bestCandidate = candidates[ length - 1 ];
+
+		for ( var i = 0; i < length; i++ ) {
+			candidate = candidates[ i ];
+			if ( candidate.resolution >= pf.getDpr() ) {
+				bestCandidate = candidate;
+				break;
+			}
+		}
+
+		if ( bestCandidate && !pf.endsWith( picImg.src, bestCandidate.url ) ) {
+			picImg.src = bestCandidate.url;
+			// currentSrc attribute and property to match
+			// http://picture.responsiveimages.org/#the-img-element
+			picImg.currentSrc = picImg.src;
+		}
+	};
+
+	pf.ascendingSort = function( a, b ) {
+		return a.resolution - b.resolution;
+	};
+
+	/*
+	 * In IE9, <source> elements get removed if they aren't children of
+	 * video elements. Thus, we conditionally wrap source elements
+	 * using <!--[if IE 9]><video style="display: none;"><![endif]-->
+	 * and must account for that here by moving those source elements
+	 * back into the picture element.
+	 */
+	pf.removeVideoShim = function( picture ) {
+		var videos = picture.getElementsByTagName( "video" );
+		if ( videos.length ) {
+			var video = videos[ 0 ],
+				vsources = video.getElementsByTagName( "source" );
+			while ( vsources.length ) {
+				picture.insertBefore( vsources[ 0 ], video );
+			}
+			// Remove the video element once we're finished removing its children
+			video.parentNode.removeChild( video );
+		}
+	};
+
+	/*
+	 * Find all `img` elements, and add them to the candidate list if they have
+	 * a `picture` parent, a `sizes` attribute in basic `srcset` supporting browsers,
+	 * a `srcset` attribute at all, and they haven’t been evaluated already.
+	 */
+	pf.getAllElements = function() {
+		var elems = [],
+			imgs = doc.getElementsByTagName( "img" );
+
+		for ( var h = 0, len = imgs.length; h < len; h++ ) {
+			var currImg = imgs[ h ];
+
+			if ( currImg.parentNode.nodeName.toUpperCase() === "PICTURE" ||
+				( currImg.getAttribute( "srcset" ) !== null ) || currImg[ pf.ns ] && currImg[ pf.ns ].srcset !== null ) {
+					elems.push( currImg );
+			}
+		}
+		return elems;
+	};
+
+	pf.getMatch = function( img, picture ) {
+		var sources = picture.childNodes,
+			match;
+
+		// Go through each child, and if they have media queries, evaluate them
+		for ( var j = 0, slen = sources.length; j < slen; j++ ) {
+			var source = sources[ j ];
+
+			// ignore non-element nodes
+			if ( source.nodeType !== 1 ) {
+				continue;
+			}
+
+			// Hitting the `img` element that started everything stops the search for `sources`.
+			// If no previous `source` matches, the `img` itself is evaluated later.
+			if ( source === img ) {
+				return match;
+			}
+
+			// ignore non-`source` nodes
+			if ( source.nodeName.toUpperCase() !== "SOURCE" ) {
+				continue;
+			}
+			// if it's a source element that has the `src` property set, throw a warning in the console
+			if ( source.getAttribute( "src" ) !== null && typeof console !== undefined ){
+				console.warn("The `src` attribute is invalid on `picture` `source` element; instead, use `srcset`.");
+			}
+
+			var media = source.getAttribute( "media" );
+
+			// if source does not have a srcset attribute, skip
+			if ( !source.getAttribute( "srcset" ) ) {
+				continue;
+			}
+
+			// if there's no media specified, OR w.matchMedia is supported
+			if ( ( !media || pf.matchesMedia( media ) ) ) {
+				var typeSupported = pf.verifyTypeSupport( source );
+
+				if ( typeSupported === true ) {
+					match = source;
+					break;
+				} else if ( typeSupported === "pending" ) {
+					return false;
+				}
+			}
+		}
+
+		return match;
+	};
+
+	function picturefill( opt ) {
+		var elements,
+			element,
+			parent,
+			firstMatch,
+			candidates,
+
+		options = opt || {};
+		elements = options.elements || pf.getAllElements();
+
+		// Loop through all elements
+		for ( var i = 0, plen = elements.length; i < plen; i++ ) {
+			element = elements[ i ];
+			parent = element.parentNode;
+			firstMatch = undefined;
+			candidates = undefined;
+
+			// expando for caching data on the img
+			if ( !element[ pf.ns ] ) {
+				element[ pf.ns ] = {};
+			}
+
+			// if the element has already been evaluated, skip it
+			// unless `options.force` is set to true ( this, for example,
+			// is set to true when running `picturefill` on `resize` ).
+			if ( !options.reevaluate && element[ pf.ns ].evaluated ) {
+				continue;
+			}
+
+			// if `img` is in a `picture` element
+			if ( parent.nodeName.toUpperCase() === "PICTURE" ) {
+
+				// IE9 video workaround
+				pf.removeVideoShim( parent );
+
+				// return the first match which might undefined
+				// returns false if there is a pending source
+				// TODO the return type here is brutal, cleanup
+				firstMatch = pf.getMatch( element, parent );
+
+				// if any sources are pending in this picture due to async type test(s)
+				// remove the evaluated attr and skip for now ( the pending test will
+				// rerun picturefill on this element when complete)
+				if ( firstMatch === false ) {
+					continue;
+				}
+			} else {
+				firstMatch = undefined;
+			}
+
+			// Cache and remove `srcset` if present and we’re going to be doing `picture`/`srcset`/`sizes` polyfilling to it.
+			if ( parent.nodeName.toUpperCase() === "PICTURE" ||
+			( element.srcset && !pf.srcsetSupported ) ||
+			( !pf.sizesSupported && ( element.srcset && element.srcset.indexOf("w") > -1 ) ) ) {
+				pf.dodgeSrcset( element );
+			}
+
+			if ( firstMatch ) {
+				candidates = pf.processSourceSet( firstMatch );
+				pf.applyBestCandidate( candidates, element );
+			} else {
+				// No sources matched, so we’re down to processing the inner `img` as a source.
+				candidates = pf.processSourceSet( element );
+
+				if ( element.srcset === undefined || element[ pf.ns ].srcset ) {
+					// Either `srcset` is completely unsupported, or we need to polyfill `sizes` functionality.
+					pf.applyBestCandidate( candidates, element );
+				} // Else, resolution-only `srcset` is supported natively.
+			}
+
+			// set evaluated to true to avoid unnecessary reparsing
+			element[ pf.ns ].evaluated = true;
+		}
+	}
+
+	/**
+	 * Sets up picture polyfill by polling the document and running
+	 * the polyfill every 250ms until the document is ready.
+	 * Also attaches picturefill on resize
+	 */
+	function runPicturefill() {
+		picturefill();
+		var intervalId = setInterval( function() {
+			// When the document has finished loading, stop checking for new images
+			// https://github.com/ded/domready/blob/master/ready.js#L15
+			picturefill();
+			if ( /^loaded|^i|^c/.test( doc.readyState ) ) {
+				clearInterval( intervalId );
+				return;
+			}
+		}, 250 );
+		if ( w.addEventListener ) {
+			var resizeThrottle;
+			w.addEventListener( "resize", function() {
+				if (!w._picturefillWorking) {
+					w._picturefillWorking = true;
+					w.clearTimeout( resizeThrottle );
+					resizeThrottle = w.setTimeout( function() {
+						picturefill({ reevaluate: true });
+						w._picturefillWorking = false;
+					}, 60 );
+				}
+			}, false );
+		}
+	}
+
+	runPicturefill();
+
+	/* expose methods for testing */
+	picturefill._ = pf;
+
+	/* expose picturefill */
+	if ( typeof module === "object" && typeof module.exports === "object" ) {
+		// CommonJS, just export
+		module.exports = picturefill;
+	} else if ( typeof define === "function" && define.amd ){
+		// AMD support
+		define( function() { return picturefill; } );
+	} else if ( typeof w === "object" ) {
+		// If no AMD and we are in the browser, attach to window
+		w.picturefill = picturefill;
+	}
+
+// } )( this, this.document );
+} )( window, window.document );
+
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/ready.js":[function(require,module,exports){
 /*!
   * domready (c) Dustin Diaz 2014 - License MIT
   */
@@ -2394,7 +3108,7 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
 
 });
 
-},{}],37:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/smooth-scroll.js":[function(require,module,exports){
 /**
  * smooth-scroll v5.0.1
  * Animate scrolling to anchor links, by Chris Ferdinandi.
@@ -2668,23 +3382,16 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
 
 	};
 
-	var smoothScroll = {
+	module.exports = {
 		init: init,
 		animateScroll: animateScroll
 	};
 
-
-	//
-	// Public APIs
-	//
-
-	// return exports;
-
-	module.exports = smoothScroll;
+	// module.exports = smoothScroll;
 
 })(window);
 
-},{}],38:[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/viewport-units-buggyfill.js":[function(require,module,exports){
 /*! 
  * viewport-units-buggyfill v0.3.1
  * @web: https://github.com/rodneyrehm/viewport-units-buggyfill/
@@ -2948,97 +3655,7 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
   };
 }));
 
-},{}],39:[function(require,module,exports){
-/**
- * Plugins
- */
+},{}]},{},["./source/js/app.js"])
 
-require('browsernizr/test/css/transitions');
-require('browsernizr/test/touchevents');
-require('browsernizr/lib/load');
-require('browsernizr/lib/prefixed');
-require('browsernizr/lib/setClasses');
 
-var Modernizr = require('browsernizr');
-var classie = require('./modules/classie.js');
-
-module.exports = (function() {
-	var container = document.querySelector('div.container');
-	var	triggerBttns = (!document.getElementsByClassName)
-    ? document.querySelectorAll('trigger-overlay')
-    : document.getElementsByClassName('trigger-overlay');
-	var overlay = document.querySelector('div.overlay');
-	var contactLinks = (!document.getElementsByClassName)
-    ? document.querySelectorAll('contact-link')
-    : document.getElementsByClassName('contact-link');
-	var	closeBttn = overlay.querySelector('button.overlay-close');
-	var	transEndEventNames = {
-			'WebkitTransition': 'webkitTransitionEnd',
-			'MozTransition': 'transitionend',
-			'OTransition': 'oTransitionEnd',
-			'msTransition': 'MSTransitionEnd',
-			'transition': 'transitionend'
-		};
-	var	transEndEventName = transEndEventNames[Modernizr.prefixed('transition')];
-	var	support = {transitions: Modernizr.csstransitions};
-
-	// console.log(triggerBttns);
-	// console.log(contactLinks);
-
-	function toggleOverlay(e) {
-		e.preventDefault();
-
-		if(classie.has(overlay, 'open')) {
-			classie.remove(overlay, 'open');
-			classie.remove(overlay, 'dark');
-			classie.remove(overlay, 'light');
-			classie.remove(container, 'overlay-open');
-			classie.remove(container, 'top');
-			classie.remove(container, 'bottom');
-			classie.add(overlay, 'close');
-			var onEndTransitionFn = function(e) {
-				if(support.transitions) {
-					if(e.propertyName !== 'visibility') return;
-					this.removeEventListener(transEndEventName, onEndTransitionFn);
-				}
-				classie.remove( overlay, 'close' );
-			};
-			if(support.transitions) {
-				overlay.addEventListener(transEndEventName, onEndTransitionFn);
-			}
-			else {
-				onEndTransitionFn();
-			}
-		}
-		else if( !classie.has(overlay, 'close')) {
-			classie.add(overlay, 'open');
-			classie.add(container, 'overlay-open');
-
-			if (classie.has(e.srcElement, 'top')) {
-				classie.add(container, 'top');
-				classie.add(overlay, 'dark');
-			} else {
-				classie.add(container, 'bottom');
-				classie.add(overlay, 'light');
-			}
-		}
-	}
-
-	// Loop through all triggers in the DOM and bind a click listener
-	for (var i = 0, len = triggerBttns.length; i < len; i++) {
-		triggerBttns[i].addEventListener('click', toggleOverlay)
-	}
-
-	closeBttn.addEventListener('click', toggleOverlay);
-
-	// Close the overlay by clicking anywhere on it
-	overlay.addEventListener('click', toggleOverlay);
-
-	// Stop clicks on contact links from bubbling up to the overlay
-	for (var i = 0, len = contactLinks.length; i < len; i++) {
-		contactLinks[i].addEventListener('click', function(e) {
-			e.stopPropagation();
-		})
-	}
-})();
-},{"./modules/classie.js":34,"browsernizr":2,"browsernizr/lib/load":16,"browsernizr/lib/prefixed":21,"browsernizr/lib/setClasses":23,"browsernizr/test/css/transitions":32,"browsernizr/test/touchevents":33}]},{},[1]);
+//# sourceMappingURL=browserified.map

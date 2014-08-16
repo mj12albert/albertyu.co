@@ -12,6 +12,7 @@ exclude: [
   'Gemfile*',
   # 'css/',
   # 'sass/',
-  'js/',
-  'assets/'
+  # 'js/',
+  '**/*.svg'
+  # 'assets/svg/*'
 ]
