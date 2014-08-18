@@ -7,7 +7,6 @@ var streamify = require('gulp-streamify');
 var exorcist = require('exorcist');
 var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
-var bundleLogger = require('../util/bundleLogger');
 
 gulp.task('watchify', function() {
   function browserifyShare(){
