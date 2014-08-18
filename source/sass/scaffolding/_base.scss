@@ -45,6 +45,12 @@ body {
   }
 }
 
+// <div class="container" role="main">
+[role="main"] {
+  position: relative;
+  z-index: 90;
+}
+
 // <div>
 .block {
   width: 100%;
