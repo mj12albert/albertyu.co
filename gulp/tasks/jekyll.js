@@ -5,6 +5,7 @@ var argv = require('yargs').argv;
 var processhtml = require('gulp-processhtml');
 var cleanhtml = require('gulp-cleanhtml');
 var replace = require('gulp-replace');
+var logger = require('../util/logger');
 
 gulp.task('jekyll', ['clean'], function() {
   !argv.production
@@ -17,7 +18,7 @@ var jekyllWatch = function() {
 
   gulp.watch('source/**/*.html')
     .on('change', function(e) {
-      gutil.log(gutil.colors.yellow("  modified/jekyll", e.path.replace(process.cwd(), '')));
+      logger.jekyllUpdate(e);
     });
 }
 

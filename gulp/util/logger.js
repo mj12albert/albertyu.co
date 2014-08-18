@@ -9,6 +9,10 @@ var startTime;
 
 module.exports = {
 
+  jekyllUpdate: function(e) {
+    gutil.log(gutil.colors.yellow("  modified/jekyll", e.path.replace(process.cwd(), '')));
+  },
+
   sassModified: function(e) {
     gutil.log(gutil.colors.yellow("modified/sass", e.path.replace(process.cwd(), '')));
   },
@@ -37,7 +41,7 @@ module.exports = {
     gutil.log('Finished', gutil.colors.green("'bundle'"), 'in', gutil.colors.magenta(prettyTime));
   },
 
-  browserifyUpdate: function(e) {
+  watchifyUpdate: function(e) {
     startTime = process.hrtime();
 
     var diff = e.toString().replace(process.cwd(), '');

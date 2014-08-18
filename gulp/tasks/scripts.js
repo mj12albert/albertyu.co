@@ -43,7 +43,7 @@ var jsWatchify = function() {
     b = watchify(b);
 
     b.on('update', function(e){
-      logger.browserifyUpdate(e);
+      logger.watchifyUpdate(e);
       bundleShare(b);
     });
 

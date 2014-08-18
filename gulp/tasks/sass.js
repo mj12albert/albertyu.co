@@ -47,16 +47,12 @@ var sassBuild = function() {
     }))
     .on('error', function(err) {
       logger.sassError(err);
-      // var file = err.message.slice(6).slice(0, err.message.slice(6).indexOf('('));
-      // var message = err.message.slice(err.message.indexOf('('), err.message.length);
-
-      // gutil.log(gutil.colors.red("error"), gutil.colors.red(file), message);
     })
     .pipe(rename("albertyu.css"))
     .pipe(minifycss({ keepSpecialComments: 0 }))
-    .pipe(gulp.dest('./deploy/css'))
-    .on('end', function() {
+    .pipe(gulp.dest('./deploy/css'));
+    /*.on('end', function() {
       gulp.src('./deploy/css/*.css')
         .pipe(tallyWeight());
-    });
+    });*/
 }
