@@ -17,6 +17,7 @@
     "gulp-replace": "^0.4.0",
     "gulp-rimraf": "^0.1.0",
     "gulp-ruby-sass": "^0.7.1",
+    "gulp-smoosher": "0.0.5",
     "gulp-streamify": "0.0.5",
     "gulp-strip-debug": "^0.3.0",
     "gulp-uglify": "^0.3.1",

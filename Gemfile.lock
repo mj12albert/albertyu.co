@@ -72,7 +72,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (3.1.2)
     safe_yaml (1.0.3)
-    sass (3.3.14)
+    sass (3.4.0)
     sassy-maps (0.4.0)
       sass (~> 3.3)
     timers (1.1.0)

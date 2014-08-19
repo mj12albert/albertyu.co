@@ -10,39 +10,40 @@
 //                                                                             /
 //=============================================================================/
 
-.browser-rejection-overlay {
+.browser-rejection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+
   background: #181818;
   color: #efefef;
   -webkit-font-smoothing: antialiased;
 }
 
-.browser-rejection-overlay .xFull {
+.browser-rejection .maxwidth {
   max-width: 1500px;
   border: 15px solid transparent;
   border-width: 0 15px;
 }
 
-
-.browser-rejection-overlay .the-logo {
-  height: 76px;
-  position: relative;
-  z-index: 3;
-  // background: url("../img/typecode_sm_white_v2.png") center left no-repeat transparent;
-}
-
-
-.browser-rejection-overlay .the-error {
+.browser-rejection-error {
   z-index: 1;
-  max-width: 696px;
+  max-width: 660px;
   margin: 0 auto;
 }
 
-
-.browser-rejection-overlay .bigtext {
-  font-weight: 700;
+.browser-rejection-error__bigtext {
+  @extend %callunaBold;
   font-size: 6.854em;
   line-height: 1;
   letter-spacing: -2px;
+  color: #dedede;
+
   margin-top: 0.833em;
   margin-left: -0.06em;
   margin-bottom: 0.236em;
@@ -52,63 +53,44 @@
 }
 
 
-.browser-rejection-overlay .description {
+.browser-rejection-error__description {
   margin-left: .2em;
-  font-family: Georgia, serif;
+  // @extend %callunaRegular;
+  font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1.65em;
-  font-weight: 400;
+  // line-height: 1.348;
   line-height: 1.4;
+  color: #aaa;
+  color: rgba(255,255,255,0.65);
 
   // width: 75%;
   min-width: 325px;
-  max-width: 696px;
-}
-
-
-.browser-rejection-overlay .description p {
+  max-width: 660px;
   margin-bottom: 0.5em;
-  color: #aaa;
-  color: rgba(255,255,255,0.65);
 }
 
+  .browser-rejection-error__description a {
+    text-decoration: none;
 
-.browser-rejection-overlay .description a {
-  // font-weight: 400;
-  // letter-spacing: -1px;
-  color: #fff;
-  border-bottom: 2px solid #eee;
-}
+    &:link,
+    &:visited {
+      color: #efefef;
+      border-bottom: 2px solid #eaeaea;
+    }
 
+    &:focus,
+    &:hover {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
 
-.browser-rejection-overlay .description a:hover {
-  border-bottom-color: #fff;
-}
+    &:active {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+  }
 
-.browser-rejection-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999999;
-}
-
-// .browser-rejection-overlay .bigtext {
-//   margin-left: -0.09em;
-//   letter-spacing: -0.03em;
-// }
-
-// .browser-rejection-overlay .bigtext .first-letter {
-//   letter-spacing: -0.05em;
-// }
-
-// .browser-rejection-overlay .description a {
-//   border-bottom-color: #fefefe;
-// }
-
-.browser-rejection-overlay {
+.browser-rejection {
   .neon {
     padding: 0 2px;
     border-bottom-width: 1px;
