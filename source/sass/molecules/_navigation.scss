@@ -10,13 +10,16 @@
 //                                                                             /
 //=============================================================================/
 
-nav {
+// <nav>
+[role="navigation"] {
   padding: 3.1rem 0 0.618rem;
 
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
+
+  -webkit-backface-visibility: hidden;
 }
 
 // <ul>

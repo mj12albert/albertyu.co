@@ -5,42 +5,29 @@
 //       PROJECT: albertyu.co                                                  /
 //        CLIENT: Albert Yu                                                    /
 //   DELIVERABLE: Website Prototype                                            /
-//         CLASS: Organism                                                     /
-//         TITLE: Site Header                                                  /
+//         CLASS: Molecule                                                     /
+//         TITLE:                                                              /
 //                                                                             /
 //=============================================================================/
-
-// <section>
-.hero {
-  position: relative;
-  width: 95%;
-  margin-left: 5%;
-  // background: #fdfdfd;
-
-  @include breakpoint($tablet) {
-    width: 80%;
-    max-width: 66.6666666667rem; // 1200px/18
-    height: 90vh;
-    margin: 0 auto;
+.loaded {
+  .main-title {
+    opacity: 1 !important;
+    @include transition(opacity 900ms);
   }
 
-  @include breakpoint(48.0625em) {
-
+  [role="navigation"] {
+    opacity: 1 !important;
+    @include transition(opacity 900ms 900ms);
   }
 
-  @include breakpoint($desktop) {
-    max-width: 48.4848484848rem;
+  .block {
+    opacity: 1 !important;
+    // compass's transform @mixin adds perspective() which is iffy
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    @include translateY(0,0);
+    @include transition(transform 600ms 1800ms);
   }
 }
-
-  // <header>
-  .header {
-    @extend %hero-column;
-    margin: 0 auto 0 0;
-    padding-top: 5%;
-    padding-bottom: 4.765rem;
-
-    @include breakpoint($tablet) {
-      padding-top: 10%;
-    }
-  }

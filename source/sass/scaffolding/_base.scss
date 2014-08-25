@@ -18,6 +18,8 @@ html {
   @include breakpoint($desktop) {
     font: normal 137.5%/1.6 serif;
   }
+
+  -webkit-backface-visibility: hidden;
 }
 
 body {
@@ -55,6 +57,7 @@ body {
 .block {
   width: 100%;
   position: relative;
+  -webkit-backface-visibility: hidden;
 }
 
 .column,
