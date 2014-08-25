@@ -40,7 +40,8 @@ var sassWatch = function() {
 }
 
 var sassBuild = function() {
-  return gulp.src('./source/sass/*.scss')
+  // inline.scss is for manually inlining into <head>
+  return gulp.src(['./source/sass/*.scss', '!**/inline.scss'])
     .pipe(sass({
       bundleExec: true,
       compass: true,
