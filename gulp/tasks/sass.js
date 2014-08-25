@@ -5,6 +5,7 @@ var sass = require('gulp-ruby-sass');
 var minifycss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var tallyWeight = require('../util/tallyWeight');
+var rimraf = require('gulp-rimraf');
 var logger = require('../util/logger');
 
 /*gulp.task('sass', ['clean'], function() {
@@ -14,7 +15,8 @@ var logger = require('../util/logger');
 })*/
 
 !argv.production
-  ? gulp.task('sass', function(){ sassWatch() })
+  // ? gulp.task('sass', function(){ sassWatch() })
+  ? gulp.task('sass', function(){ console.log("bcw directly") })
   : gulp.task('sass', ['clean'], function(){ sassBuild() })
 
 var sassWatch = function() {
@@ -38,21 +40,23 @@ var sassWatch = function() {
 }
 
 var sassBuild = function() {
-  return gulp.src('source/sass/**/*.{scss,sass}')
+  return gulp.src('./source/sass/*.scss')
     .pipe(sass({
       bundleExec: true,
       compass: true,
       sourcemap: false,
+      sourcemapPath: '../sass',
       require: ['breakpoint']
     }))
     .on('error', function(err) {
       logger.sassError(err);
     })
-    .pipe(rename("albertyu.css"))
+    // .pipe(rename("albertyu.css"))
     .pipe(minifycss({ keepSpecialComments: 0 }))
-    .pipe(gulp.dest('./deploy/css'));
-    /*.on('end', function() {
-      gulp.src('./deploy/css/*.css')
-        .pipe(tallyWeight());
-    });*/
+    .pipe(gulp.dest('./deploy/css'))
+    .on('end', function() {
+      // sourcemap: false isn't working, so manually delete .map from deploy dir
+      gulp.src('./deploy/css/*.css.map')
+        .pipe(rimraf());
+    });
 }

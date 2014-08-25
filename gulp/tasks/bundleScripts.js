@@ -19,11 +19,11 @@ var logger = require('../util/logger');
 })*/
 
 !argv.production
-  ? gulp.task('scripts', function(){ jsWatchify() })
-  : gulp.task('scripts', ['clean'], function(){ jsDeploy() })
+  ? gulp.task('bundleScripts', function(){ jsWatchify() })
+  : gulp.task('bundleScripts', ['clean'], function(){ jsDeploy() })
 
 var jsDeploy = function() {
-  return browserify('./source/js/app.js')
+  return browserify('./source/js/src/app.js')
     .bundle()
     .pipe(source('albertyu.js'))
     .pipe(streamify(stripDebug()))
@@ -47,7 +47,7 @@ var jsWatchify = function() {
       bundleShare(b);
     });
 
-    b.add('./source/js/app.js');
+    b.add('./source/js/src/app.js');
     bundleShare(b);
   }
 
@@ -60,9 +60,9 @@ var jsWatchify = function() {
       })
       .pipe(source('browserified.js'))
       .pipe(transform(function() {
-        return exorcist('./source/js/browserified.map');
+        return exorcist('./source/js/dist/browserified.map');
       }))
-      .pipe(gulp.dest('./source/js/'))
+      .pipe(gulp.dest('./source/js/dist/'))
       .on('end', logger.finish);
   }
 

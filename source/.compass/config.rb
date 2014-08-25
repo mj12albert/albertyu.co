@@ -31,6 +31,6 @@ fonts_dir = "fonts"
 Sass::Script::Number.precision = 10
 
 # Enable Sourcemaps
-sourcemap = true
+# sourcemap = true
 
 require "breakpoint"
