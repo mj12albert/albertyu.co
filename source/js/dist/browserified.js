@@ -1,24 +1,53 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"./source/js/app.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"./source/js/src/app.js":[function(require,module,exports){
 var fastclick = require('./modules/fastclick.js');
 var viewports = require('./modules/viewport-units-buggyfill.js');
 var domready = require('./modules/ready.js');
 var picturefill = require('./modules/picturefill.js');
 var smoothScroll = require('./modules/smooth-scroll.js');
-require('./modules/overlay.js');
+var classie = require('./modules/classie.js');
+var style = document.documentElement.style;
 
-domready(function() {
+/*domready(function() {
   console.log("ready!!!");
 
   viewports.init();
 
   fastclick(document.body);
 
-  smoothScroll.init();
-
-  // ...
+  // smoothScroll.init();
 
 })
-},{"./modules/fastclick.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/fastclick.js","./modules/overlay.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/overlay.js","./modules/picturefill.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/picturefill.js","./modules/ready.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/ready.js","./modules/smooth-scroll.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/smooth-scroll.js","./modules/viewport-units-buggyfill.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/viewport-units-buggyfill.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/index.js":[function(require,module,exports){
+
+window.addEventListener('load', function load(e) {
+  // console.log(e);
+
+  window.removeEventListener('load', load, false);
+
+  classie.remove(document.documentElement, 'loading');
+
+  smoothScroll.init();
+})*/
+
+viewports.init();
+fastclick(document.body);
+smoothScroll.init();
+
+window.addEventListener('load', function load(e) {
+  window.removeEventListener('load', load, false);
+  classie.remove(document.documentElement, 'loading');
+  classie.add(document.documentElement, 'loaded')
+})
+
+if ('-ms-scroll-limit' in style || 'behavior' in style) {
+  // IE needs domready for overlay.js to init correctly
+  domready(function() {
+    require('./modules/overlay.js');
+  })
+} else {
+  // browserify's require() works just fine on other browsers
+  require('./modules/overlay.js');
+}
+},{"./modules/classie.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/classie.js","./modules/fastclick.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/fastclick.js","./modules/overlay.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/overlay.js","./modules/picturefill.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/picturefill.js","./modules/ready.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/ready.js","./modules/smooth-scroll.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/smooth-scroll.js","./modules/viewport-units-buggyfill.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/viewport-units-buggyfill.js"}],"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/index.js":[function(require,module,exports){
 var Modernizr = require('./lib/Modernizr'),
     ModernizrProto = require('./lib/ModernizrProto'),
     classes = require('./lib/classes'),
@@ -1445,7 +1474,7 @@ This test will also return `true` for Firefox 4 Multitouch support.
   });
 
 
-},{"./../lib/Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./../lib/prefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixes.js","./../lib/testStyles":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testStyles.js"}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/classie.js":[function(require,module,exports){
+},{"./../lib/Modernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/Modernizr.js","./../lib/prefixes":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixes.js","./../lib/testStyles":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/testStyles.js"}],"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/classie.js":[function(require,module,exports){
 /*!
  * classie v1.0.1
  * class helper functions
@@ -1532,7 +1561,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/fastclick.js":[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/fastclick.js":[function(require,module,exports){
 /**
  * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
  *
@@ -2355,7 +2384,7 @@ if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) 
 	window.FastClick = FastClick;
 }
 
-},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/overlay.js":[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/overlay.js":[function(require,module,exports){
 /**
  * Plugins
  */
@@ -2453,7 +2482,7 @@ module.exports = (function() {
 		})
 	}
 })();
-},{"./classie.js":"/Users/mj12albert/Servers/albertyu.co/source/js/modules/classie.js","browsernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/index.js","browsernizr/lib/load":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/load.js","browsernizr/lib/prefixed":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixed.js","browsernizr/lib/setClasses":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/setClasses.js","browsernizr/test/css/transitions":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/css/transitions.js","browsernizr/test/touchevents":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/touchevents.js"}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/picturefill.js":[function(require,module,exports){
+},{"./classie.js":"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/classie.js","browsernizr":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/index.js","browsernizr/lib/load":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/load.js","browsernizr/lib/prefixed":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/prefixed.js","browsernizr/lib/setClasses":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/lib/setClasses.js","browsernizr/test/css/transitions":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/css/transitions.js","browsernizr/test/touchevents":"/Users/mj12albert/Servers/albertyu.co/node_modules/browsernizr/test/touchevents.js"}],"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/picturefill.js":[function(require,module,exports){
 /*! Picturefill - v2.1.0 - 2014-07-25
 * http://scottjehl.github.io/picturefill
 * Copyright (c) 2014 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT */
@@ -3078,7 +3107,7 @@ window.matchMedia || (window.matchMedia = function() {
 // } )( this, this.document );
 } )( window, window.document );
 
-},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/ready.js":[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/ready.js":[function(require,module,exports){
 /*!
   * domready (c) Dustin Diaz 2014 - License MIT
   */
@@ -3108,7 +3137,7 @@ window.matchMedia || (window.matchMedia = function() {
 
 });
 
-},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/smooth-scroll.js":[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/smooth-scroll.js":[function(require,module,exports){
 /**
  * smooth-scroll v5.0.1
  * Animate scrolling to anchor links, by Chris Ferdinandi.
@@ -3391,7 +3420,7 @@ window.matchMedia || (window.matchMedia = function() {
 
 })(window);
 
-},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/modules/viewport-units-buggyfill.js":[function(require,module,exports){
+},{}],"/Users/mj12albert/Servers/albertyu.co/source/js/src/modules/viewport-units-buggyfill.js":[function(require,module,exports){
 /*! 
  * viewport-units-buggyfill v0.3.1
  * @web: https://github.com/rodneyrehm/viewport-units-buggyfill/
@@ -3655,7 +3684,7 @@ window.matchMedia || (window.matchMedia = function() {
   };
 }));
 
-},{}]},{},["./source/js/app.js"])
+},{}]},{},["./source/js/src/app.js"])
 
 
 //# sourceMappingURL=browserified.map
