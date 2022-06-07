@@ -1,4 +1,4 @@
-FROM node:16.15-alpine3.15
+FROM node:16.15-alpine3.15 AS build_stage
 
 # https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#global-npm-dependencies
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
@@ -26,9 +26,8 @@ WORKDIR ${WORK_DIR}
 COPY ["package-lock.json", "package.json", "./"]
 
 RUN npm set progress=false && \
-    npm install -g pm2 --no-cache && \
     npm ci \
-    --production \
+    # --production \
     --unsafe-perm \
     --no-cache && \
     npm cache clean --force
@@ -36,6 +35,21 @@ RUN npm set progress=false && \
 COPY . .
 
 RUN npm run build
+
+FROM node:16.15-alpine3.15
+
+COPY ["package-lock.json", "package.json", "./"]
+
+RUN npm set progress=false && \
+    npm install -g pm2 --no-cache && \
+    npm ci \
+    --production \
+    --unsafe-perm \
+    --no-cache && \
+    npm cache clean --force
+
+COPY --from=build_stage /deploy/albertyu/.next ./.next
+COPY --from=build_stage /deploy/albertyu/public ./public
 
 EXPOSE 3000
 
