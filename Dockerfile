@@ -35,6 +35,8 @@ RUN npm set progress=false && \
 
 COPY . .
 
+RUN npm run build
+
 EXPOSE 3000
 
 USER node

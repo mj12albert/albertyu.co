@@ -3,11 +3,11 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Create and publish a Docker image
+name: Dockerize and push image to github container registry
 
 on:
   push:
-    branches: ['develop']
+    branches: ['ghcr']
 
 env:
   REGISTRY: ghcr.io
