@@ -2,51 +2,41 @@ version: '3'
 
 services:
   nextjs:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: "${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
     container_name: nextjs
-    restart: unless-stopped
+    restart: always
     networks:
-      - app-network
+      - albertyu-net
 
   nginx:
     image: nginx:mainline-alpine
     container_name: nginx
-    restart: unless-stopped
+    restart: always
     ports:
       - "80:80"
+      - "443:443"
     volumes:
-      - web-root:/var/www/html
-      - ./nginx-conf:/etc/nginx/conf.d
+      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
+      - ./nginx/dhparam:/etc/letsencrypt/dhparam:ro
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
     depends_on:
       - nextjs
     networks:
-      - app-network
+      - albertyu-net
 
   certbot:
-    image: certbot/certbot
-    container_name: certbot
+    image: certbot/dns-cloudflare
     volumes:
+      - ./cloudflare/:/opt/cloudflare/:ro
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email info@albertyu.co --agree-tos --no-eff-email --staging -d *.albertyu.co
+    command: certonly --non-interactive --dns-cloudflare --dns-cloudflare-credentials /opt/cloudflare/credentials --keep-until-expiring --agree-tos --email info@albertyu.co -d *.albertyu.co --server https://acme-v02.api.letsencrypt.org/directory
 
 volumes:
   certbot-etc:
   certbot-var:
-  web-root:
-    driver: local
-    driver_opts:
-      type: none
-      device: /deploy/albertyu
-      o: bind
 
 networks:
-  app-network:
+  albertyu-net:
     driver: bridge
