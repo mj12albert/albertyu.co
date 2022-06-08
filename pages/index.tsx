@@ -18,8 +18,8 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          version:
+          <code className={styles.code}>{process.env.IMAGE_TAG_V}</code>
         </p>
 
         <div className={styles.grid}>

@@ -46,7 +46,7 @@ jobs:
           ECR_REGISTRY: ${{ env.ECR_PUBLIC_REGISTRY }}
           IMAGE_TAG: ${{ steps.get-short-sha.outputs.short_sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg IMAGE_TAG_V=$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output    name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
@@ -68,7 +68,7 @@ jobs:
             docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
             container_id="$(docker ps --filter name="$CONTAINER_NAME" -q)"
             if [[ ! -z "$container_id" ]]; then
-                echo "$NAME already running with id $container_id, stopping now ..."
+                echo "$CONTAINER_NAME already running with id $container_id, stopping now ..."
                 docker stop "$container_id"
             fi
             docker run --rm -p 80:3000 -d --name=$CONTAINER_NAME $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG

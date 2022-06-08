@@ -4,6 +4,9 @@ FROM node:16.15-alpine3.15 AS build_stage
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
 
+ARG IMAGE_TAG_V
+ENV IMAGE_TAG_V=$IMAGE_TAG_V
+
 # app name
 ENV APP_NAME=albertyu
 ENV WORK_DIR /deploy/${APP_NAME}
