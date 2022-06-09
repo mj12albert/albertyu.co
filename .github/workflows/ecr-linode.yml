@@ -47,7 +47,7 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output    name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
-      - name: Manually upload docker-compose.yml to Linode
+      - name: Manually scp some files to Linode
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_DEPLOY_HOST }}
@@ -71,21 +71,12 @@ jobs:
           envs: ECR_REGISTRY,ECR_REPOSITORY,IMAGE_TAG,CONTAINER_NAME,CLOUDFLARE_DNS_API_TOKEN
           script: |
             echo "Starting deploy..."
-            docker images
-            docker ps -a
             docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-            container_id="$(docker ps --filter name="$CONTAINER_NAME" -q)"
-            if [[ ! -z "$container_id" ]]; then
-                echo "$CONTAINER_NAME already running with id $container_id, stopping now ..."
-                docker stop "$container_id"
-            fi
             rm .env
             touch .env
             echo "ECR_REGISTRY=$ECR_REGISTRY" >> ./.env
             echo "ECR_REPOSITORY=$ECR_REPOSITORY" >> ./.env
             echo "IMAGE_TAG=$IMAGE_TAG" >> ./.env
-            echo "wrote env file:"
-            cat .env
             curl https://ssl-config.mozilla.org/ffdhe2048.txt > ./nginx/dhparam
             echo "dns_cloudflare_api_token = $CLOUDFLARE_DNS_API_TOKEN" >> ./cloudflare/credentials
             chmod go-r ./cloudflare/credentials
