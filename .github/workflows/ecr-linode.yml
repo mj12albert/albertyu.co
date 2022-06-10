@@ -72,11 +72,12 @@ jobs:
           script: |
             echo "Starting deploy..."
             docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-            rm .env
-            touch .env
-            echo "ECR_REGISTRY=$ECR_REGISTRY" >> ./.env
-            echo "ECR_REPOSITORY=$ECR_REPOSITORY" >> ./.env
-            echo "IMAGE_TAG=$IMAGE_TAG" >> ./.env
+            echo > .env
+            cat <<EOF > .env
+            ECR_REGISTRY=$ECR_REGISTRY
+            ECR_REPOSITORY=$ECR_REPOSITORY
+            IMAGE_TAG=$IMAGE_TAG
+            EOF
             curl https://ssl-config.mozilla.org/ffdhe2048.txt > ./nginx/dhparam
             echo "dns_cloudflare_api_token = $CLOUDFLARE_DNS_API_TOKEN" >> ./cloudflare/credentials
             chmod go-r ./cloudflare/credentials
