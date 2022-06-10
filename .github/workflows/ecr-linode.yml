@@ -81,6 +81,8 @@ jobs:
             curl https://ssl-config.mozilla.org/ffdhe2048.txt > ./nginx/dhparam
             echo "dns_cloudflare_api_token = $CLOUDFLARE_DNS_API_TOKEN" >> ./cloudflare/credentials
             chmod go-r ./cloudflare/credentials
+            mkdir -p ./nginx/localhost
+            openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./nginx/localhost/localhost.key -out ./nginx/localhost/localhost.crt -subj "/CN=localhost"
             docker container prune -f
             docker-compose --env-file ./.env up -d
             docker-compose ps -a
