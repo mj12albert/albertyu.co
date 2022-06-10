@@ -17,7 +17,6 @@ services:
       - "443:443"
     volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
-      - ./nginx/localhost:/etc/nginx/localhost/:ro
       - ./nginx/dhparam:/etc/letsencrypt/dhparam:ro
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt

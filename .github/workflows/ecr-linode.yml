@@ -57,7 +57,7 @@ jobs:
           source: "./.dockerignore, ./docker-compose.yml, ./Dockerfile, ./nginx/*, ./cloudflare/*, ./package.json, ./package-lock.json"
           target: "/home/${{ secrets.SSH_DEPLOY_USER }}"
 
-      - name: Deploy via SSH
+      - name: SSH into Linode to docker-compose up
         uses: appleboy/ssh-action@master
         env:
           ECR_REGISTRY: ${{ env.ECR_PUBLIC_REGISTRY }}
@@ -71,7 +71,7 @@ jobs:
           envs: ECR_REGISTRY,ECR_REPOSITORY,IMAGE_TAG,CONTAINER_NAME,CLOUDFLARE_DNS_API_TOKEN
           script: |
             echo "Starting deploy..."
-            docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+            docker pull --quiet $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
             echo > .env
             cat <<EOF > .env
             ECR_REGISTRY=$ECR_REGISTRY
