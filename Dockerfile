@@ -30,9 +30,8 @@ COPY ["package-lock.json", "package.json", "./"]
 
 RUN npm set progress=false && \
     npm ci \
-    # --production \
-    --unsafe-perm \
-    --no-cache && \
+    --legacy-peer-deps \
+    --unsafe-perm && \
     npm cache clean --force
 
 COPY . .
@@ -44,11 +43,11 @@ FROM node:16.15-alpine3.15
 COPY ["package-lock.json", "package.json", "./"]
 
 RUN npm set progress=false && \
-    npm install -g pm2 --no-cache && \
+    npm install pm2 --location=global && \
     npm ci \
-    --production \
-    --unsafe-perm \
-    --no-cache && \
+    --legacy-peer-deps \
+    --omit=dev \
+    --unsafe-perm && \
     npm cache clean --force
 
 COPY --from=build_stage /deploy/albertyu/.next ./.next
