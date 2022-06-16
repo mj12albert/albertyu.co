@@ -13,7 +13,7 @@ module.exports = {
   reactStrictMode: true,
 
   env: {
-    IMAGE_TAG_V: process.env.IMAGE_TAG_V,
+    IMAGE_TAG: process.env.IMAGE_TAG,
   },
 
   async headers() {

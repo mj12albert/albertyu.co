@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import TestIcon from 'assets/svg/test.svg'
+import Text from 'components/Text';
+import ExternalLink from 'components/ExternalLink';
 
 const Home: NextPage = () => {
   return (
@@ -11,21 +12,39 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <TestIcon />
+      <main sx={{ bg: 'background' }}>
+        <section sx={{ minHeight: '100vh', p: 5 }}>
+          <h1 sx={{
+            variant: 'typography.headings.h1',
+            mt: 11,
+          }}>
+            I’m Albert Yu
+          </h1>
 
-      <main>
-        <h1 sx={{
-          fontFamily: 'heading',
-        }}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+          <Text sx={{ fontSize: 18 }}>
+            I’m a systems-minded designer and developer with 10 years of experience building digital products.
+          </Text>
 
-        <p sx={{
-          fontFamily: 'body',
+          <Text sx={{ fontSize: 18 }}>
+            My work focuses on delivering meaningful experiences for the web, with an interest towards practicing constraint-based design and inclusive design.
+          </Text>
+
+          <Text sx={{ fontSize: 18 }}>
+            Currently at <ExternalLink href="google.com" sx={{ fontSize: 'inherit' }}>Neat</ExternalLink> – we’re working on bringing modern financial services for businesses on the web.
+          </Text>
+        </section>
+
+        <footer sx={{
+          display: 'flex',
+          flexFlow: 'row nowrap',
+          justifyContent: 'center',
+          alignItems: 'center',
+          p: 5,
         }}>
-          version:
-          <code>{process.env.IMAGE_TAG_V}</code>
-        </p>
+          <code sx={{
+            fontSize: 0,
+          }}>{process.env.IMAGE_TAG}</code>
+        </footer>
       </main>
     </div>
   )
