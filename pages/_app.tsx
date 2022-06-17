@@ -1,4 +1,4 @@
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from 'assets/theme';
 import './global.css';
@@ -8,7 +8,7 @@ function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;

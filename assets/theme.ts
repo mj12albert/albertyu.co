@@ -1,8 +1,9 @@
 import type { Theme } from 'theme-ui';
 
-const SYSTEM_FONT_STACK = 'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"';
+const SYSTEM_FONT_STACK =
+  'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"';
 
-const makeTheme = <T extends Theme>(t: T) => t
+const makeTheme = <T extends Theme>(t: T) => t;
 
 export const theme = makeTheme({
   colors: {
@@ -83,7 +84,7 @@ export const theme = makeTheme({
         fontSize: 1,
         lineHeight: 'heading',
         fontWeight: 600,
-      }
+      },
     },
     text: {
       fontSize: 2,
@@ -91,20 +92,21 @@ export const theme = makeTheme({
     },
   },
 
+  // prettier-ignore
   space: [
-    0,    // 0
-    2,    // 1
-    4,    // 2
-    8,    // 3
-    12,   // 4
-    16,   // 5
-    24,   // 6
-    32,   // 7
-    40,   // 8
-    48,   // 9
-    64,   // 10
-    80,   // 11
-    96,   // 12
+    0,  // 0
+    2,  // 1
+    4,  // 2
+    8,  // 3
+    12, // 4
+    16, // 5
+    24, // 6
+    32, // 7
+    40, // 8
+    48, // 9
+    64, // 10
+    80, // 11
+    96, // 12
   ],
 
   styles: {
@@ -114,6 +116,6 @@ export const theme = makeTheme({
       color: 'gray.8',
       backgroundColor: 'gray.2',
       overscrollBehavior: 'auto',
-    }
-  }
+    },
+  },
 });

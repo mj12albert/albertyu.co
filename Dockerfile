@@ -44,6 +44,7 @@ COPY ["package-lock.json", "package.json", "./"]
 
 RUN npm set progress=false && \
     npm install pm2 --location=global && \
+    npm set-script prepare "" && \
     npm ci \
     --legacy-peer-deps \
     --omit=dev \

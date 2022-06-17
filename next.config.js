@@ -7,7 +7,7 @@ const CSP_DIRECTIVES = `
   style-src 'self' 'unsafe-inline';
   font-src 'self';
   img-src 'self' data:;
-`
+`;
 
 module.exports = {
   reactStrictMode: true,
@@ -23,14 +23,14 @@ module.exports = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: CSP_DIRECTIVES.replace(/\s{2,}/g, ' ').trim()
+            value: CSP_DIRECTIVES.replace(/\s{2,}/g, ' ').trim(),
           },
         ],
-      }
-    ]
+      },
+    ];
   },
 
-  webpack: config => {
+  webpack: (config) => {
     const rules = config.module.rules.find(
       (rule) => rule.test && rule.test.test('.svg'),
     );
@@ -46,4 +46,4 @@ module.exports = {
   },
 
   poweredByHeader: false,
-}
+};

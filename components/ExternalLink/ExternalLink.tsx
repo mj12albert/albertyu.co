@@ -1,11 +1,11 @@
-import { ThemeUICSSObject } from 'theme-ui'
+import { ThemeUICSSObject } from 'theme-ui';
 
 type Props = {
-  href: string,
-  sx?: ThemeUICSSObject,
-  rel?: string,
-  id?: string | undefined,
-  children: React.ReactNode,
+  href: string;
+  sx?: ThemeUICSSObject;
+  rel?: string;
+  id?: string | undefined;
+  children: React.ReactNode;
 };
 
 const ExternalLink = ({ href, sx = {}, children, ...rest }: Props) => {
@@ -21,10 +21,10 @@ const ExternalLink = ({ href, sx = {}, children, ...rest }: Props) => {
         ...sx,
       }}
       {...rest}
-     >
-       {children}
-     </a>
-  )
-}
+    >
+      {children}
+    </a>
+  );
+};
 
 export default ExternalLink;
