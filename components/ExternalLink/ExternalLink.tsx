@@ -2,11 +2,13 @@ import { ThemeUICSSObject } from 'theme-ui'
 
 type Props = {
   href: string,
-  sx: ThemeUICSSObject,
+  sx?: ThemeUICSSObject,
+  rel?: string,
+  id?: string | undefined,
   children: React.ReactNode,
 };
 
-const ExternalLink = ({ href, sx, children, ...rest }: Props) => {
+const ExternalLink = ({ href, sx = {}, children, ...rest }: Props) => {
   return (
     <a
       href={href}
@@ -14,7 +16,8 @@ const ExternalLink = ({ href, sx, children, ...rest }: Props) => {
       rel="noopener noreferrer"
       sx={{
         variant: 'typography.text',
-        color: 'blue',
+        color: 'blue.6',
+        fontSize: 'inherit',
         ...sx,
       }}
       {...rest}
@@ -22,10 +25,6 @@ const ExternalLink = ({ href, sx, children, ...rest }: Props) => {
        {children}
      </a>
   )
-}
-
-ExternalLink.defaultProps = {
-  sx: {}
 }
 
 export default ExternalLink;
