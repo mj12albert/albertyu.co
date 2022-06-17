@@ -9,7 +9,7 @@ const Text = ({ sx = {}, children, ...rest }: Props) => {
   return (
     <p
       sx={{
-        variant: 'typography.text',
+        variant: 'typography.text.body',
         ...sx,
       }}
       {...rest}

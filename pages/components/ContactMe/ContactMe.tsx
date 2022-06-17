@@ -1,5 +1,6 @@
 import { ThemeUICSSObject } from 'theme-ui';
 import ExternalLink from 'components/ExternalLink';
+import List from 'components/List';
 
 type ItemProps = {
   sx?: ThemeUICSSObject;
@@ -26,7 +27,7 @@ const Item = ({ sx = {}, children, ...rest }: ItemProps) => {
 
 const ContactMe = ({ sx = {}, ...rest }: { sx?: ThemeUICSSObject }) => {
   return (
-    <section sx={{ mt: 6, mb: 8, px: 5, ...sx }}>
+    <section sx={{ ...sx }} {...rest}>
       <h3
         sx={{
           variant: 'typography.headings.h4',
@@ -37,12 +38,11 @@ const ContactMe = ({ sx = {}, ...rest }: { sx?: ThemeUICSSObject }) => {
         Contact
       </h3>
 
-      <ul
+      <List
         sx={{
           m: 0,
           px: 0,
         }}
-        {...rest}
       >
         <Item>
           <ExternalLink id="mailto" href="#">
@@ -64,7 +64,7 @@ const ContactMe = ({ sx = {}, ...rest }: { sx?: ThemeUICSSObject }) => {
             LinkedIn
           </ExternalLink>
         </Item>
-      </ul>
+      </List>
     </section>
   );
 };

@@ -3,10 +3,11 @@ import { ThemeUICSSObject } from 'theme-ui';
 const Divider = ({ sx, ...rest }: { sx?: ThemeUICSSObject }) => (
   <hr
     sx={{
-      mx: 5,
       border: 0,
-      height: 2,
       backgroundColor: 'gray.3',
+      height: 2,
+      width: '100%',
+      m: 0,
       ...sx,
     }}
     {...rest}

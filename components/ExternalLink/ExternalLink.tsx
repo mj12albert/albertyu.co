@@ -15,9 +15,12 @@ const ExternalLink = ({ href, sx = {}, children, ...rest }: Props) => {
       target="_blank"
       rel="noopener noreferrer"
       sx={{
-        variant: 'typography.text',
+        variant: 'typography.text.body',
         color: 'blue.6',
         fontSize: 'inherit',
+        '&:hover, &:focus': {
+          color: 'blue.4',
+        },
         ...sx,
       }}
       {...rest}

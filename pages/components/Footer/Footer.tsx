@@ -3,7 +3,7 @@ import { ThemeUICSSObject } from 'theme-ui';
 const SmallText = ({ children }: { children: React.ReactNode }) => (
   <code
     sx={{
-      fontSize: 0,
+      fontSize: [0, '11px'],
       color: 'gray.4',
     }}
   >
@@ -19,7 +19,7 @@ const Footer = ({ sx = {}, ...rest }: { sx?: ThemeUICSSObject }) => {
         flexFlow: 'row nowrap',
         justifyContent: 'space-between',
         alignItems: 'center',
-        p: 5,
+        py: [5, null, 4],
         ...sx,
       }}
       {...rest}

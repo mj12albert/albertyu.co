@@ -6,30 +6,19 @@ const SYSTEM_FONT_STACK =
 const makeTheme = <T extends Theme>(t: T) => t;
 
 export const theme = makeTheme({
-  colors: {
-    slate: [
-      '#f8fafc',
-      '#f1f5f9',
-      '#e2e8f0',
-      '#cbd5e1',
-      '#94a3b8',
-      '#64748b',
-      '#475569',
-      '#334155',
-      '#1e293b',
-      '#0f172a',
-    ],
+  breakpoints: [512, 768, 1024].map((n) => `${(n / 16).toFixed(2)}em`),
 
+  colors: {
     gray: [
       '#f9fafb',
       '#f3f4f6',
-      '#e5e7eb',
-      '#d1d5db',
-      '#9ca3af',
-      '#6b7280',
+      '#e5e7eb', // 2 - root bg color
+      '#d1d5db', // 3 - <hr> color
+      '#9ca3af', // 4 - legalese text color
+      '#6b7280', // 5 - muted text color
       '#4b5563',
       '#374151',
-      '#1f2937',
+      '#1f2937', // 8 - root text color
       '#111827',
     ],
 
@@ -38,9 +27,9 @@ export const theme = makeTheme({
       '#dbeafe',
       '#bfdbfe',
       '#93c5fd',
-      '#60a5fa',
+      '#60a5fa', // 4 - <a> hover color
       '#3b82f6',
-      '#2563eb',
+      '#2563eb', // 6 - <a> color
       '#1d4ed8',
       '#1e40af',
       '#1e3a8a',
@@ -80,6 +69,11 @@ export const theme = makeTheme({
         lineHeight: 'heading',
         fontWeight: 600,
       },
+      h3: {
+        fontSize: 3,
+        lineHeight: 'heading',
+        fontWeight: 600,
+      },
       h4: {
         fontSize: 1,
         lineHeight: 'heading',
@@ -87,8 +81,32 @@ export const theme = makeTheme({
       },
     },
     text: {
-      fontSize: 2,
-      lineHeight: 'body',
+      lede: {
+        fontSize: 18,
+        lineHeight: 'body',
+        maxWidth: '40ch',
+      },
+      body: {
+        fontSize: 2,
+        lineHeight: 'body',
+        maxWidth: '45ch',
+      },
+    },
+  },
+
+  grids: {
+    containers: {
+      '12col': {
+        display: 'grid',
+        gridTemplateColumns: ['1fr', null, 'repeat(12, minmax(16px, 1fr))'],
+        gridColumnGap: 5,
+      },
+    },
+    items: {
+      content: {
+        gridColumn: [null, null, '6/span 5', '7/span 4'],
+        alignSelf: 'center',
+      },
     },
   },
 
@@ -116,6 +134,9 @@ export const theme = makeTheme({
       color: 'gray.8',
       backgroundColor: 'gray.2',
       overscrollBehavior: 'auto',
+      strong: {
+        fontWeight: 500,
+      },
     },
   },
 });
