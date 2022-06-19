@@ -1,0 +1,84 @@
+name: build image and publish to ECR
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: albertyu.co
+  ECR_PUBLIC_REGISTRY: public.ecr.aws/a2k4l4h2
+  CONTAINER_NAME: nextjs
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-22.04
+
+    outputs:
+      IMAGE_TAG: ${{ steps.env-to-outputs.outputs.short_sha }}
+      ECR_PUBLIC_REGISTRY: ${{ steps.env-to-outputs.outputs.ecr_public_registry }}
+      ECR_REPOSITORY: ${{ steps.env-to-outputs.outputs.ecr_repository }}
+      CONTAINER_NAME: ${{ steps.env-to-outputs.outputs.container_name }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Convert env vars to outputs
+        # when calling the reusable deploy workflow the env context cannot be evaluated =/
+        # https://github.community/t/passing-environment-variables-to-reusable-workflow/230456
+        id: env-to-outputs
+        run: |
+          echo "::set-output name=short_sha::$(git rev-parse --short HEAD)"
+          echo "::set-output name=ecr_public_registry::${{ env.ECR_PUBLIC_REGISTRY }}"
+          echo "::set-output name=ecr_repository::${{ env.ECR_REPOSITORY }}"
+          echo "::set-output name=container_name::${{ env.CONTAINER_NAME }}"
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to ECR
+        id: login-ecr
+        run: |
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ env.ECR_PUBLIC_REGISTRY }}
+
+      - name: Build, tag, push image to ECR
+        id: build-and-push-image
+        env:
+          IMAGE_TAG: ${{ steps.env-to-outputs.outputs.short_sha }}
+        run: |
+          docker build -t $ECR_PUBLIC_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --build-arg IMAGE_TAG=$IMAGE_TAG .
+          docker push $ECR_PUBLIC_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "::set-output name=image::$ECR_PUBLIC_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+
+  deploy-testing:
+    name: Testing
+    needs: build
+    uses: ./.github/workflows/deploy-ec2.yml
+    with:
+      ENVIRONMENT: testing
+      IMAGE_TAG: ${{ needs.build.outputs.IMAGE_TAG }}
+      ECR_PUBLIC_REGISTRY: ${{ needs.build.outputs.ECR_PUBLIC_REGISTRY }}
+      ECR_REPOSITORY: ${{ needs.build.outputs.ECR_REPOSITORY }}
+      CONTAINER_NAME: ${{ needs.build.outputs.CONTAINER_NAME }}
+    secrets: inherit
+
+  deploy-prod:
+    name: Production
+    if: github.ref == 'refs/heads/main'
+    needs: [build, deploy-testing]
+    uses: ./.github/workflows/deploy-ec2.yml
+    with:
+      ENVIRONMENT: production
+      IMAGE_TAG: ${{ needs.build.outputs.IMAGE_TAG }}
+      ECR_PUBLIC_REGISTRY: ${{ needs.build.outputs.ECR_PUBLIC_REGISTRY }}
+      ECR_REPOSITORY: ${{ needs.build.outputs.ECR_REPOSITORY }}
+      CONTAINER_NAME: ${{ needs.build.outputs.CONTAINER_NAME }}
+    secrets: inherit

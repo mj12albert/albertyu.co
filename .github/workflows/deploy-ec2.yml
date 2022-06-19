@@ -1,0 +1,47 @@
+on:
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        default: 'testing'
+        required: true
+        type: string
+      IMAGE_TAG:
+        required: true
+        type: string
+      ECR_PUBLIC_REGISTRY:
+        required: true
+        type: string
+      ECR_REPOSITORY:
+        required: true
+        type: string
+      CONTAINER_NAME:
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    environment: ${{ inputs.ENVIRONMENT }}
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: ssh into ec2 and deploy
+        uses: appleboy/ssh-action@master
+        env:
+          ENVIRONMENT: ${{ inputs.ENVIRONMENT }}
+          IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
+          ECR_PUBLIC_REGISTRY: ${{ inputs.ECR_PUBLIC_REGISTRY }}
+          ECR_REPOSITORY: ${{ inputs.ECR_REPOSITORY }}
+          CONTAINER_NAME: ${{ inputs.CONTAINER_NAME }}
+        with:
+          host: ${{ secrets.EC2_DEPLOY_HOST }}
+          username: ${{ secrets.EC2_DEPLOY_USER }}
+          key: ${{ secrets.EC2_DEPLOY_KEY }}
+          envs: ENVIRONMENT, IMAGE_TAG, ECR_PUBLIC_REGISTRY, ECR_REPOSITORY, CONTAINER_NAME
+          script: |
+            echo "deploying version: $IMAGE_TAG to $ENVIRONMENT"
+
+            docker image prune -a
+            docker container prune -f
+            docker pull --quiet $ECR_PUBLIC_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+            docker stop $CONTAINER_NAME
+            docker run --detach --interactive --rm --tty --name $CONTAINER_NAME -p 80:3000 public.ecr.aws/a2k4l4h2/albertyu.co:$IMAGE_TAG
