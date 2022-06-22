@@ -11,7 +11,7 @@ type CommonProps = {
 const Title = ({ sx, children, ...rest }: CommonProps) => (
   <strong
     sx={{
-      color: 'gray.8',
+      color: 'gray.7',
       ...sx,
     }}
     {...rest}
@@ -29,7 +29,7 @@ const Item = ({ sx = {}, children, ...rest }: CommonProps) => {
       }}
       {...rest}
     >
-      <Text sx={{ variant: 'typography.text.body', m: 0, color: 'gray.5' }}>
+      <Text sx={{ variant: 'typography.text.body', m: 0, color: 'gray.6' }}>
         {children}
       </Text>
     </List.Item>
@@ -43,7 +43,7 @@ const Link = ({
 }: React.ComponentProps<typeof ExternalLink>) => (
   <ExternalLink
     sx={{
-      color: 'gray.5',
+      color: 'gray.6',
       textDecoration: 'none',
       '&:hover, &:focus': {
         textDecoration: 'underline',

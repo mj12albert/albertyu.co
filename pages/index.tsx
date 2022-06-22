@@ -137,10 +137,11 @@ const Home: NextPage = () => {
           </Text>
 
           <Text sx={{ variant: 'typography.text.body', mb: 1 }}>
-            You can see a previous version of this site{' '}
-            <ExternalLink href="https://v1.albertyu.co">here</ExternalLink>. I’m
-            planning to “restore” it using Svelte to
-            try&nbsp;out&nbsp;Svelte&nbsp;😉.
+            I recently restored{' '}
+            <ExternalLink href="https://v1.albertyu.co">
+              the previous version
+            </ExternalLink>{' '}
+            of this site using SvelteKit to try&nbsp;out&nbsp;Svelte&nbsp;🧑‍💻.
           </Text>
         </section>
 

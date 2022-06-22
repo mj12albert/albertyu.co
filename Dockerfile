@@ -40,7 +40,7 @@ RUN npm run build
 
 FROM node:16.15-alpine3.15
 
-COPY ["package-lock.json", "package.json", "./"]
+COPY ["package-lock.json", "package.json", "next.config.js", "./"]
 
 RUN npm set progress=false && \
     npm install pm2 --location=global && \

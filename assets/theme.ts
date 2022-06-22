@@ -131,11 +131,11 @@ export const theme = makeTheme({
     // root is applied to <html> and will override global.css
     root: {
       fontFamily: 'sans',
-      color: 'gray.8',
-      backgroundColor: 'gray.2',
+      color: 'gray.7',
+      backgroundColor: 'gray.1',
       overscrollBehavior: 'auto',
       strong: {
-        fontWeight: 500,
+        fontWeight: 600,
       },
     },
   },

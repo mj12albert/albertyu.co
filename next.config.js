@@ -16,6 +16,11 @@ module.exports = {
     IMAGE_TAG: process.env.IMAGE_TAG,
   },
 
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
+
   async headers() {
     return [
       {
