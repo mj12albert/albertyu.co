@@ -158,6 +158,18 @@ const Home: NextPage = () => {
             mb: 7,
           }}
         />
+
+        <code
+          sx={{
+            position: 'fixed',
+            bottom: 2,
+            right: 2,
+            fontSize: [0, '11px'],
+            color: 'gray.3',
+          }}
+        >
+          {process.env.IMAGE_TAG}
+        </code>
       </main>
     </div>
   );
