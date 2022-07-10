@@ -5,13 +5,12 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Item = ({ sx = {}, children, ...rest }: Props) => {
+const Item = ({ children, ...rest }: Props) => {
   return (
     <li
       sx={{
         pl: 3,
         mb: 1,
-        ...sx,
       }}
       {...rest}
     >
@@ -20,13 +19,12 @@ const Item = ({ sx = {}, children, ...rest }: Props) => {
   );
 };
 
-const List = ({ sx = {}, children, ...rest }: Props) => {
+const List = ({ children, ...rest }: Props) => {
   return (
     <ul
       sx={{
         listStyleType: '"–"',
         px: 4,
-        ...sx,
       }}
       {...rest}
     >

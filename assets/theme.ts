@@ -38,7 +38,8 @@ export const theme = makeTheme({
 
   fonts: {
     sans: SYSTEM_FONT_STACK,
-    monospace: 'Menlo, monospace',
+    monospace:
+      'ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace',
   },
 
   fontSizes: [

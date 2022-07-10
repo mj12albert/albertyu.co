@@ -7,7 +7,7 @@ type ItemProps = {
   children: React.ReactNode;
 };
 
-const Item = ({ sx = {}, children, ...rest }: ItemProps) => {
+const Item = ({ children, ...rest }: ItemProps) => {
   return (
     <li
       sx={{
@@ -16,7 +16,6 @@ const Item = ({ sx = {}, children, ...rest }: ItemProps) => {
         alignItems: 'center',
         fontSize: 1,
         mb: '1px',
-        ...sx,
       }}
       {...rest}
     >
@@ -25,9 +24,9 @@ const Item = ({ sx = {}, children, ...rest }: ItemProps) => {
   );
 };
 
-const ContactMe = ({ sx = {}, ...rest }: { sx?: ThemeUICSSObject }) => {
+const ContactMe = (props: { sx?: ThemeUICSSObject }) => {
   return (
-    <section sx={{ ...sx }} {...rest}>
+    <section {...props}>
       <h3
         sx={{
           variant: 'typography.headings.h4',
@@ -45,7 +44,7 @@ const ContactMe = ({ sx = {}, ...rest }: { sx?: ThemeUICSSObject }) => {
         }}
       >
         <Item>
-          <ExternalLink id="mailto" href="#">
+          <ExternalLink id="mailto" href="mailto:">
             Email
           </ExternalLink>
         </Item>

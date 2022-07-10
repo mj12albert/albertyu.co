@@ -8,12 +8,11 @@ type ItemProps = {
   children: React.ReactNode;
 };
 
-const Item = ({ sx = {}, children, ...rest }: ItemProps) => {
+const Item = ({ children, ...rest }: ItemProps) => {
   return (
     <List.Item
       sx={{
         mb: 1,
-        ...sx,
       }}
       {...rest}
     >
@@ -22,8 +21,8 @@ const Item = ({ sx = {}, children, ...rest }: ItemProps) => {
   );
 };
 
-const ToolsList = ({ sx, ...rest }: { sx?: ThemeUICSSObject }) => (
-  <List sx={sx} {...rest}>
+const ToolsList = (props: { sx?: ThemeUICSSObject }) => (
+  <List {...props}>
     <Item>React / Node.js</Item>
     <Item>JavaScript / TypeScript</Item>
     <Item>styled-components / Emotion / Tailwind / Sass</Item>

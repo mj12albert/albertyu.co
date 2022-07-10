@@ -8,11 +8,10 @@ type CommonProps = {
   children: React.ReactNode;
 };
 
-const Title = ({ sx, children, ...rest }: CommonProps) => (
+const Title = ({ children, ...rest }: CommonProps) => (
   <strong
     sx={{
       color: 'gray.7',
-      ...sx,
     }}
     {...rest}
   >
@@ -20,12 +19,11 @@ const Title = ({ sx, children, ...rest }: CommonProps) => (
   </strong>
 );
 
-const Item = ({ sx = {}, children, ...rest }: CommonProps) => {
+const Item = ({ children, ...rest }: CommonProps) => {
   return (
     <List.Item
       sx={{
         mb: 3,
-        ...sx,
       }}
       {...rest}
     >
@@ -37,7 +35,6 @@ const Item = ({ sx = {}, children, ...rest }: CommonProps) => {
 };
 
 const Link = ({
-  sx = {},
   children,
   ...rest
 }: React.ComponentProps<typeof ExternalLink>) => (
@@ -48,7 +45,6 @@ const Link = ({
       '&:hover, &:focus': {
         textDecoration: 'underline',
       },
-      ...sx,
     }}
     rel="noopener noreferrer nofollow"
     {...rest}
@@ -57,8 +53,8 @@ const Link = ({
   </ExternalLink>
 );
 
-const WorkHistory = ({ sx, ...rest }: { sx?: ThemeUICSSObject }) => (
-  <List sx={sx} {...rest}>
+const WorkHistory = (props: { sx?: ThemeUICSSObject }) => (
+  <List {...props}>
     <Item>
       <Title>Product Designer</Title>&nbsp;&middot;&nbsp;
       <Link href="https://www.rapyd.net">Rapyd</Link>
