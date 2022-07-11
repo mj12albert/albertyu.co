@@ -38,9 +38,9 @@ const ToolsList = (props: { sx?: ThemeUICSSObject }) => (
         Artline 220
       </ExternalLink>
     </Item>
-    <Item>Figma / Miro</Item>
-    <Item>git / Sublime Text / Docker</Item>
-    <Item>GitHub / Jira / Confluence</Item>
+    <Item>Sublime Text / Figma / Miro</Item>
+    <Item>git / GitHub / Docker</Item>
+    <Item>Slack / Jira / Confluence</Item>
   </List>
 );
 

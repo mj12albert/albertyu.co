@@ -10,6 +10,8 @@ const Text = ({ sx = {}, children, ...rest }: Props) => {
     <p
       sx={{
         variant: 'typography.text.body',
+        mt: 0,
+        mb: 5,
         ...sx,
       }}
       {...rest}

@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <main
         sx={{
           variant: 'grids.containers.12col',
-          gridTemplateRows: 'minmax(90vh, max-content)',
+          gridTemplateRows: 'minmax(93vh, max-content)',
           mx: [5, 6, 0],
         }}
       >
@@ -43,17 +43,17 @@ const Home: NextPage = () => {
 
           <Text sx={{ variant: 'typography.text.lede' }}>
             I’m a systems-minded designer and developer with 10&nbsp;years of
-            experience building digital&nbsp;products.
+            experience building for the web.
           </Text>
 
           <Text sx={{ variant: 'typography.text.lede' }}>
-            My work focuses on delivering meaningful experiences for the web,
-            with an interest towards practicing constraint-based design and
-            inclusive&nbsp;design.
+            My work focuses on delivering memorable experiences for meaningful
+            products, with an interest towards practicing constraint-based
+            design and inclusive&nbsp;design.
           </Text>
 
-          <Text sx={{ variant: 'typography.text.lede' }}>
-            Currently at{' '}
+          <Text sx={{ variant: 'typography.text.lede', mb: 8 }}>
+            Currently working on design systems at{' '}
             <ExternalLink
               href="https://www.neatcommerce.com"
               rel="noopener noreferrer nofollow"
@@ -67,8 +67,12 @@ const Home: NextPage = () => {
             >
               Rapyd
             </ExternalLink>
-            ) – we’re working on bringing modern financial services to
-            businesses on the&nbsp;web.
+            ) – a modern financial services platform for all businesses on
+            the&nbsp;web.
+          </Text>
+
+          <Text sx={{ variant: 'typography.text.lede', mb: 0 }}>
+            I’m not looking for new opportunities at this time 🙂
           </Text>
         </section>
 
@@ -91,7 +95,7 @@ const Home: NextPage = () => {
 
           <Text sx={{ variant: 'typography.text.body', mt: 4, mb: 6 }}>
             I love designing with code, and thrive at the intersection of design
-            &amp;&nbsp;engineering. Here’s some stuff I use on a
+            &amp;&nbsp;engineering. Here’s some tools and tech I use on a
             daily&nbsp;basis:
           </Text>
 
@@ -126,14 +130,14 @@ const Home: NextPage = () => {
             I’m redesigning in the open. At the moment I’m using Next.js and{' '}
             <ExternalLink href="https://theme-ui.com/">theme-ui</ExternalLink>{' '}
             so I can quickly try out some ideas. It deploys via GitHub Actions
-            and runs on Docker in a Linode VPS.
+            and runs on Docker on AWS.
           </Text>
 
           <Text sx={{ variant: 'typography.text.body' }}>
-            Sure I could have just used Vercel like a normal person but I
+            Sure I could have used Vercel like a normal person but I
             over-engineered this bit to learn some modern ways to deploy
-            a&nbsp;website. At some point I’m totally going to try to run this
-            on&nbsp;Kubernetes.
+            a&nbsp;website. At some point I may be foolish enough try to run
+            this on&nbsp;Kubernetes.
           </Text>
 
           <Text sx={{ variant: 'typography.text.body', mb: 1 }}>
