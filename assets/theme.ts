@@ -11,14 +11,14 @@ export const theme = makeTheme({
   colors: {
     gray: [
       '#f9fafb',
-      '#f3f4f6',
-      '#e5e7eb', // 2 - root bg color
+      '#f3f4f6', // 1 - root bg color
+      '#e5e7eb',
       '#d1d5db', // 3 - <hr> color
-      '#9ca3af', // 4 - legalese text color
+      '#9ca3af',
       '#6b7280', // 5 - muted text color
       '#4b5563',
-      '#374151',
-      '#1f2937', // 8 - root text color
+      '#374151', // 7 - root text color
+      '#1f2937',
       '#111827',
     ],
 
@@ -129,7 +129,6 @@ export const theme = makeTheme({
   ],
 
   styles: {
-    // root is applied to <html> and will override global.css
     root: {
       fontFamily: 'sans',
       color: 'gray.7',

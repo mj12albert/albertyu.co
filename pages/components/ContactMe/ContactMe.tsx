@@ -15,7 +15,7 @@ const Item = ({ children, ...rest }: ItemProps) => {
         flexFlow: 'row nowrap',
         alignItems: 'center',
         fontSize: 1,
-        mb: '1px',
+        mb: 1,
       }}
       {...rest}
     >

@@ -27,7 +27,7 @@ const Item = ({ children, ...rest }: CommonProps) => {
       }}
       {...rest}
     >
-      <Text sx={{ variant: 'typography.text.body', m: 0, color: 'gray.6' }}>
+      <Text sx={{ variant: 'typography.text.body', m: 0, color: 'gray.5' }}>
         {children}
       </Text>
     </List.Item>
@@ -40,7 +40,7 @@ const Link = ({
 }: React.ComponentProps<typeof ExternalLink>) => (
   <ExternalLink
     sx={{
-      color: 'gray.6',
+      color: 'inherit',
       textDecoration: 'none',
       '&:hover, &:focus': {
         textDecoration: 'underline',
