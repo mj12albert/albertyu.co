@@ -129,15 +129,14 @@ const Home: NextPage = () => {
           <Text sx={{ variant: 'typography.text.body' }}>
             I’m redesigning in the open. At the moment I’m using Next.js and{' '}
             <ExternalLink href="https://theme-ui.com/">theme-ui</ExternalLink>{' '}
-            so I can quickly try out some ideas. It deploys via GitHub Actions
-            and runs on Docker on AWS.
+            so I can quickly try out some ideas.
           </Text>
 
           <Text sx={{ variant: 'typography.text.body' }}>
-            Sure I could have used Vercel like a normal person but I
-            over-engineered this bit to learn some modern ways to deploy
-            a&nbsp;website. At some point I may be foolish enough try to run
-            this on&nbsp;Kubernetes.
+            It deploys via GitHub Actions and runs on Docker on AWS,
+            deliberately over-engineered so I can keep up with modern ways to
+            deploy a&nbsp;website – Vercel is a bit too easy and where’s the fun
+            in that?
           </Text>
 
           <Text sx={{ variant: 'typography.text.body', mb: 1 }}>
