@@ -7,14 +7,9 @@ import List, { TextItem, ContactItem, WorkItem } from 'components/List';
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Albert Yu</title>
-        <meta
-          name="description"
-          content="Albert Yu is web developer &amp; designer. Currently based in Hong Kong."
-        />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main
@@ -244,20 +239,8 @@ const Home: NextPage = () => {
             </ContactItem>
           </List>
         </section>
-
-        <code
-          sx={{
-            position: 'fixed',
-            bottom: 2,
-            right: 2,
-            fontSize: [0, '11px'],
-            color: 'gray.3',
-          }}
-        >
-          {process.env.IMAGE_TAG}
-        </code>
       </main>
-    </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@
 const CSP_DIRECTIVES = `
   default-src 'self';
   script-src 'self' 'unsafe-eval';
-  script-src-elem 'self';
+  script-src-elem 'self' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   font-src 'self';
   img-src 'self' data:;

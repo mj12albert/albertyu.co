@@ -9,6 +9,12 @@ const makeTheme = <T extends Theme>(t: T) => t;
 export const theme = makeTheme({
   breakpoints: [512, 768, 1024].map((n) => `${(n / 16).toFixed(2)}em`),
 
+  config: {
+    useColorSchemeMediaQuery: true,
+    useLocalStorage: true,
+    printColorModeName: 'light',
+  },
+
   colors: {
     ...colors.scales,
     // inspired by @primer https://primer.style/design/foundations/color#functional-system ❤️
@@ -25,6 +31,25 @@ export const theme = makeTheme({
     accent: {
       fg: colors.scales.blue[6],
       active: colors.scales.blue[4],
+    },
+    modes: {
+      light: {},
+      dark: {
+        fg: {
+          default: colors.scales.zinc[2],
+          subtle: colors.scales.zinc[4],
+        },
+        border: {
+          default: colors.scales.zinc[7],
+        },
+        canvas: {
+          default: colors.scales.zinc[9],
+        },
+        accent: {
+          fg: colors.scales.blue[4],
+          active: colors.scales.blue[3],
+        },
+      },
     },
   },
 

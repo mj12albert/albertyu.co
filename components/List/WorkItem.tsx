@@ -63,7 +63,7 @@ const WorkItem = ({ title, org, href, period }: Props) => {
   return (
     <Item>
       <Title>{title}</Title>&nbsp;&middot;&nbsp;
-      {href ? <Link href="https://www.rapyd.net">{org}</Link> : org}
+      {href ? <Link href={href}>{org}</Link> : org}
       <br />
       {period}
     </Item>
