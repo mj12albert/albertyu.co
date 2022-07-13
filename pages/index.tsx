@@ -3,9 +3,7 @@ import Head from 'next/head';
 import Text from 'components/Text';
 import ExternalLink from 'components/ExternalLink';
 import Divider from 'components/Divider';
-import WorkHistory from './components/WorkHistory';
-import ToolsList from './components/ToolsList';
-import ContactMe from './components/ContactMe';
+import List, { TextItem, ContactItem, WorkItem } from 'components/List';
 
 const Home: NextPage = () => {
   return (
@@ -53,7 +51,7 @@ const Home: NextPage = () => {
           </Text>
 
           <Text sx={{ variant: 'typography.text.lede', mb: 8 }}>
-            Currently working on design systems at{' '}
+            Currently at{' '}
             <ExternalLink
               href="https://www.neatcommerce.com"
               rel="noopener noreferrer nofollow"
@@ -67,8 +65,7 @@ const Home: NextPage = () => {
             >
               Rapyd
             </ExternalLink>
-            ) – a modern financial services platform for all businesses on
-            the&nbsp;web.
+            ) – a modern fintech platform for businesses on the&nbsp;web.
           </Text>
 
           <Text sx={{ variant: 'typography.text.lede', mb: 0 }}>
@@ -91,7 +88,37 @@ const Home: NextPage = () => {
             Work Experience
           </h2>
 
-          <WorkHistory sx={{ mb: 7 }} />
+          <List sx={{ mb: 7 }}>
+            <WorkItem
+              title="Product Designer"
+              org="Rapyd"
+              href="https://www.rapyd.net"
+              period="2022–Now"
+            />
+            <WorkItem
+              title="Principal Software Engineer (Front-End)"
+              org="Neat"
+              href="https://www.neatcommerce.com"
+              period="2020–2022"
+            />
+            <WorkItem
+              title="Software Engineer / Team Lead (Front-End)"
+              org="Neat"
+              href="https://www.neatcommerce.com"
+              period="2017-2020"
+            />
+            <WorkItem
+              title="Software Engineer"
+              org="HelloToby"
+              href="https://www.hellotoby.com/en"
+              period="2016-2017"
+            />
+            <WorkItem
+              title="Web Designer / Developer"
+              org="Self-employed"
+              period="2011-2016"
+            />
+          </List>
 
           <Text sx={{ variant: 'typography.text.body', mt: 4, mb: 6 }}>
             I love designing with code, and thrive at the intersection of design
@@ -99,7 +126,26 @@ const Home: NextPage = () => {
             daily&nbsp;basis:
           </Text>
 
-          <ToolsList />
+          <List>
+            <TextItem>React / Node.js</TextItem>
+            <TextItem>JavaScript / TypeScript</TextItem>
+            <TextItem>styled-components / Emotion / Tailwind / Sass</TextItem>
+            <TextItem>
+              <ExternalLink href="https://konigi.com/tools/graph-paper/">
+                Konigi graph paper
+              </ExternalLink>{' '}
+              &amp;{' '}
+              <ExternalLink
+                href="https://artline.com.au/products/fineliners/fineline-pens/artline-220/"
+                rel="noopener noreferrer nofollow"
+              >
+                Artline 220
+              </ExternalLink>
+            </TextItem>
+            <TextItem>Sublime Text / Figma / Miro</TextItem>
+            <TextItem>git / GitHub / Docker</TextItem>
+            <TextItem>Slack / Jira / Confluence</TextItem>
+          </List>
         </section>
 
         <Divider
@@ -135,8 +181,7 @@ const Home: NextPage = () => {
           <Text sx={{ variant: 'typography.text.body' }}>
             It deploys via GitHub Actions and runs on Docker on AWS,
             deliberately over-engineered so I can keep up with modern ways to
-            deploy a&nbsp;website – Vercel is a bit too easy and where’s the fun
-            in that?
+            deploy a&nbsp;website.
           </Text>
 
           <Text sx={{ variant: 'typography.text.body', mb: 1 }}>
@@ -155,12 +200,50 @@ const Home: NextPage = () => {
           }}
         />
 
-        <ContactMe
+        <section
           sx={{
             variant: 'grids.items.content',
             mb: 7,
           }}
-        />
+        >
+          <h3
+            sx={{
+              variant: 'typography.headings.h4',
+              mt: 0,
+              mb: 3,
+            }}
+          >
+            Contact
+          </h3>
+
+          <List
+            sx={{
+              m: 0,
+              px: 0,
+            }}
+          >
+            <ContactItem>
+              <ExternalLink id="mailto" href="mailto:">
+                Email
+              </ExternalLink>
+            </ContactItem>
+
+            <ContactItem>
+              <ExternalLink href="https://github.com/mj12albert">
+                Github
+              </ExternalLink>
+            </ContactItem>
+
+            <ContactItem>
+              <ExternalLink
+                href="https://www.linkedin.com/in/mj12albert/"
+                rel="noopener noreferrer nofollow"
+              >
+                LinkedIn
+              </ExternalLink>
+            </ContactItem>
+          </List>
+        </section>
 
         <code
           sx={{
