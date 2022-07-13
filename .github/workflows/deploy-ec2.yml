@@ -38,10 +38,16 @@ jobs:
           key: ${{ secrets.EC2_DEPLOY_KEY }}
           envs: ENVIRONMENT, IMAGE_TAG, ECR_PUBLIC_REGISTRY, ECR_REPOSITORY, CONTAINER_NAME
           script: |
-            echo "deploying version: $IMAGE_TAG to $ENVIRONMENT"
+            echo "deploying $CONTAINER_NAME@$IMAGE_TAG to $ENVIRONMENT"
 
             docker image prune -a
             docker container prune -f
             docker pull --quiet $ECR_PUBLIC_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-            docker stop $CONTAINER_NAME
+            if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
+              echo ":: Found container - $CONTAINER_NAME"
+              if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
+                echo ":: Stopping running container - $CONTAINER_NAME"
+                docker stop $CONTAINER_NAME;
+              fi
+            fi
             docker run --detach --interactive --rm --tty --name $CONTAINER_NAME -p 80:3000 public.ecr.aws/a2k4l4h2/albertyu.co:$IMAGE_TAG
