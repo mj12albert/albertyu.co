@@ -17,7 +17,7 @@ type CommonProps = {
 const Title = ({ children, ...rest }: CommonProps) => (
   <strong
     sx={{
-      color: 'gray.7',
+      color: 'fg.default',
     }}
     {...rest}
   >
@@ -30,7 +30,7 @@ const Item = ({ children, ...rest }: CommonProps) => {
     <TextItem
       sx={{
         mb: 3,
-        color: 'gray.5',
+        color: 'fg.subtle',
       }}
       {...rest}
     >
@@ -49,6 +49,7 @@ const Link = ({
       textDecoration: 'none',
       '&:hover, &:focus': {
         textDecoration: 'underline',
+        color: 'inherit',
       },
     }}
     rel="noopener noreferrer nofollow"

@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const ExternalLink = ({ href, sx = {}, children, ...rest }: Props) => {
+const ExternalLink = ({ href, children, ...rest }: Props) => {
   return (
     <a
       href={href}
@@ -16,12 +16,11 @@ const ExternalLink = ({ href, sx = {}, children, ...rest }: Props) => {
       rel="noopener noreferrer"
       sx={{
         variant: 'typography.text.body',
-        color: 'blue.6',
+        color: 'accent.fg',
         fontSize: 'inherit',
         '&:hover, &:focus': {
-          color: 'blue.4',
+          color: 'accent.active',
         },
-        ...sx,
       }}
       {...rest}
     >

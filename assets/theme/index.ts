@@ -1,4 +1,5 @@
 import type { Theme } from 'theme-ui';
+import colors from './colors';
 
 const SYSTEM_FONT_STACK =
   'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"';
@@ -9,31 +10,22 @@ export const theme = makeTheme({
   breakpoints: [512, 768, 1024].map((n) => `${(n / 16).toFixed(2)}em`),
 
   colors: {
-    gray: [
-      '#f9fafb',
-      '#f3f4f6', // 1 - root bg color
-      '#e5e7eb',
-      '#d1d5db', // 3 - <hr> color
-      '#9ca3af',
-      '#6b7280', // 5 - muted text color
-      '#4b5563',
-      '#374151', // 7 - root text color
-      '#1f2937',
-      '#111827',
-    ],
-
-    blue: [
-      '#eff6ff',
-      '#dbeafe',
-      '#bfdbfe',
-      '#93c5fd',
-      '#60a5fa', // 4 - <a> hover color
-      '#3b82f6',
-      '#2563eb', // 6 - <a> color
-      '#1d4ed8',
-      '#1e40af',
-      '#1e3a8a',
-    ],
+    ...colors.scales,
+    // inspired by @primer https://primer.style/design/foundations/color#functional-system ❤️
+    fg: {
+      default: colors.scales.gray[7],
+      subtle: colors.scales.gray[5],
+    },
+    border: {
+      default: colors.scales.gray[3],
+    },
+    canvas: {
+      default: colors.scales.gray[1],
+    },
+    accent: {
+      fg: colors.scales.blue[6],
+      active: colors.scales.blue[4],
+    },
   },
 
   fonts: {
@@ -131,8 +123,8 @@ export const theme = makeTheme({
   styles: {
     root: {
       fontFamily: 'sans',
-      color: 'gray.7',
-      backgroundColor: 'gray.1',
+      color: 'fg.default',
+      backgroundColor: 'canvas.default',
       overscrollBehavior: 'auto',
       strong: {
         fontWeight: 600,

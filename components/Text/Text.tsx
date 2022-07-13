@@ -5,14 +5,13 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Text = ({ sx = {}, children, ...rest }: Props) => {
+const Text = ({ children, ...rest }: Props) => {
   return (
     <p
       sx={{
         variant: 'typography.text.body',
         mt: 0,
         mb: 5,
-        ...sx,
       }}
       {...rest}
     >
