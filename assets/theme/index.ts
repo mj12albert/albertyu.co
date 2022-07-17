@@ -1,4 +1,5 @@
 import type { Theme } from 'theme-ui';
+import { alpha } from '@theme-ui/color';
 import colors from './colors';
 
 const SYSTEM_FONT_STACK =
@@ -24,9 +25,13 @@ export const theme = makeTheme({
     },
     border: {
       default: colors.scales.gray[3],
+      muted: colors.scales.gray[2],
     },
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     canvas: {
       default: colors.scales.gray[1],
+      muted: alpha(colors.scales.gray[2], 0.5),
     },
     accent: {
       fg: colors.scales.blue[6],
@@ -41,9 +46,11 @@ export const theme = makeTheme({
         },
         border: {
           default: colors.scales.zinc[7],
+          muted: colors.scales.zinc[6],
         },
         canvas: {
           default: colors.scales.zinc[9],
+          muted: colors.scales.zinc[8],
         },
         accent: {
           fg: colors.scales.blue[4],
@@ -148,12 +155,14 @@ export const theme = makeTheme({
   styles: {
     root: {
       fontFamily: 'sans',
+      lineHeight: 'body',
       color: 'fg.default',
       backgroundColor: 'canvas.default',
       overscrollBehavior: 'auto',
       strong: {
         fontWeight: 600,
       },
+      transition: 'background-color 160ms ease-in-out',
     },
   },
 });

@@ -14,7 +14,6 @@ export default React.memo<any>(function GlobalStyles() {
         }
 
         html {
-          line-height: 1.15;
           -webkit-text-size-adjust: 100%;
           -moz-tab-size: 4;
           tab-size: 4;

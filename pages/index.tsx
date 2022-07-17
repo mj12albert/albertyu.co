@@ -4,6 +4,7 @@ import Text from 'components/Text';
 import ExternalLink from 'components/ExternalLink';
 import Divider from 'components/Divider';
 import List, { TextItem, ContactItem, WorkItem } from 'components/List';
+import ColorModeButton from 'components/ColorModeButton';
 
 const Home: NextPage = () => {
   return (
@@ -12,10 +13,39 @@ const Home: NextPage = () => {
         <title>Albert Yu</title>
       </Head>
 
+      <header
+        sx={{
+          height: [64, null, 60],
+          display: 'flex',
+          flexDirection: ['row', 'row-reverse'],
+          flexWrap: 'nowrap',
+          justifyContent: ['space-between', 'flex-start'],
+          alignItems: 'center',
+          gridColumn: [null, null, '1/span 12'],
+          px: [0, null, 6],
+        }}
+      >
+        <ColorModeButton />
+
+        {/* Navigation */}
+
+        <div
+          sx={{
+            display: ['none', 'flex'],
+            mr: 'auto',
+            textTransform: 'uppercase',
+            fontSize: 1,
+            fontWeight: 600,
+          }}
+        >
+          Albert Yu
+        </div>
+      </header>
+
       <main
         sx={{
           variant: 'grids.containers.12col',
-          gridTemplateRows: 'minmax(93vh, max-content)',
+          gridTemplateRows: 'minmax(90vh, max-content)',
           mx: [5, 6, 0],
         }}
       >
@@ -23,12 +53,13 @@ const Home: NextPage = () => {
           sx={{
             variant: 'grids.items.content',
             mt: [128, 8, 0],
-            mb: [6, null, 0],
+            mb: [10, null, 0],
           }}
         >
           <h1
             sx={{
               variant: 'typography.headings.h1',
+              ml: -1,
             }}
           >
             I’m Albert Yu
@@ -71,7 +102,7 @@ const Home: NextPage = () => {
         <section
           sx={{
             variant: 'grids.items.content',
-            mb: [8, null, 9],
+            mb: 0,
           }}
         >
           <h2
@@ -148,14 +179,14 @@ const Home: NextPage = () => {
             variant: 'grids.items.content',
             maxWidth: 128,
             mx: 'auto',
-            mb: [8, null, 10],
+            my: 10,
           }}
         />
 
         <section
           sx={{
             variant: 'grids.items.content',
-            mb: 10,
+            mb: 11,
           }}
         >
           <h2
