@@ -14,6 +14,7 @@ module.exports = {
 
   env: {
     IMAGE_TAG: process.env.IMAGE_TAG,
+    APP_ENV: process.env.APP_ENV,
   },
 
   i18n: {
