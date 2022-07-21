@@ -93,16 +93,19 @@ export const theme = makeTheme({
         fontSize: 4,
         lineHeight: 'heading',
         fontWeight: 600,
+        m: 0,
       },
       h3: {
         fontSize: 3,
         lineHeight: 'heading',
         fontWeight: 600,
+        m: 0,
       },
       h4: {
         fontSize: 1,
         lineHeight: 'heading',
         fontWeight: 600,
+        m: 0,
       },
     },
     text: {
