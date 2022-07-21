@@ -1,19 +1,16 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
+import Layout, { NextPageWithLayout } from 'components/Layout';
 import Text from 'components/Text';
 import ExternalLink from 'components/ExternalLink';
 import Divider from 'components/Divider';
 import List, { TextItem, ContactItem, WorkItem } from 'components/List';
-import Header from 'components/Header';
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
         <title>Albert Yu</title>
       </Head>
-
-      <Header />
 
       <main
         sx={{
@@ -267,6 +264,10 @@ const Home: NextPage = () => {
       </main>
     </>
   );
+};
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>;
 };
 
 export default Home;
