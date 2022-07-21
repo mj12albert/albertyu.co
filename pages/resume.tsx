@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { SxProp } from 'theme-ui';
 import BaseList from 'components/List';
-import { Organization, Position, Details } from 'components/Resume';
+import { Organization, Position, Details, Heading } from 'components/Resume';
 
 const List = (props: React.ComponentProps<typeof BaseList>) => {
   return (
@@ -15,32 +15,6 @@ const List = (props: React.ComponentProps<typeof BaseList>) => {
     />
   );
 };
-
-const Heading = ({
-  children,
-  ...rest
-}: {
-  children: React.ReactNode;
-} & SxProp) => (
-  <h2
-    sx={{
-      variant: 'typography.headings.h2',
-      fontSize: 2,
-      textTransform: 'uppercase',
-      fontWeight: 700,
-      color: 'fg.muted',
-      mb: 6,
-      breakAfter: 'avoid',
-      '@media print': {
-        fontSize: '10pt',
-        mb: 4,
-      },
-    }}
-    {...rest}
-  >
-    {children}
-  </h2>
-);
 
 const Small = ({
   children,
