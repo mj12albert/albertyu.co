@@ -141,7 +141,8 @@ export default React.memo<any>(function GlobalStyles() {
         }
 
         // end of modern-normalize
-        div {
+        div,
+        a {
           position: relative;
         }
       `}

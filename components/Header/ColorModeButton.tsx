@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useColorMode, SxProp } from 'theme-ui';
 import SunIcon from 'assets/svg/sun.svg';
 import MoonIcon from 'assets/svg/moon.svg';
@@ -5,16 +6,26 @@ import MoonIcon from 'assets/svg/moon.svg';
 const ColorModeButton = (props: SxProp) => {
   const [colorMode, setColorMode] = useColorMode();
 
+  const [state, setState] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (colorMode) {
+      setState(colorMode);
+    }
+  }, [colorMode]);
+
   return (
     <button
       type="button"
       onClick={() => {
-        const nextColorMode = {
-          light: 'dark',
-          dark: 'light',
-        }[colorMode];
+        if (state) {
+          const nextColorMode = {
+            light: 'dark',
+            dark: 'light',
+          }[state];
 
-        if (nextColorMode) setColorMode(nextColorMode);
+          if (nextColorMode) setColorMode(nextColorMode);
+        }
       }}
       sx={{
         appearance: 'none',
@@ -46,7 +57,7 @@ const ColorModeButton = (props: SxProp) => {
       }}
       {...props}
     >
-      {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
+      {state === 'light' ? <MoonIcon /> : <SunIcon />}
     </button>
   );
 };

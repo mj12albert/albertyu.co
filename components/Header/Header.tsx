@@ -1,5 +1,5 @@
 import ColorModeButton from './ColorModeButton';
-// import Navigation from './Navigation';
+import Navigation from './Navigation';
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
         justifyContent: ['space-between', 'flex-start'],
         alignItems: 'center',
         gridColumn: [null, null, '1/span 12'],
-        px: [0, null, 6],
+        px: [5, 6],
         '@media print': {
           display: 'none',
         },
@@ -20,7 +20,7 @@ const Header = () => {
     >
       <ColorModeButton />
 
-      {/* Navigation goes here */}
+      <Navigation />
 
       <div
         sx={{

@@ -7,8 +7,9 @@ type Props = {
   flexDirection?: StylePropertyValue<CSS.Property.FlexDirection | undefined>;
   flexWrap?: StylePropertyValue<CSS.Property.FlexWrap | undefined>;
   justifyContent?: string;
-  alignItems?: string;
+  alignItems?: StylePropertyValue<CSS.Property.AlignItems | undefined>;
   children: React.ReactNode;
+  display?: StylePropertyValue<CSS.Property.Display | undefined>;
   inline?: boolean;
 } & SxProp;
 
@@ -21,13 +22,14 @@ const Flex = (props: Props) => {
     justifyContent = 'flex-start',
     alignItems = 'flex-start',
     inline = false,
+    display = undefined,
     ...rest
   } = props;
   return (
     <BaseFlex
       as={as}
       sx={{
-        display: inline ? 'inline-flex' : 'flex',
+        display: display || (inline ? 'inline-flex' : 'flex'),
         ...(flexFlow ? { flexFlow } : { flexDirection, flexWrap }),
         justifyContent,
         alignItems,

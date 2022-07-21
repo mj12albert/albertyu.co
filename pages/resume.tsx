@@ -1,6 +1,7 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import { SxProp } from 'theme-ui';
+import Layout, { NextPageWithLayout } from 'components/Layout';
+import Flex from 'components/Flex';
 import BaseList from 'components/List';
 import { Organization, Position, Details, Heading } from 'components/Resume';
 
@@ -38,7 +39,7 @@ const Small = ({
   );
 };
 
-const ResumePage: NextPage = () => {
+const ResumePage: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -54,7 +55,7 @@ const ResumePage: NextPage = () => {
           minHeight: '29.7cm',
           p: 5,
           '@media screen': {
-            my: 10,
+            my: ['5vh', '10vh', '15vh'],
           },
           '@page': {
             mt: '2cm',
@@ -64,13 +65,16 @@ const ResumePage: NextPage = () => {
           },
         }}
       >
-        <div
+        <Flex
+          flexDirection={['column', 'row']}
+          alignItems={['flex-start', 'center']}
           sx={{
-            display: 'flex',
-            flexFlow: 'row nowrap',
-            alignItems: 'center',
             mb: 7,
             pb: 3,
+            '@media print': {
+              flexDirection: 'row',
+              alignItems: 'center',
+            },
           }}
         >
           <h1
@@ -92,7 +96,7 @@ const ResumePage: NextPage = () => {
             <Small sx={{ mb: 1 }}>hello@albertyu.co</Small>
             <Small>github.com/mj12albert</Small>
           </div>
-        </div>
+        </Flex>
 
         <Heading>Experience</Heading>
 
@@ -260,6 +264,10 @@ const ResumePage: NextPage = () => {
       </main>
     </>
   );
+};
+
+ResumePage.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>;
 };
 
 export default ResumePage;
