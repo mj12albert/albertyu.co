@@ -222,9 +222,30 @@ const Home: NextPage = () => {
             }}
           >
             <ContactItem>
-              <ExternalLink id="mailto" href="mailto:">
+              <button
+                type="button"
+                onClick={() => {
+                  window.location.href = atob(
+                    'bWFpbHRvOmhlbGxvQGFsYmVydHl1LmNv',
+                  );
+                }}
+                sx={{
+                  appearance: 'none',
+                  bg: 'transparent',
+                  border: 0,
+                  p: 0,
+                  fontSize: 'inherit',
+                  lineHeight: 'body',
+                  color: 'accent.fg',
+                  textDecoration: 'underline',
+                  cursor: 'pointer',
+                  '&:is(:hover, :focus, :focus-visible)': {
+                    color: 'accent.active',
+                  },
+                }}
+              >
                 Email
-              </ExternalLink>
+              </button>
             </ContactItem>
 
             <ContactItem>
