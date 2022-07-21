@@ -6,6 +6,7 @@ import MoonIcon from 'assets/svg/moon.svg';
 const ColorModeButton = (props: SxProp) => {
   const [colorMode, setColorMode] = useColorMode();
 
+  // need to put this in state to prevent a hydration error
   const [state, setState] = useState<string | null>(null);
 
   useEffect(() => {
@@ -50,6 +51,12 @@ const ColorModeButton = (props: SxProp) => {
           color: 'accent.active',
           borderColor: 'border.muted',
           bg: 'canvas.muted',
+        },
+        '&:focus-visible': {
+          outlineWidth: 2,
+          outlineColor: 'fg.muted',
+          outlineStyle: 'solid',
+          outlineOffset: 1,
         },
         '& svg': {
           width: 20,
