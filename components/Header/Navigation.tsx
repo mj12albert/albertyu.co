@@ -1,21 +1,9 @@
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import Flex from 'components/Flex';
 
-const Navigation = () => {
-  const { pathname, isReady } = useRouter();
-
-  const [activePage, setActive] = useState(pathname.replace(/\//g, ''));
-
-  useEffect(() => {
-    if (isReady) {
-      setActive(pathname.replace(/\//g, ''));
-    }
-  }, [isReady, pathname]);
-
+const Navigation = ({ activePage, ...rest }: { activePage: string | null }) => {
   return (
-    <Flex as="nav" alignItems="center">
+    <Flex as="nav" alignItems="center" {...rest}>
       {[/*'work', 'about',*/ 'resume'].map((key) => {
         const isActive = key === activePage;
         return (
@@ -36,8 +24,14 @@ const Navigation = () => {
                 cursor: isActive && 'default',
                 '&:is(:hover, :active)': {
                   textDecoration: isActive ? 'none' : 'underline',
+                  color: 'fg.default',
                 },
-                '&:is(:hover, :active, :focus-visible)': {
+                '&:focus-visible': {
+                  outlineWidth: 2,
+                  outlineColor: 'fg.default',
+                  outlineStyle: 'solid',
+                  outlineOffset: '8px',
+                  borderRadius: 1,
                   color: 'fg.default',
                 },
                 '&:not(:last-of-type)': {

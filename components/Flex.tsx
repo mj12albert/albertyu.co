@@ -6,7 +6,7 @@ type Props = {
   flexFlow?: string;
   flexDirection?: StylePropertyValue<CSS.Property.FlexDirection | undefined>;
   flexWrap?: StylePropertyValue<CSS.Property.FlexWrap | undefined>;
-  justifyContent?: string;
+  justifyContent?: StylePropertyValue<CSS.Property.JustifyContent | undefined>;
   alignItems?: StylePropertyValue<CSS.Property.AlignItems | undefined>;
   children: React.ReactNode;
   display?: StylePropertyValue<CSS.Property.Display | undefined>;

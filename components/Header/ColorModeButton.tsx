@@ -17,6 +17,7 @@ const ColorModeButton = (props: SxProp) => {
   return (
     <button
       type="button"
+      aria-label={`Turn ${state === 'light' ? 'off' : 'on'} the lights`}
       onClick={() => {
         if (state) {
           const nextColorMode = {
@@ -57,7 +58,11 @@ const ColorModeButton = (props: SxProp) => {
       }}
       {...props}
     >
-      {state === 'light' ? <MoonIcon /> : <SunIcon />}
+      {state === 'light' ? (
+        <MoonIcon aria-hidden="true" />
+      ) : (
+        <SunIcon aria-hidden="true" />
+      )}
     </button>
   );
 };

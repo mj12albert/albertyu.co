@@ -58,7 +58,7 @@ const ResumePage: NextPageWithLayout = () => {
             my: ['5vh', '10vh', '15vh'],
           },
           '@page': {
-            mt: '2cm',
+            mt: '2.5cm',
           },
           '@page:first': {
             mt: 'auto',
