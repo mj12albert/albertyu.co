@@ -36,6 +36,15 @@ module.exports = {
     ];
   },
 
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/api/robots',
+      },
+    ];
+  },
+
   webpack: (config) => {
     const rules = config.module.rules.find(
       (rule) => rule.test && rule.test.test('.svg'),

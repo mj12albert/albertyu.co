@@ -1,46 +1,16 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
+import Layout, { NextPageWithLayout } from 'components/Layout';
 import Text from 'components/Text';
 import ExternalLink from 'components/ExternalLink';
 import Divider from 'components/Divider';
 import List, { TextItem, ContactItem, WorkItem } from 'components/List';
-import ColorModeButton from 'components/ColorModeButton';
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
         <title>Albert Yu</title>
       </Head>
-
-      <header
-        sx={{
-          height: [64, null, 60],
-          display: 'flex',
-          flexDirection: ['row', 'row-reverse'],
-          flexWrap: 'nowrap',
-          justifyContent: ['space-between', 'flex-start'],
-          alignItems: 'center',
-          gridColumn: [null, null, '1/span 12'],
-          px: [0, null, 6],
-        }}
-      >
-        <ColorModeButton />
-
-        {/* Navigation */}
-
-        <div
-          sx={{
-            display: ['none', 'flex'],
-            mr: 'auto',
-            textTransform: 'uppercase',
-            fontSize: 1,
-            fontWeight: 600,
-          }}
-        >
-          Albert Yu
-        </div>
-      </header>
 
       <main
         sx={{
@@ -108,7 +78,7 @@ const Home: NextPage = () => {
           <h2
             sx={{
               variant: 'typography.headings.h3',
-              mb: 6,
+              my: 5,
             }}
           >
             Work Experience
@@ -192,7 +162,7 @@ const Home: NextPage = () => {
           <h2
             sx={{
               variant: 'typography.headings.h3',
-              mb: 6,
+              my: 5,
             }}
           >
             About this site
@@ -249,9 +219,30 @@ const Home: NextPage = () => {
             }}
           >
             <ContactItem>
-              <ExternalLink id="mailto" href="mailto:">
+              <button
+                type="button"
+                onClick={() => {
+                  window.location.href = atob(
+                    'bWFpbHRvOmhlbGxvQGFsYmVydHl1LmNv',
+                  );
+                }}
+                sx={{
+                  appearance: 'none',
+                  bg: 'transparent',
+                  border: 0,
+                  p: 0,
+                  fontSize: 'inherit',
+                  lineHeight: 'body',
+                  color: 'accent.fg',
+                  textDecoration: 'underline',
+                  cursor: 'pointer',
+                  '&:is(:hover, :focus, :focus-visible)': {
+                    color: 'accent.active',
+                  },
+                }}
+              >
                 Email
-              </ExternalLink>
+              </button>
             </ContactItem>
 
             <ContactItem>
@@ -273,6 +264,10 @@ const Home: NextPage = () => {
       </main>
     </>
   );
+};
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>;
 };
 
 export default Home;
