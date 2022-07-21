@@ -28,13 +28,41 @@ const Heading = ({
       fontSize: 2,
       textTransform: 'uppercase',
       fontWeight: 700,
+      color: 'fg.muted',
       mb: 6,
+      breakAfter: 'avoid',
+      '@media print': {
+        fontSize: '10pt',
+        mb: 4,
+      },
     }}
     {...rest}
   >
     {children}
   </h2>
 );
+
+const Small = ({
+  children,
+  ...rest
+}: {
+  children: React.ReactNode;
+} & SxProp) => {
+  return (
+    <small
+      sx={{
+        display: 'block',
+        fontFamily: 'monospace',
+        fontWeight: 400,
+        fontSize: 0,
+        lineHeight: 1.2,
+      }}
+      {...rest}
+    >
+      {children}
+    </small>
+  );
+};
 
 const ResumePage: NextPage = () => {
   return (
@@ -47,12 +75,51 @@ const ResumePage: NextPage = () => {
         itemScope
         itemType="http://schema.org/Person"
         sx={{
-          margin: '1.5cm auto',
+          mx: 'auto',
           maxWidth: '21cm',
           minHeight: '29.7cm',
           p: 5,
+          '@media screen': {
+            my: 10,
+          },
+          '@page': {
+            mt: '2cm',
+          },
+          '@page:first': {
+            mt: 'auto',
+          },
         }}
       >
+        <div
+          sx={{
+            display: 'flex',
+            flexFlow: 'row nowrap',
+            alignItems: 'center',
+            mb: 7,
+            pb: 3,
+          }}
+        >
+          <h1
+            sx={{
+              variant: 'typography.headings.h1',
+              ml: -1,
+              mr: 'auto',
+              lineHeight: 1,
+              '@media print': {
+                my: 0,
+                transform: 'translateY(2px)',
+              },
+            }}
+          >
+            Albert Yu
+          </h1>
+
+          <div>
+            <Small sx={{ mb: 1 }}>hello@albertyu.co</Small>
+            <Small>github.com/mj12albert</Small>
+          </div>
+        </div>
+
         <Heading>Experience</Heading>
 
         <List>
@@ -142,7 +209,7 @@ const ResumePage: NextPage = () => {
                 to="2017"
               >
                 {[
-                  'Provided web design and development for businesses, agencies, and startups in Hong Kong. Worked solo, and as part of a larger team of up to 10-15 developers & designers.',
+                  'Provided web design and development for businesses, agencies, and startups in Hong Kong. Worked solo, and as part of a larger team of up to 5-10 developers & designers.',
                   'Built websites and webapps using frameworks like Wordpress, AngularJS, MeteorJS. Early adopter of React.js in 2015.',
                   'Implemented style guides and scss systems based on methodologies like BEMCSS and Atomic Design, handed off code and Sketch files.',
                 ]}

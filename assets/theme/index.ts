@@ -135,6 +135,9 @@ export const theme = makeTheme({
         fontWeight: 600,
       },
       transition: 'background-color 160ms ease-in-out',
+      '@media print': {
+        backgroundColor: 'transparent',
+      },
     },
   },
 });

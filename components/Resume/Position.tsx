@@ -15,6 +15,7 @@ const Position = ({ title, from, to, children, ...rest }: Props) => {
   return (
     <li
       sx={{
+        breakInside: 'avoid',
         mb: 8,
       }}
       {...rest}

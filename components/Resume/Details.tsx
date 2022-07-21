@@ -19,6 +19,7 @@ const Details = ({ label, children = [], ...rest }: Props) => {
   return (
     <li
       sx={{
+        breakInside: 'avoid',
         '&:not(:last-of-type)': {
           mb: 3,
         },
@@ -56,6 +57,9 @@ const Details = ({ label, children = [], ...rest }: Props) => {
               fontSize: 1,
               fontWeight: 500,
               m: 0,
+              '@media print': {
+                fontSize: '9pt',
+              },
             }}
           >
             {label}
