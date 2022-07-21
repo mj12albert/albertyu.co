@@ -21,6 +21,7 @@ export const theme = makeTheme({
     // inspired by @primer https://primer.style/design/foundations/color#functional-system ❤️
     fg: {
       default: colors.scales.gray[7],
+      muted: colors.scales.gray[6],
       subtle: colors.scales.gray[5],
     },
     border: {
@@ -42,6 +43,7 @@ export const theme = makeTheme({
       dark: {
         fg: {
           default: colors.scales.zinc[2],
+          muted: colors.scales.zinc[3],
           subtle: colors.scales.zinc[4],
         },
         border: {
@@ -88,6 +90,7 @@ export const theme = makeTheme({
         fontSize: 5,
         lineHeight: 'heading',
         fontWeight: 600,
+        m: 0,
       },
       h2: {
         fontSize: 4,

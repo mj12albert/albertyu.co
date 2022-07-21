@@ -65,9 +65,6 @@ const Position = ({ title, from, to, children, ...rest }: Props) => {
                     ml: -4,
                     mr: '5px',
                   },
-                  '@media screen': {
-                    maxWidth: '80ch',
-                  },
                   '@media print': {
                     fontSize: '9pt',
                     lineHeight: 1.4,

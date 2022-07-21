@@ -13,6 +13,9 @@ const Header = () => {
         alignItems: 'center',
         gridColumn: [null, null, '1/span 12'],
         px: [0, null, 6],
+        '@media print': {
+          display: 'none',
+        },
       }}
     >
       <ColorModeButton />
