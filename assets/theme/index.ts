@@ -1,5 +1,4 @@
 import type { Theme } from 'theme-ui';
-import { alpha } from '@theme-ui/color';
 import colors from './colors';
 
 const SYSTEM_FONT_STACK =
@@ -13,51 +12,19 @@ export const theme = makeTheme({
   config: {
     useColorSchemeMediaQuery: true,
     useLocalStorage: true,
+    initialColorModeName: 'light',
     printColorModeName: 'light',
   },
 
+  // FIXME ts doesn't like spreading everything
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   colors: {
     ...colors.scales,
-    // inspired by @primer https://primer.style/design/foundations/color#functional-system ❤️
-    fg: {
-      default: colors.scales.gray[7],
-      muted: colors.scales.gray[6],
-      subtle: colors.scales.gray[5],
-    },
-    border: {
-      default: colors.scales.gray[3],
-      muted: colors.scales.gray[2],
-    },
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    canvas: {
-      default: colors.scales.gray[1],
-      muted: alpha(colors.scales.gray[2], 0.5),
-    },
-    accent: {
-      fg: colors.scales.blue[6],
-      active: colors.scales.blue[4],
-    },
+    ...colors.modes.light,
     modes: {
-      light: {},
       dark: {
-        fg: {
-          default: colors.scales.zinc[2],
-          muted: colors.scales.zinc[3],
-          subtle: colors.scales.zinc[4],
-        },
-        border: {
-          default: colors.scales.zinc[7],
-          muted: colors.scales.zinc[6],
-        },
-        canvas: {
-          default: colors.scales.zinc[9],
-          muted: colors.scales.zinc[8],
-        },
-        accent: {
-          fg: colors.scales.blue[4],
-          active: colors.scales.blue[3],
-        },
+        ...colors.modes.dark,
       },
     },
   },
@@ -90,7 +57,6 @@ export const theme = makeTheme({
         fontSize: 5,
         lineHeight: 'heading',
         fontWeight: 600,
-        m: 0,
       },
       h2: {
         fontSize: 4,
