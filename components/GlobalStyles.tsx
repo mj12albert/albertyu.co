@@ -1,7 +1,7 @@
 import React from 'react';
 import { Global, css } from '@emotion/react';
 
-export default React.memo<any>(function GlobalStyles() {
+export default React.memo<Record<string, unknown>>(function GlobalStyles() {
   return (
     <Global
       styles={css`
