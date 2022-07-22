@@ -65,6 +65,8 @@ const Details = ({ label, children = [], ...rest }: Props) => {
             {label}
           </p>
           <Icon
+            role="img"
+            alt=""
             sx={{
               width: 20,
               height: 20,
