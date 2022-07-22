@@ -93,7 +93,7 @@ const ResumePage: NextPageWithLayout = () => {
           </h1>
 
           <div>
-            <Small sx={{ mb: 1 }}>hello@albertyu.co</Small>
+            <Small sx={{ mb: 1 }}>inbox@albertyu.co</Small>
             <Small>github.com/mj12albert</Small>
           </div>
         </Flex>
