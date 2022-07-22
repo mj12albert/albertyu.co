@@ -1,4 +1,4 @@
-export default function VersionTag(props: any) {
+export default function VersionTag(props: Record<string, unknown>) {
   return (
     <code
       sx={{

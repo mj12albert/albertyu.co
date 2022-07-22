@@ -93,7 +93,7 @@ const ResumePage: NextPageWithLayout = () => {
           </h1>
 
           <div>
-            <Small sx={{ mb: 1 }}>hello@albertyu.co</Small>
+            <Small sx={{ mb: 1 }}>inbox@albertyu.co</Small>
             <Small>github.com/mj12albert</Small>
           </div>
         </Flex>
@@ -102,7 +102,10 @@ const ResumePage: NextPageWithLayout = () => {
 
         <List>
           <Organization>
-            <Organization.Header href="https://www.rapyd.net">
+            <Organization.Header
+              href="https://www.rapyd.net"
+              aria-label="Visit Rapyd’s website"
+            >
               Rapyd / Neat, A Rapyd Company
             </Organization.Header>
 
@@ -118,7 +121,10 @@ const ResumePage: NextPageWithLayout = () => {
           </Organization>
 
           <Organization>
-            <Organization.Header href="https://www.neatcommerce.com">
+            <Organization.Header
+              href="https://www.neatcommerce.com"
+              aria-label="Visit Neat’s website"
+            >
               Neat
             </Organization.Header>
 
@@ -155,7 +161,10 @@ const ResumePage: NextPageWithLayout = () => {
           </Organization>
 
           <Organization>
-            <Organization.Header href="https://www.hellotoby.com/en">
+            <Organization.Header
+              href="https://www.hellotoby.com/en"
+              aria-label="Visit HelloToby’s website"
+            >
               HelloToby
             </Organization.Header>
 

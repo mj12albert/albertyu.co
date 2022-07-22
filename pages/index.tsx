@@ -223,7 +223,7 @@ const Home: NextPageWithLayout = () => {
                 type="button"
                 onClick={() => {
                   window.location.href = atob(
-                    'bWFpbHRvOmhlbGxvQGFsYmVydHl1LmNv',
+                    'bWFpbHRvOmluYm94QGFsYmVydHl1LmNv',
                   );
                 }}
                 sx={{

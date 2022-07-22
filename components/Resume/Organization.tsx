@@ -4,10 +4,16 @@ import ExternalLink from 'components/ExternalLink';
 
 type Props = {
   href?: string;
+  'aria-label'?: string;
   children: React.ReactNode;
 };
 
-const Header = ({ children, href, ...rest }: Props) => {
+const Header = ({
+  children,
+  href,
+  'aria-label': ariaLabel,
+  ...rest
+}: Props) => {
   return (
     <Flex
       alignItems="center"
@@ -28,6 +34,7 @@ const Header = ({ children, href, ...rest }: Props) => {
       {href && (
         <ExternalLink
           href={href}
+          aria-label={ariaLabel || ''}
           sx={{
             width: 20,
             height: 20,
@@ -42,7 +49,7 @@ const Header = ({ children, href, ...rest }: Props) => {
             },
           }}
         >
-          <LinkIcon />
+          <LinkIcon role="img" alt="" />
         </ExternalLink>
       )}
     </Flex>
