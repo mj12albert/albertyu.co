@@ -10,6 +10,13 @@ export default function Document() {
           content="Albert Yu is web developer &amp; designer. Currently based in Hong Kong."
         />
         <link rel="icon" href="/favicon.ico" />
+        {process.env.APP_ENV === 'production' && (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "380beea29e5c423eafe2ea068705d5d7"}'
+          />
+        )}
       </Head>
       <body>
         <InitializeColorMode />
