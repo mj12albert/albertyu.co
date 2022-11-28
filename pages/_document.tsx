@@ -9,6 +9,7 @@ export default function Document() {
           name="description"
           content="Albert Yu is web developer &amp; designer. Currently based in Hong Kong."
         />
+        <link rel="me" href="https://hachyderm.io/@mj12albert" />
         <link rel="icon" href="/favicon.ico" />
         {process.env.APP_ENV === 'production' && (
           <script
