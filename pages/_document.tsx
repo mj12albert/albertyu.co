@@ -11,13 +11,6 @@ export default function Document() {
         />
         <link rel="me" href="https://hachyderm.io/@mj12albert" />
         <link rel="icon" href="/favicon.ico" />
-        {process.env.APP_ENV === 'production' && (
-          <script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"token": "380beea29e5c423eafe2ea068705d5d7"}'
-          />
-        )}
       </Head>
       <body>
         <InitializeColorMode />
