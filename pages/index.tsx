@@ -86,10 +86,16 @@ const Home: NextPageWithLayout = () => {
 
           <List sx={{ mb: 7 }}>
             <WorkItem
+              title="Software Engineer"
+              org="MUI"
+              href="https://www.mui.com"
+              period="2023+"
+            />
+            <WorkItem
               title="Product Designer"
               org="Rapyd"
               href="https://www.rapyd.net"
-              period="2022–Now"
+              period="2022–2023"
             />
             <WorkItem
               title="Principal Software Engineer (Front-End)"

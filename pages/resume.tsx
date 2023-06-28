@@ -103,6 +103,25 @@ const ResumePage: NextPageWithLayout = () => {
         <List>
           <Organization>
             <Organization.Header
+              href="https://www.mui.com"
+              aria-label="Visit the MUI website"
+            >
+              MUI
+            </Organization.Header>
+
+            <List>
+              <Position title="Software Engineer" from="2023" to="Now">
+                {[
+                  'Worked closely with engineers to build out Rapyd’s design system, worked on fundamentals such as layout patterns, grid systems and typography, to complex components such as data tables. I made a lot of prototypes in CodeSandbox with documentation in Figma.',
+                  'Built a POC using Next.js and Markdoc to prototype key user flows for Rapyd’s documentation and API reference sites. This was a pilot project for a larger redesign initiative.',
+                  'Collaborated with product managers and engineers on design system governance: clarifying requirements, maintaining and grooming the backlog.',
+                ]}
+              </Position>
+            </List>
+          </Organization>
+
+          <Organization>
+            <Organization.Header
               href="https://www.rapyd.net"
               aria-label="Visit Rapyd’s website"
             >
@@ -110,7 +129,7 @@ const ResumePage: NextPageWithLayout = () => {
             </Organization.Header>
 
             <List>
-              <Position title="Product Designer" from="2022" to="Now">
+              <Position title="Product Designer" from="2022" to="2023">
                 {[
                   'Worked closely with engineers to build out Rapyd’s design system, worked on fundamentals such as layout patterns, grid systems and typography, to complex components such as data tables. I made a lot of prototypes in CodeSandbox with documentation in Figma.',
                   'Built a POC using Next.js and Markdoc to prototype key user flows for Rapyd’s documentation and API reference sites. This was a pilot project for a larger redesign initiative.',
