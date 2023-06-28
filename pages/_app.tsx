@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'theme-ui';
+import { ThemeUIProvider } from 'theme-ui';
 import { theme } from 'assets/theme';
 import { NextPageWithLayout } from 'components/Layout';
 import GlobalStyles from 'components/GlobalStyles';
@@ -12,10 +12,10 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <GlobalStyles />
       {getLayout(<Component {...pageProps} />)}
-    </ThemeProvider>
+    </ThemeUIProvider>
   );
 }
 

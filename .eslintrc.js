@@ -18,5 +18,6 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'react/no-unknown-property': ['error', { ignore: ['sx'] }],
   },
 };

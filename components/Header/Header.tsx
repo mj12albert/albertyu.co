@@ -37,32 +37,32 @@ const Header = () => {
 
       <Navigation activePage={activePage} />
 
-      <Link href="/" passHref>
-        <a
-          sx={{
-            display: ['none', 'flex'],
-            mr: 'auto',
-            textTransform: 'uppercase',
-            fontSize: 1,
-            fontWeight: 600,
+      <Link
+        href="/"
+        passHref
+        sx={{
+          display: ['none', 'flex'],
+          mr: 'auto',
+          textTransform: 'uppercase',
+          fontSize: 1,
+          fontWeight: 600,
+          color: 'fg.default',
+          textDecoration: 'none',
+          cursor: isActive && 'default',
+          '&:is(:hover, :active)': {
+            color: !isActive && 'accent.fg',
+          },
+          '&:focus-visible': {
+            outlineWidth: 2,
+            outlineColor: 'fg.default',
+            outlineStyle: 'solid',
+            outlineOffset: '8px',
+            borderRadius: 1,
             color: 'fg.default',
-            textDecoration: 'none',
-            cursor: isActive && 'default',
-            '&:is(:hover, :active)': {
-              color: !isActive && 'accent.fg',
-            },
-            '&:focus-visible': {
-              outlineWidth: 2,
-              outlineColor: 'fg.default',
-              outlineStyle: 'solid',
-              outlineOffset: '8px',
-              borderRadius: 1,
-              color: 'fg.default',
-            },
-          }}
-        >
-          Albert Yu
-        </a>
+          },
+        }}
+      >
+        Albert Yu
       </Link>
     </Flex>
   );
